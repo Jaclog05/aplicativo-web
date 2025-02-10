@@ -29,11 +29,11 @@ function AppraisalComponent() {
               <input type="text" placeholder='Localidad' className={styles.loc} />
               <input type="text" placeholder='Area (m2)' className={styles.area} />
               <input type="text" placeholder='Precio' className={styles.price} />
+              <div className={styles.mapSection}>
+                Mapa Interactivo
+              </div>
               <input type="submit" value="Continuar" className={styles.submit}/>
             </form>
-            <div className={styles.mapSection}>
-              Mapa Interactivo
-            </div>
           </> :
           step == 2 ? <>
             <form className={styles.formGuidingQuestions} onSubmit={handleSubmitGeneralInfo}>
@@ -67,7 +67,6 @@ function AppraisalComponent() {
               </p>
               <p className={styles.appraisalResult}>$ 236.000.000 COP</p>
               <button className={styles.paperButton}>Descargar Informe</button>
-              <input type="submit" value="Continuar" className={styles.submit}/>
             </form>
           </>
         }

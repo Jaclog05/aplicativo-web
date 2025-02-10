@@ -3,6 +3,8 @@
   background: #D9D9D9;
   font-size: 35px;
   padding: 20px;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
 }
 
 .appraisalHeader {
@@ -24,23 +26,19 @@
 }
 
 .appraisalBody {
-  display: grid;
-  grid-auto-flow: column;
-  padding: 20px 0px;
-}
-
-.appraisalBody > *{
-  justify-self: center;
+  padding: 0px 60px;
 }
 
 .formGeneralInfo {
   display: grid;
+  height: 100%;
   grid-template-areas: 
-   "addr addr addr strat"
-   "loc loc loc loc"
-   "area area price price"
-   "submit submit . .";
+   "addr addr strat map map"
+   "loc loc loc map map"
+   "area area price map map"
+   ". . . . submit";
   gap: 15px;
+  align-items: center;
 }
 
 .formGeneralInfo > input[type=text] {
@@ -55,20 +53,6 @@
 .formGeneralInfo > input[type=text]::placeholder {
   font-size: 16px;
   color: #000;
-}
-
-.formGeneralInfo > input[type="submit"] {
-  border-radius: 11px;
-  border: none;
-  color: #fff;
-  background: #8B8B8B;
-  font-size: 22px;
-  height: 40px;
-}
-
-.formGeneralInfo > input[type="submit"]:hover {
-  cursor: pointer;
-  background: rgba(0, 123, 255, 0.911);
 }
 
 .addr {
@@ -91,31 +75,26 @@
   grid-area: price;
 }
 
-.submit {
-  grid-area: submit;
-}
 
 .mapSection {
+  grid-area: map;
   display: grid;
-  width: 500px;
   height: 305px;
   place-items: center;
   font-size: 24px;
   color: #fff;
   background: #8B8B8B;
-  text-align: center;
 }
 
 /* step 2 */
 
 .formGuidingQuestions {
   display: grid;
+  height: 100%;
   grid-template-areas:
-  "question image"
-  "bottom bottom"
-  ". submit";
-  padding: 0 50px;
-  grid-template-columns: 7fr 3fr;
+  "question question question image image"
+  "bottom bottom bottom bottom bottom"
+  ". . . . submit";
 }
 
 .question {
@@ -166,31 +145,53 @@
   margin-right: 5px;
 }
 
-.submit {
-  grid-area: submit;
-}
-
 /* step 3 */
 
 .formResults {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  display: grid;
+  height: 100%;
+  grid-template-areas:
+   "desc desc desc desc desc"
+   "res res res res res"
+   "button button button button button";
+  gap: 15px;
   align-items: center;
 }
 
 .resultsDescription {
+  grid-area: desc;
   font-size: 24px;
   text-align: center;
 }
 
 .appraisalResult {
+  grid-area: res;
+  justify-self: center;
   font-size: 43px;
 }
 
 .paperButton {
+  grid-area: button;
   height: 40px;
   border: 1px solid #000;
   background: #fff;
   width: 150px;
+  justify-self: center;
+}
+
+.submit {
+  grid-area: submit;
+  border-radius: 11px;
+  border: none;
+  color: #fff;
+  background: #8B8B8B;
+  font-size: 22px;
+  height: 40px;
+  width: 165px;
+  justify-self: end;
+}
+
+.submit:hover {
+  cursor: pointer;
+  background: rgba(0, 123, 255, 0.911);
 }
