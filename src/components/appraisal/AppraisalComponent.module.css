@@ -1,0 +1,196 @@
+.appraisalSection {
+  height: 410px;
+  background: #D9D9D9;
+  font-size: 35px;
+  padding: 20px;
+}
+
+.appraisalHeader {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 60px;
+  padding-left: 5px;
+  gap: 15px;
+}
+
+.appraisalComponentTitle {
+  font-size: 27px;
+}
+
+.imgIcon {
+  width: 40px;
+}
+
+.appraisalBody {
+  display: grid;
+  grid-auto-flow: column;
+  padding: 20px 0px;
+}
+
+.appraisalBody > *{
+  justify-self: center;
+}
+
+.formGeneralInfo {
+  display: grid;
+  grid-template-areas: 
+   "addr addr addr strat"
+   "loc loc loc loc"
+   "area area price price"
+   "submit submit . .";
+  gap: 15px;
+}
+
+.formGeneralInfo > input[type=text] {
+  background: rgba(60, 60, 67, 0.29);
+  padding-left: 5px;
+  height: 40px;
+  border: 0px;
+  font-size: 16px;
+  color: #000;
+}
+
+.formGeneralInfo > input[type=text]::placeholder {
+  font-size: 16px;
+  color: #000;
+}
+
+.formGeneralInfo > input[type="submit"] {
+  border-radius: 11px;
+  border: none;
+  color: #fff;
+  background: #8B8B8B;
+  font-size: 22px;
+  height: 40px;
+}
+
+.formGeneralInfo > input[type="submit"]:hover {
+  cursor: pointer;
+  background: rgba(0, 123, 255, 0.911);
+}
+
+.addr {
+  grid-area: addr;
+}
+
+.strat {
+  grid-area: strat;
+}
+
+.loc {
+  grid-area: loc;
+}
+
+.area {
+  grid-area: area;
+}
+
+.price {
+  grid-area: price;
+}
+
+.submit {
+  grid-area: submit;
+}
+
+.mapSection {
+  display: grid;
+  width: 500px;
+  height: 305px;
+  place-items: center;
+  font-size: 24px;
+  color: #fff;
+  background: #8B8B8B;
+  text-align: center;
+}
+
+/* step 2 */
+
+.formGuidingQuestions {
+  display: grid;
+  grid-template-areas:
+  "question image"
+  "bottom bottom"
+  ". submit";
+  padding: 0 50px;
+  grid-template-columns: 7fr 3fr;
+}
+
+.question {
+  grid-area: question;
+}
+
+.questionText {
+  font-size: 22px;
+}
+
+.optionsWrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0px;
+}
+
+.options {
+  display: grid;
+  width: 206px;
+  height: 138px;
+  background: #8B8B8B;
+  border-radius: 11px;
+  color: #fff;
+  border: none;
+  place-items: center;
+}
+
+.genericImage {
+  grid-area: image;
+  width: 293px;
+  height: 221px;
+  justify-self: center;
+  align-self: center;
+}
+
+.bottom {
+  display: flex;
+  grid-area: bottom;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+.bottom > div > button {
+  width: 134px;
+  height: 40px;
+  border: 1px solid #000;
+  background: #fff;
+  margin-right: 5px;
+}
+
+.submit {
+  grid-area: submit;
+}
+
+/* step 3 */
+
+.formResults {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.resultsDescription {
+  font-size: 24px;
+  text-align: center;
+}
+
+.appraisalResult {
+  font-size: 43px;
+}
+
+.paperButton {
+  height: 40px;
+  border: 1px solid #000;
+  background: #fff;
+  width: 150px;
+}

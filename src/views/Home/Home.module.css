@@ -1,0 +1,85 @@
+.homeWrapper {
+  width: 100%;
+}
+
+.coverWrapper {
+  width: 100%;
+  background: #8b8b8b;
+  height: 484px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.coverMainText {
+  font-weight: 400;
+  font-size: 43px;
+  color: #fff;
+}
+
+.coverSecondaryText {
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  color: #fff;
+  width: 430px;
+}
+
+.coverButton {
+  width: 146px;
+  height: 34px;
+  background: #d9d9d9;
+  font-weight: 400;
+  font-size: 16px;
+  color: #000;
+}
+
+.infoSection {
+  height: 380px;
+  padding: 30px;
+}
+
+.infoSectionTitle {
+  font-size: 27px;
+}
+
+.stepsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 60px;
+}
+
+.footerSection {
+  display: grid;
+  place-items: center;
+  height: 230px;
+  background-color: #8B8B8B;
+  color: #fff;
+  margin-top: 30px;
+}
+
+.footerSection > hr {
+  width: 80%;
+  border: 1px solid;
+}
+
+.footerSection > p {
+  font-size: 14px;
+  text-align: center;
+}
+
+.imgIcon {
+  width: 87px;
+  height: 87px;
+  justify-self: start;
+}
+
+.footerSection > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  width: 80%;
+}
