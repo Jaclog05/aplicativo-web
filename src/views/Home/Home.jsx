@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './Home.module.css';
 import InfoStep from '../../components/infoStep/InfoStep';
-import AppraisalComponent from '../../components/appraisal/appraisalComponent';
+import AppraisalComponent from '../../components/appraisal/AppraisalComponent';
 import avaluoLogo from '../../assets/avaluo-icon.svg';
 
 function Home() {
