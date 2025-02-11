@@ -153,7 +153,8 @@
   grid-template-areas:
    "desc desc desc desc desc"
    "res res res res res"
-   "button button button button button";
+   "button button button button button"
+   ". . . . submit";
   gap: 15px;
   align-items: center;
 }

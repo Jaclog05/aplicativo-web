@@ -12,12 +12,16 @@ function AppraisalComponent() {
     setStep(prevState => prevState + 1)
   }
 
+  function handleNewAppraisal() {
+    setStep(1)
+  }
+
   return (
     <div className={styles.appraisalSection}>
       <div className={styles.appraisalHeader}>
         <img src={avaluoLogo} alt="avaluo Logo" className={styles.imgIcon}/>
         <p className={styles.appraisalComponentTitle}>
-          Paso {step}: Información general del Inmueble
+          Paso {step}: {step === 1 ? 'Información general del inmueble' : step === 2 ? 'Preguntas orientadoras' : 'Obten un precio estimado'}
         </p>
       </div>
       <div className={styles.appraisalBody}>
@@ -67,6 +71,7 @@ function AppraisalComponent() {
               </p>
               <p className={styles.appraisalResult}>$ 236.000.000 COP</p>
               <button className={styles.paperButton}>Descargar Informe</button>
+              <button onClick={handleNewAppraisal} className={styles.submit}>Nuevo Avalúo</button>
             </form>
           </>
         }
