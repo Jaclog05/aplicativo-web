@@ -13,9 +13,11 @@ function NavBar() {
         </div>
       </Link>
       <div className={styles.rightWrapper}>
-        <div className={styles.aboutUs}>Sobre Nosotros</div>
-        <Link to='/login' className={styles.links}>
-          <button className={styles.loginButton}>Iniciar Sesión</button>
+        <Link to='/aboutUs' className={styles.aboutUs}>
+          Sobre Nosotros
+        </Link>
+        <Link to='/login' className={styles.loginButton}>
+          Iniciar Sesión
         </Link>
       </div>
     </nav>

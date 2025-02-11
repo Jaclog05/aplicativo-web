@@ -3,6 +3,7 @@ import styles from './Home.module.css';
 import InfoStep from '../../components/infoStep/InfoStep';
 import AppraisalComponent from '../../components/appraisal/AppraisalComponent';
 import avaluoLogo from '../../assets/avaluo-icon.svg';
+import { HashLink } from 'react-router-hash-link';
 
 function Home() {
   return (
@@ -15,9 +16,11 @@ function Home() {
           En este texto se mostrará una pequeña descripción
           de lo que podemos hacer en este sitio o cualquier otra que se decida
         </p>
-        <button className={styles.coverButton}>
+        <HashLink
+          smooth to='/#appraisal_section' className={styles.coverButton}
+        >
           Empezar
-        </button>
+        </HashLink>
       </div>
       <div className={styles.infoSection}>
         <p className={styles.infoSectionTitle}>

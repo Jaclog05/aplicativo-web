@@ -17,7 +17,7 @@ function AppraisalComponent() {
   }
 
   return (
-    <div className={styles.appraisalSection}>
+    <div id='appraisal_section' className={styles.appraisalSection}>
       <div className={styles.appraisalHeader}>
         <img src={avaluoLogo} alt="avaluo Logo" className={styles.imgIcon}/>
         <p className={styles.appraisalComponentTitle}>
