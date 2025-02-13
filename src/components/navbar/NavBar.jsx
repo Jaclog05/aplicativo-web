@@ -12,14 +12,9 @@ function NavBar() {
           <p>Aplicativo Web Nombre</p>
         </div>
       </Link>
-      <div className={styles.rightWrapper}>
-        <Link to='/aboutUs' className={styles.aboutUs}>
-          Sobre Nosotros
-        </Link>
-        <Link to='/login' className={styles.loginButton}>
-          Iniciar Sesión
-        </Link>
-      </div>
+      <Link to='/aboutUs' className={styles.aboutUs}>
+        Sobre Nosotros
+      </Link>
     </nav>
   )
 }

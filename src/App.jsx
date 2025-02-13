@@ -17,7 +17,7 @@ function App() {
         <Route path="/" element={
           <AppraisalComponent/>
         } />
-        <Route path="/login" element={
+        <Route path="/admin-login" element={
           <Login />
         } />
         <Route path="/aboutUs" element={
