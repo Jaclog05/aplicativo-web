@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from '../appraisal/AppraisalComponent.module.css'
 import avaluoLogo from '../../assets/avaluo-icon.svg'
 import genericImage from '../../assets/generic-image.svg'
 import { useState } from 'react'
+import { questions } from '../../info_objects/questions'
 
 function AppraisalComponent() {
   const [step, setStep] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const currentQuestion = questions[currentIndex];
 
   function handleSubmitGeneralInfo(e){
     e.preventDefault()
@@ -14,6 +17,16 @@ function AppraisalComponent() {
 
   function handleNewAppraisal() {
     setStep(1)
+    setCurrentIndex(0)
+  }
+
+  function handleQuestionsNavigation(e, direction) {
+    e.preventDefault();
+    if(direction === 'previous'){
+      setCurrentIndex(prev => prev - 1)
+    } else if (direction === 'next' && currentIndex < questions.length - 1) {
+      setCurrentIndex(prev => prev + 1)
+    }
   }
 
   return (
@@ -42,23 +55,40 @@ function AppraisalComponent() {
           step == 2 ? <>
             <form className={styles.formGuidingQuestions} onSubmit={handleSubmitGeneralInfo}>
               <div className={styles.question}>
-                <p className={styles.questionText}>{`
-                  19.   ¿Cómo percibes la iluminación natural en las zonas comunes dentro de la vivienda?
-                  (Sala, comedor, estudio, cocina, entre otros)`
-                }</p>
+                <p className={styles.questionText}>
+                  {currentQuestion.id}. {currentQuestion.question}
+                </p>
                 <div className={styles.optionsWrapper}>
-                  <button className={styles.options}>Bueno</button>
-                  <button className={styles.options}>Regular</button>
-                  <button className={styles.options}>Malo</button>
+                  {Object.entries(currentQuestion.options).map(([option, value]) => (
+                    <button key={option} className={styles.options} value={value}>
+                      {option}
+                    </button>
+                  ))}
                 </div>
               </div>
+
               <img src={genericImage} alt="generic Image" className={styles.genericImage}/>
+
               <div className={styles.bottom}>
                 <div>
-                  <button>Anterior</button>
-                  <button>Siguiente</button>
+                  <button
+                    onClick={(e) => handleQuestionsNavigation(e, "previous")}
+                    disabled={currentIndex === 0}
+                    className={styles.navigationButtons}
+                  >
+                    Anterior
+                  </button>
+                  <button
+                    onClick={(e) => handleQuestionsNavigation(e, "next")}
+                    disabled={currentIndex === questions.length - 1}
+                    className={styles.navigationButtons}
+                  >
+                    Siguiente
+                  </button>
                 </div>
-                <p>Pregunta 19 de 35</p>
+                <p>
+                  Pregunta {currentQuestion.id} de {questions.length}
+                </p>
               </div>
               <input type="submit" value="Continuar" className={styles.submit}/>
             </form>

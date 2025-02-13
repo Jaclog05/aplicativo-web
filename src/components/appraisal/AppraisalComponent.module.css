@@ -137,12 +137,18 @@
   font-size: 16px;
 }
 
-.bottom > div > button {
+.navigationButtons {
   width: 134px;
   height: 40px;
   border: 1px solid #000;
   background: #fff;
   margin-right: 5px;
+}
+
+.navigationButtons:hover {
+  cursor: pointer;
+  background: #8B8B8B;
+  color: #fff;
 }
 
 /* step 3 */
