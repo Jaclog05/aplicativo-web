@@ -1,0 +1,57 @@
+.wrapper {
+  display: grid;
+  width: 651px;
+  height: 35px;
+  grid-auto-flow: column;
+  gap: 10px;
+  padding: 10px 0px;
+}
+
+.wrapper > div {
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  color: #fff;
+  background: #8B8B8B;
+}
+
+.wrapper div:first-child {
+  border-radius: 20px 0px 0px 20px
+}
+
+.wrapper div:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 20px 20px 0px;
+  gap: 10px;
+}
+
+.icon {
+  width: 27px;
+  height: 27px;
+  fill: #fff;
+}
+
+.icon:hover {
+  cursor: pointer;
+}
+
+:global(.tooltip-inner) {
+  background-color: #3C3C43 !important;
+  color: #fff !important;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 6px;
+  font-size: 12px;
+  max-width: 331px;
+  text-align: justify;
+}
+
+:global(.tooltip.show) {
+  opacity: 0.8 !important;
+}
+
+:global(.tooltip-arrow::before) {
+  background-color: #3C3C43 !important;
+}
