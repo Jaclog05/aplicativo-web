@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Infobar.module.css'
+import styles from './InfoBar.module.css'
 import InfoIcon from '../../assets/info-icon.svg'
 import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 
