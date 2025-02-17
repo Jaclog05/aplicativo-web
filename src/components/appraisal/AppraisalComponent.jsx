@@ -1,7 +1,7 @@
 import React, { useState, useReducer } from 'react'
 import styles from '../appraisal/AppraisalComponent.module.css'
 import avaluoLogo from '../../assets/avaluo-icon.svg'
-import { questions } from '../../info_objects/questionsMultiFamilies'
+import { questions } from '../../info_objects/questionsUniFamily'
 import GeneralInfoForm from '../GeneralInfoForm'
 import GuidingQuestionsForm from '../GuidingQuestionsForm'
 import ResultsForm from '../ResultsForm'

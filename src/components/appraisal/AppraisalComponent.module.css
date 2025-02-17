@@ -111,17 +111,6 @@
   padding: 15px 0px;
 }
 
-.options {
-  display: grid;
-  width: 206px;
-  height: 138px;
-  background: #8B8B8B;
-  border-radius: 11px;
-  color: #fff;
-  border: none;
-  place-items: center;
-}
-
 .genericImage {
   grid-area: image;
   width: 293px;

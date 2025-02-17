@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './appraisal/AppraisalComponent.module.css'
 import genericImage from '../assets/generic-image.svg'
 import InfoBar from './infoBar/InfoBar';
+import OptionButton from './optionButton/OptionButton';
 
 function GuidingQuestionsForm({
   dispatch,
@@ -28,9 +29,7 @@ function GuidingQuestionsForm({
           </p>
           <div className={styles.optionsWrapper}>
             {Object.entries(options).map(([option, value]) => (
-              <button key={option} className={styles.options} value={value}>
-                {option}
-              </button>
+              <OptionButton option={option} value={value}/>
             ))}
           </div>
         </div>
