@@ -12,7 +12,7 @@ function GuidingQuestionsForm({
   questionsLength
 }) {
 
-  const {id, question, options, indicator, subgroup, parameter, explanaition} = currentQuestion;
+  const {id, question, options, indicator, subgroup, parameter, explanation} = currentQuestion;
 
   return (
     <div>
@@ -20,7 +20,7 @@ function GuidingQuestionsForm({
         indicator={indicator}
         subgroup={subgroup}
         parameter={parameter}
-        explanaition={explanaition}
+        explanation={explanation}
       />
       <form className={styles.formGuidingQuestions} onSubmit={onContinue}>
         <div className={styles.question}>

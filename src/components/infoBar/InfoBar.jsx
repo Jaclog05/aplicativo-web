@@ -3,11 +3,11 @@ import styles from './InfoBar.module.css'
 import InfoIcon from '../../assets/info-icon.svg'
 import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 
-function InfoBar({indicator, subgroup, parameter, explanaition}) {
+function InfoBar({indicator, subgroup, parameter, explanation}) {
 
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip-2" {...props}>
-      {explanaition}
+      {explanation}
     </Tooltip>
   );
 
