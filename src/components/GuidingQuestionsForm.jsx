@@ -10,10 +10,12 @@ function GuidingQuestionsForm({
   onContinue,
   currentIndex,
   currentQuestion,
-  questionsLength
+  questionsLength,
+  answers
 }) {
 
   const {id, question, options, indicator, subgroup, parameter, explanation} = currentQuestion;
+  const selectedAnswer = answers[currentIndex];
 
   return (
     <div>
@@ -31,7 +33,13 @@ function GuidingQuestionsForm({
           </p>
           <div className={styles.optionsWrapper}>
             {Object.entries(options).map(([option, value]) => (
-              <OptionButton key={option} option={option} value={value}/>
+              <OptionButton
+                key={option}
+                option={option}
+                value={value}
+                isSelected={selectedAnswer === value}
+                onSelect={(value) => dispatch({ type: 'SET_ANSWER', index: currentIndex, answer: value })}
+              />
             ))}
           </div>
         </div>
@@ -40,24 +48,23 @@ function GuidingQuestionsForm({
 
         <div className={styles.bottom}>
           <div>
-            <button
-              type='button'
-              onClick={() => dispatch({ type: 'PREV_QUESTION' })}
-              disabled={currentIndex === 0}
-              className={styles.navigationButtons}
-            >
-              Anterior
-            </button>
-            <button
-              type='button'
-              onClick={() => dispatch({ type: 'NEXT_QUESTION' })}
-              disabled={currentIndex === questionsLength - 1}
-              className={styles.navigationButtons}
-            >
-              Siguiente
-            </button>
+            {
+              Object.keys(answers).length === questionsLength ?
+              <input
+                type="submit"
+                value="Calcular Avalúo"
+                className={styles.submit}
+              /> :
+              <button
+                type='button'
+                onClick={() => dispatch({ type: 'NEXT_QUESTION' })}
+                disabled={answers[currentIndex] === undefined}
+                className={styles.navigationButtons}
+              >
+                Siguiente
+              </button>
+            }
           </div>
-          <input type="submit" value="Continuar" className={styles.submit}/>
         </div>
       </form>
     </div>

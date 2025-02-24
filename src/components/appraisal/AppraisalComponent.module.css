@@ -122,7 +122,7 @@
 .bottom {
   display: flex;
   grid-area: bottom;
-  justify-content: space-between;
+  justify-content: end;
   font-size: 16px;
 }
 
@@ -132,6 +132,14 @@
   border: 1px solid #000;
   background: #fff;
   margin-right: 5px;
+}
+
+.navigationButtons:disabled {
+  border: none;
+}
+
+.navigationButtons:disabled:hover {
+  cursor: not-allowed;
 }
 
 .navigationButtons:hover {

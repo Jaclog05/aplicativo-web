@@ -16,6 +16,11 @@ function AppraisalComponent() {
         return { ...state, currentIndex: Math.max(state.currentIndex - 1, 0) };
       case 'NEXT_QUESTION':
         return { ...state, currentIndex: Math.min(state.currentIndex + 1, questions.length - 1) };
+      case 'SET_ANSWER':
+        return {
+          ...state,
+          answers: { ...state.answers, [action.index]: action.answer }
+        };
       case 'RESET':
         return initialState;
       default:
@@ -23,9 +28,9 @@ function AppraisalComponent() {
     }
   }
 
-  const initialState = { step: 1, currentIndex: 0 };
+  const initialState = { step: 1, currentIndex: 0, answers: {} };
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { step, currentIndex } = state;
+  const { step, currentIndex, answers } = state;
   const currentQuestion = questions[currentIndex];
 
 
@@ -50,6 +55,7 @@ function AppraisalComponent() {
         { step == 2 &&
           <GuidingQuestionsForm
             dispatch={dispatch}
+            answers={answers}
             currentIndex={currentIndex}
             currentQuestion={currentQuestion}
             questionsLength={questions.length}

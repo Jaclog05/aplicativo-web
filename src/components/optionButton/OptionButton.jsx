@@ -3,7 +3,7 @@ import styles from './OptionButton.module.css'
 import ThumbUpIcon from '../../assets/thumb-up-icon.svg'
 import ThumbDownIcon from '../../assets/thumb-down-icon.svg'
 
-function OptionButton({option, value}) {
+function OptionButton({option, value, onSelect, isSelected}) {
   function showIcon(option) {
     if(option == 'Si' || option == 'Bueno' || option == 'Es agradable') {
       return <img src={ThumbUpIcon} alt='thumb-up-icon' className={styles.icon}/>
@@ -14,7 +14,13 @@ function OptionButton({option, value}) {
     }
   }
   return (
-    <button type="button" key={option} className={styles.options} value={value}>
+    <button
+      className={`${styles.options} ${isSelected ? styles.selected : ''}`}
+      type="button"
+      key={option}
+      value={value}
+      onClick={() => onSelect(value)}
+    >
       { showIcon(option) }
       {option}
     </button>
