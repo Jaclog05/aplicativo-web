@@ -14,7 +14,7 @@ function OptionButton({option, value}) {
     }
   }
   return (
-    <button key={option} className={styles.options} value={value}>
+    <button type="button" key={option} className={styles.options} value={value}>
       { showIcon(option) }
       {option}
     </button>

@@ -3,6 +3,7 @@ import styles from './appraisal/AppraisalComponent.module.css'
 import genericImage from '../assets/generic-image.svg'
 import InfoBar from './infoBar/InfoBar';
 import OptionButton from './optionButton/OptionButton';
+import ProgressBarComponent from './progressBar/progressBarComponent';
 
 function GuidingQuestionsForm({
   dispatch,
@@ -16,6 +17,7 @@ function GuidingQuestionsForm({
 
   return (
     <div>
+      <ProgressBarComponent questionId={id} questionsLength={questionsLength}/>
       <InfoBar
         indicator={indicator}
         subgroup={subgroup}
@@ -29,7 +31,7 @@ function GuidingQuestionsForm({
           </p>
           <div className={styles.optionsWrapper}>
             {Object.entries(options).map(([option, value]) => (
-              <OptionButton option={option} value={value}/>
+              <OptionButton key={option} option={option} value={value}/>
             ))}
           </div>
         </div>
@@ -55,11 +57,8 @@ function GuidingQuestionsForm({
               Siguiente
             </button>
           </div>
-          <p>
-            Pregunta {id} de {questionsLength}
-          </p>
+          <input type="submit" value="Continuar" className={styles.submit}/>
         </div>
-        <input type="submit" value="Continuar" className={styles.submit}/>
       </form>
     </div>
   )
