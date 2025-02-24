@@ -3,7 +3,7 @@ import styles from './appraisal/AppraisalComponent.module.css'
 import genericImage from '../assets/generic-image.svg'
 import InfoBar from './infoBar/InfoBar';
 import OptionButton from './optionButton/OptionButton';
-import ProgressBarComponent from './progressBar/progressBarComponent';
+import ProgressBarComponent from './progressBar/ProgressBarComponent';
 
 function GuidingQuestionsForm({
   dispatch,
