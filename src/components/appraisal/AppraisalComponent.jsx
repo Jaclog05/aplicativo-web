@@ -16,6 +16,11 @@ function AppraisalComponent() {
         return { ...state, currentIndex: Math.max(state.currentIndex - 1, 0) };
       case 'NEXT_QUESTION':
         return { ...state, currentIndex: Math.min(state.currentIndex + 1, questions.length - 1) };
+      case 'POST_GENERAL_INFO':
+        return {
+          ...state,
+          generalInfo: action.value
+        }
       case 'SET_ANSWER':
         return {
           ...state,
@@ -28,7 +33,7 @@ function AppraisalComponent() {
     }
   }
 
-  const initialState = { step: 1, currentIndex: 0, answers: {} };
+  const initialState = { step: 1, currentIndex: 0, answers: {}, generalInfo: {} };
   const [state, dispatch] = useReducer(reducer, initialState);
   const { step, currentIndex, answers } = state;
   const currentQuestion = questions[currentIndex];
@@ -50,7 +55,14 @@ function AppraisalComponent() {
       <div className={styles.appraisalBody}>
         { step == 1 &&
           <GeneralInfoForm
-            onContinue={() => dispatch({ type: 'NEXT_STEP'})}
+            onContinue={(e) => {
+              e.preventDefault()
+              const data = Object.fromEntries(
+                new FormData(e.target)
+              )
+              dispatch({ type: 'POST_GENERAL_INFO', value: data})
+              dispatch({ type: 'NEXT_STEP'})
+            }}
           /> }
         { step == 2 &&
           <GuidingQuestionsForm
