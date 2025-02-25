@@ -1,20 +1,56 @@
-import React from 'react'
-import styles from './appraisal/AppraisalComponent.module.css'
+import React from "react";
+import styles from "./appraisal/AppraisalComponent.module.css";
 
 function GeneralInfoForm({ onContinue }) {
   return (
     <form className={styles.formGeneralInfo} onSubmit={onContinue}>
-      <input type="text" placeholder='Direccion del inmueble' className={styles.addr} />
-      <input type="text" placeholder='Estrato' className={styles.strat} />
-      <input type="text" placeholder='Localidad' className={styles.loc} />
-      <input type="text" placeholder='Area (m2)' className={styles.area} />
-      <input type="text" placeholder='Precio' className={styles.price} />
-      <div className={styles.mapSection}>
-        Mapa Interactivo
-      </div>
-      <input type="submit" value="Continuar" className={styles.submit}/>
+      <input
+        type="text"
+        placeholder="Direccion del inmueble"
+        className={styles.addr}
+        name="address"
+      />
+
+      <select className={styles.strat} name="stratum" defaultValue="" required>
+        <option value="" disabled>
+          Estrato
+        </option>
+        {[1, 2, 3, 4, 5, 6].map((num) => (
+          <option key={num} value={num}>
+            {num}
+          </option>
+        ))}
+      </select>
+
+      <select className={styles.status} name="status" defaultValue="" required>
+        <option value="" disabled>
+          Tipo de Vivienda
+        </option>
+        <option value="Unifamiliar">Unifamiliar</option>
+        <option value="Multifamiliar">Multifamiliar</option>
+      </select>
+
+      <input
+        type="number"
+        name="area"
+        placeholder="Area (m2)"
+        className={styles.area}
+        step="0.01"
+        required
+      />
+      <input
+        type="number"
+        name="price"
+        placeholder="Precio (COP)"
+        className={styles.price}
+        required
+      />
+
+      <div className={styles.mapSection}>Mapa Interactivo</div>
+
+      <input type="submit" value="Continuar" className={styles.submit} />
     </form>
-  )
+  );
 }
 
-export default GeneralInfoForm
+export default GeneralInfoForm;

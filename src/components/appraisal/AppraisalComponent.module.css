@@ -34,14 +34,15 @@
   height: 100%;
   grid-template-areas: 
    "addr addr strat map map"
-   "loc loc loc map map"
+   "status status status map map"
    "area area price map map"
    ". . . . submit";
   gap: 15px;
   align-items: center;
 }
 
-.formGeneralInfo > input[type=text] {
+.formGeneralInfo > input:not([type=submit]),
+.formGeneralInfo > select {
   background: rgba(60, 60, 67, 0.29);
   padding-left: 5px;
   height: 40px;
@@ -50,7 +51,8 @@
   color: #000;
 }
 
-.formGeneralInfo > input[type=text]::placeholder {
+.formGeneralInfo > input[type=number]::placeholder,
+.formGeneralInfo > select {
   font-size: 16px;
   color: #000;
 }
@@ -63,8 +65,8 @@
   grid-area: strat;
 }
 
-.loc {
-  grid-area: loc;
+.status {
+  grid-area: status;
 }
 
 .area {
