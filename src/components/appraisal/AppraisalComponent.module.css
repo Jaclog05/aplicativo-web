@@ -91,18 +91,13 @@
 .formGuidingQuestions {
   display: grid;
   height: 100%;
-  grid-template-areas:
-  "question question question image image"
-  "bottom bottom bottom bottom bottom"
-  ". . . . submit";
+  grid-template-columns: 4fr 1fr;
 }
 
 .question {
-  grid-area: question;
-}
-
-.questionText {
+  display: grid;
   font-size: 22px;
+  grid-template-rows: 1fr 3fr;
 }
 
 .optionsWrapper {
@@ -112,7 +107,6 @@
 }
 
 .genericImage {
-  grid-area: image;
   width: 293px;
   height: 221px;
   justify-self: center;
@@ -121,8 +115,6 @@
 
 .bottom {
   display: flex;
-  grid-area: bottom;
-  justify-content: end;
   font-size: 16px;
 }
 
@@ -191,8 +183,8 @@
   background: #8B8B8B;
   font-size: 22px;
   height: 40px;
-  width: 165px;
   justify-self: end;
+  padding: 0px 10px;
 }
 
 .submit:hover {
