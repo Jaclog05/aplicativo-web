@@ -35,7 +35,8 @@ function GeneralInfoForm({ onContinue }) {
         name="area"
         placeholder="Area (m2)"
         className={styles.area}
-        step="0.01"
+        step="1"
+        min="30"
         required
       />
       <input
@@ -43,6 +44,7 @@ function GeneralInfoForm({ onContinue }) {
         name="price"
         placeholder="Precio (COP)"
         className={styles.price}
+        min="10000000"
         required
       />
 

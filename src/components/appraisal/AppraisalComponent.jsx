@@ -1,12 +1,14 @@
 import React, { useState, useReducer } from 'react'
 import styles from '../appraisal/AppraisalComponent.module.css'
 import avaluoLogo from '../../assets/avaluo-icon.svg'
-import { questions } from '../../info_objects/questionsMultiFamilies'
+import { questionsArray } from '../../info_objects/questionsMultiFamilies'
 import GeneralInfoForm from '../GeneralInfoForm'
 import GuidingQuestionsForm from '../GuidingQuestionsForm'
 import ResultsForm from '../ResultsForm'
 
 function AppraisalComponent() {
+
+  const questions = questionsArray.slice(0,4) //Corregir
 
   function reducer(state, action) {
     switch(action.type) {

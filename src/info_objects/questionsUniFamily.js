@@ -1,4 +1,4 @@
-export const questions = [
+export const questionsArray = [
   {
     "id": 1,
     "indicator": "Entorno",
