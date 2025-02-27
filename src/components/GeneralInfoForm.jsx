@@ -1,15 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./appraisal/AppraisalComponent.module.css";
+import Map from "./map/Map";
+import SearchBar from "./searchBar/SearchBar";
 
 function GeneralInfoForm({ onContinue }) {
+  const [coords, setCoords] = useState([11.0101922, -74.8231794084391])
+  const [bounds, setBounds] = useState([
+    10.9138881,
+    11.1066443,
+    -74.9192181,
+    -74.7536320
+  ])
+  
   return (
     <form className={styles.formGeneralInfo} onSubmit={onContinue}>
-      <input
-        type="text"
-        placeholder="Direccion del inmueble"
-        className={styles.addr}
-        name="address"
-      />
+
+      <SearchBar setBounds={setBounds} setCoords={setCoords}/>
 
       <select className={styles.strat} name="stratum" defaultValue="" required>
         <option value="" disabled>
@@ -48,7 +54,7 @@ function GeneralInfoForm({ onContinue }) {
         required
       />
 
-      <div className={styles.mapSection}>Mapa Interactivo</div>
+      <Map coords={coords} bounds={bounds} className={styles.mapSection}/>
 
       <input type="submit" value="Continuar" className={styles.submit} />
     </form>
