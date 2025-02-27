@@ -1,0 +1,7 @@
+.wrapper {
+  background: #ddd;
+  display: grid;
+  position: relative;
+  width: 100%;
+  grid-area: addr;
+}
