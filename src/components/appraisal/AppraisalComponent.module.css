@@ -57,10 +57,6 @@
   color: #000;
 }
 
-.addr {
-  grid-area: addr;
-}
-
 .strat {
   grid-area: strat;
 }
@@ -80,13 +76,34 @@
 
 .mapSection {
   grid-area: map;
-  display: grid;
   height: 305px;
-  place-items: center;
-  font-size: 24px;
-  color: #fff;
-  background: #8B8B8B;
 }
+
+.suggestionsList {
+  padding: 0;
+  margin-top: -25px;
+  position: absolute;
+  width: 380px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  font-size: 15px;
+}
+
+.suggestionsList li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.suggestionsList li:hover {
+  background: #f0f0f0;
+}
+
 
 /* step 2 */
 
