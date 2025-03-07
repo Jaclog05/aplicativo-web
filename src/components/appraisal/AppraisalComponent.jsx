@@ -7,6 +7,7 @@ import ResultsForm from "../ResultsForm";
 import { appraisalReducer, initialState } from "../../appraisalReducer";
 
 function AppraisalComponent() {
+  const {VITE_API_BASE_URL} = import.meta.env;
   const [state, dispatch] = useReducer(appraisalReducer, initialState);
   const [isLoading, setIsLoading] = useState(false);
   const {
@@ -42,12 +43,12 @@ function AppraisalComponent() {
 
     dispatch({ type: "POST_GENERAL_INFO", value: data });
     const url = type === "Unifamiliar"
-      ? "http://localhost:4000/questions?type=Unifamiliar"
-      : "http://localhost:4000/questions";
+      ? `${VITE_API_BASE_URL}/questions?type=Unifamiliar`
+      : `${VITE_API_BASE_URL}/questions`;
 
     fetchData(url, 'SET_QUESTIONS');
     fetchData(
-      `http://localhost:4000/square-meter-prices?stratum=${stratum}&status=nueva`, // Añadir campo para estado de vivienda
+      `${VITE_API_BASE_URL}/square-meter-prices?stratum=${stratum}&status=nueva`, // Añadir campo para estado de vivienda
       'SET_SQUARE_METER_PRICE'
     );
   };
