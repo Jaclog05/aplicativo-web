@@ -33,6 +33,7 @@ function SearchBarInput({ input, setInput, setResults }) {
       name="address"
       value={input}
       onChange={(e) => handleChange(e.target.value)}
+      required
     />
   );
 }

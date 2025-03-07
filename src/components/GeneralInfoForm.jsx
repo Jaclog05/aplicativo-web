@@ -15,6 +15,26 @@ function GeneralInfoForm({ onContinue, isLoading }) {
   return (
     <form className={styles.formGeneralInfo} onSubmit={onContinue}>
 
+      <input
+        type="text"
+        name="username"
+        placeholder="Nombre"
+        pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{3,}"
+        className={styles.name}
+        title="El nombre debe tener al menos 3 letras y no puede contener números ni caracteres especiales"
+        required
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Correo Electrónico"
+        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        className={styles.email}
+        title="Ingrese un correo electrónico válido (ejemplo: usuario@dominio.com)"
+        required
+      />
+
       <SearchBar setBounds={setBounds} setCoords={setCoords}/>
 
       <select className={styles.strat} name="stratum" defaultValue="" required>
@@ -28,12 +48,20 @@ function GeneralInfoForm({ onContinue, isLoading }) {
         ))}
       </select>
 
-      <select className={styles.status} name="status" defaultValue="" required>
+      <select className={styles.type} name="type" defaultValue="" required>
         <option value="" disabled>
           Tipo de Vivienda
         </option>
         <option value="Unifamiliar">Unifamiliar</option>
         <option value="Multifamiliar">Multifamiliar</option>
+      </select>
+
+      <select className={styles.status} name="status" defaultValue="" required>
+        <option value="" disabled>
+          Estado de la Vivienda
+        </option>
+        <option value="usada">Usada</option>
+        <option value="nueva">Nueva</option>
       </select>
 
       <input

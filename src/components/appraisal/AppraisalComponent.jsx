@@ -38,8 +38,9 @@ function AppraisalComponent() {
   const handleGeneralInfoSubmit = (e) => {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.target));
-    const type = data["status"];
+    const type = data["type"];
     const stratum = data["stratum"];
+    const status = data["status"]
 
     dispatch({ type: "POST_GENERAL_INFO", value: data });
     const url = type === "Unifamiliar"
@@ -48,7 +49,7 @@ function AppraisalComponent() {
 
     fetchData(url, 'SET_QUESTIONS');
     fetchData(
-      `${VITE_API_BASE_URL}/square-meter-prices?stratum=${stratum}&status=nueva`, // Añadir campo para estado de vivienda
+      `${VITE_API_BASE_URL}/square-meter-prices?stratum=${stratum}&status=${status}`,
       'SET_SQUARE_METER_PRICE'
     );
   };
