@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import styles from './Dashboard.module.css'
 import Sidebar from '../../components/sidebar/Sidebar'
-import EditPricesForm from '../../components/editPricesForm/editPricesForm'
 import Table from '../../components/table/Table'
+import EditPricesForm from '../../components/editPricesForm/EditPricesForm'
 
 function Dashboard() {
 
