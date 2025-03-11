@@ -4,6 +4,8 @@ import Home from "./views/Home/Home"
 import Login from "./views/Login/Login"
 import AboutUs from "./views/AboutUs/AboutUs"
 import AppraisalComponent from "./components/appraisal/AppraisalComponent"
+import Dashboard from "./views/Dashboard/Dashboard"
+import PrivateRoute from "./components/PrivateRoute"
 
 function App() {
 
@@ -22,6 +24,11 @@ function App() {
         } />
         <Route path="/aboutUs" element={
           <AboutUs/>
+        } />
+        <Route path="/dashboard" element={
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
         } />
       </Routes>
     </>

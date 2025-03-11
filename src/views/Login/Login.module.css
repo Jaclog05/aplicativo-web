@@ -21,7 +21,7 @@
   margin: 10px auto;
 }
 
-.wrapper > input[type=text] {
+.wrapper > input:not([type=submit]) {
   background: rgba(60, 60, 67, 0.29);
   padding-left: 5px;
   height: 40px;
