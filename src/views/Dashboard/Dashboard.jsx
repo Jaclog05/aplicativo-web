@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import styles from './Dashboard.module.css'
 import Sidebar from '../../components/sidebar/Sidebar'
 import Table from '../../components/table/Table'
-import EditPricesForm from '../../components/editPricesForm/EditPricesForm'
+import EditPricesForm from '../../components/editPricesForm/EditPricesForm.jsx'
 
 function Dashboard() {
 
