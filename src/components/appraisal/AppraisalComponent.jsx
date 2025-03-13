@@ -16,7 +16,8 @@ function AppraisalComponent() {
     answers,
     questions,
     appraisal,
-    generalInfo
+    generalInfo,
+    squareMeterPrice
   } = state;
 
   const fetchData = async (url, actionType) => {
@@ -99,7 +100,8 @@ function AppraisalComponent() {
           <ResultsForm
             onReset={() => dispatch({ type: "RESET" })}
             appraisal={appraisal}
-            address={generalInfo.address}
+            generalInfo={generalInfo}
+            sqMeterPrice={squareMeterPrice}
           />
         )}
       </div>

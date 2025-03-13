@@ -192,6 +192,11 @@
   text-align: center;
 }
 
+.addressText {
+  font-size: 20px;
+  font-style: italic;
+}
+
 .appraisalResult {
   grid-area: res;
   justify-self: center;
@@ -205,6 +210,17 @@
   background: #fff;
   width: 150px;
   justify-self: center;
+  font-size: 12px;
+  place-items: center;
+  display: grid;
+  color: #000;
+  text-decoration: none;
+}
+
+.paperButton:hover {
+  cursor: pointer;
+  background: #8B8B8B;
+  color: #fff;
 }
 
 .submit {
