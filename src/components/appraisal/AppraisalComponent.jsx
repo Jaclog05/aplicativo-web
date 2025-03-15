@@ -7,7 +7,7 @@ import ResultsForm from "../ResultsForm";
 import { appraisalReducer, initialState } from "../../appraisalReducer";
 
 function AppraisalComponent() {
-  const {VITE_API_BASE_URL} = import.meta.env;
+  const { VITE_API_BASE_URL } = import.meta.env;
   const [state, dispatch] = useReducer(appraisalReducer, initialState);
   const [isLoading, setIsLoading] = useState(false);
   const {
@@ -41,10 +41,10 @@ function AppraisalComponent() {
     const data = Object.fromEntries(new FormData(e.target));
     const type = data["type"];
     const stratum = data["stratum"];
-    const status = data["status"]
+    const status = data["status"];
 
     dispatch({ type: "POST_GENERAL_INFO", value: data });
-    const url = type === "Unifamiliar"
+    const url = type === "unifamiliar"
       ? `${VITE_API_BASE_URL}/questions?type=Unifamiliar`
       : `${VITE_API_BASE_URL}/questions`;
 

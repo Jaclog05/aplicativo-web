@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./appraisal/AppraisalComponent.module.css";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import PdfReport from "./pdfReport/PdfReport";
 
 function ResultsForm({ onReset, appraisal, generalInfo, sqMeterPrice }) {
-
-  console.log('sqMeterPrice results form = ', sqMeterPrice)
+  const { VITE_API_BASE_URL } = import.meta.env;
 
   const formatPrice = (price) =>
     new Intl.NumberFormat("es-ES", {
@@ -13,6 +12,44 @@ function ResultsForm({ onReset, appraisal, generalInfo, sqMeterPrice }) {
       currency: "COP",
       maximumFractionDigits: 0,
     }).format(price);
+
+  useEffect(() => {
+    const postAppraisal = async () => {
+      const {
+        username,
+        email,
+        stratum,
+        type,
+        price
+      } = generalInfo;
+
+      try {
+        const response = await fetch(`${VITE_API_BASE_URL}/appraisals`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            user_name: username,
+            user_email: email,
+            stratum: stratum,
+            property_type: type,
+            property_value: price,
+            estimated_value: appraisal
+          }),
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.message || "Error al registrar avaluo");
+        }
+      } catch (error) {
+        alert("Error al registrar los datos: ", error.message)
+      }
+    }
+    postAppraisal()
+  }, [])
 
   return (
     <form className={styles.formResults}>

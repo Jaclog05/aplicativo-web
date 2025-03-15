@@ -52,8 +52,8 @@ function GeneralInfoForm({ onContinue, isLoading }) {
         <option value="" disabled>
           Tipo de Vivienda
         </option>
-        <option value="Unifamiliar">Unifamiliar</option>
-        <option value="Multifamiliar">Multifamiliar</option>
+        <option value="unifamiliar">Unifamiliar</option>
+        <option value="multifamiliar">Multifamiliar</option>
       </select>
 
       <select className={styles.status} name="status" defaultValue="" required>

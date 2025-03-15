@@ -4,7 +4,6 @@ import mapImage from '../../assets/mapImageExample.png';
 
 function PdfReport({data, appraisal, sqMeterPrice}) {
 
-  console.log('sqMeterPrice pdf component = ', sqMeterPrice)
   const styles = StyleSheet.create({
     page: { padding: 30, fontSize: 12, backgroundColor: '#F5F5F5' },
     header: { backgroundColor: '#003366', padding: 10, marginBottom: 10 },

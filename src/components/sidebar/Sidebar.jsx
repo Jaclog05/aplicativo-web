@@ -8,6 +8,7 @@ function Sidebar({ onClick, options }) {
 
   const handleLogout = () => {
     sessionStorage.removeItem("appraisalToken");
+    sessionStorage.removeItem("appraisalsData");
     navigate("/admin-login");
   };
 
