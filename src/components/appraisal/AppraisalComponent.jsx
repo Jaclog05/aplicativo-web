@@ -27,7 +27,7 @@ function AppraisalComponent() {
       const data = await res.json();
       dispatch({
         type: actionType,
-        value: actionType === "SET_QUESTIONS" ? data.slice(0, 3) : data.price,
+        value: actionType === "SET_QUESTIONS" ? data.slice(0, 3) : data[0].price,
       });
     } catch (error) {
       console.error(`Error al obtener ${actionType}:`, error);
