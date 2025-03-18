@@ -2,8 +2,8 @@ import React from 'react'
 import styles from './Home.module.css';
 import InfoStep from '../../components/infoStep/InfoStep';
 import AppraisalComponent from '../../components/appraisal/AppraisalComponent';
-import avaluoLogo from '../../assets/avaluo-icon.svg';
 import { HashLink } from 'react-router-hash-link';
+import Footer from '../../components/footer/Footer';
 
 function Home() {
   return (
@@ -45,19 +45,7 @@ function Home() {
         </div>
       </div>
       <AppraisalComponent/>
-      <footer className={styles.footerSection}>
-        <div>
-          <div>
-            <img src={avaluoLogo} alt="avaluo Logo" className={styles.imgIcon}/>
-            <p>Aplicativo Web Nombre</p>
-          </div>
-          <div>
-            Links de interés
-          </div>
-        </div>
-        <hr/>
-        <p>Todos los derechos reservados ©</p>
-      </footer>
+      <Footer/>
     </div>
   )
 }

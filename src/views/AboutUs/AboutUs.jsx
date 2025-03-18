@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './AboutUs.module.css';
-import avaluoLogo from '../../assets/avaluo-icon.svg'
+import Footer from '../../components/footer/Footer';
 
 function AboutUs() {
   return (
@@ -26,19 +26,7 @@ function AboutUs() {
           </p>
         </div>
       </div>
-      <footer className={styles.footerSection}>
-        <div>
-          <div>
-            <img src={avaluoLogo} alt="avaluo Logo" className={styles.imgIcon}/>
-            <p>Aplicativo Web Nombre</p>
-          </div>
-          <div>
-            Links de interés
-          </div>
-        </div>
-        <hr/>
-        <p>Todos los derechos reservados ©</p>
-      </footer>
+      <Footer/>
     </div>
   )
 }
