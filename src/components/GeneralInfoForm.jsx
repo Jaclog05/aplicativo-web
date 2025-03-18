@@ -1,20 +1,17 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styles from "./appraisal/AppraisalComponent.module.css";
 import Map from "./map/Map";
 import SearchBar from "./searchBar/SearchBar";
+import LoadingButton from "./LoadingButton";
 
 function GeneralInfoForm({ onContinue, isLoading }) {
-  const [coords, setCoords] = useState([11.0101922, -74.8231794084391])
+  const [coords, setCoords] = useState([11.0101922, -74.8231794084391]);
   const [bounds, setBounds] = useState([
-    10.9138881,
-    11.1066443,
-    -74.9192181,
-    -74.7536320
-  ])
-  
+    10.9138881, 11.1066443, -74.9192181, -74.753632,
+  ]);
+
   return (
     <form className={styles.formGeneralInfo} onSubmit={onContinue}>
-
       <input
         type="text"
         name="username"
@@ -35,7 +32,7 @@ function GeneralInfoForm({ onContinue, isLoading }) {
         required
       />
 
-      <SearchBar setBounds={setBounds} setCoords={setCoords}/>
+      <SearchBar setBounds={setBounds} setCoords={setCoords} />
 
       <select className={styles.strat} name="stratum" defaultValue="" required>
         <option value="" disabled>
@@ -82,9 +79,13 @@ function GeneralInfoForm({ onContinue, isLoading }) {
         required
       />
 
-      <Map coords={coords} bounds={bounds} className={styles.mapSection}/>
+      <Map coords={coords} bounds={bounds} className={styles.mapSection} />
 
-      <input type="submit" value={isLoading ? 'Espere...' : "Continuar"} className={styles.submit} />
+      <LoadingButton
+        isLoading={isLoading}
+        loadingMessage="Cargando Preguntas"
+        text="Continuar"
+      />
     </form>
   );
 }

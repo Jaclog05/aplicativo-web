@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import styles from "./Login.module.css";
 import avaluoLogo from "../../assets/avaluo-icon.svg";
+import LoadingButton from "../../components/LoadingButton";
 
 const { VITE_API_BASE_URL } = import.meta.env;
 
@@ -9,12 +10,13 @@ function Login() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-
+    setIsLoading(true);
     try {
       const response = await fetch(`${VITE_API_BASE_URL}/login`, {
         method: "POST",
@@ -35,6 +37,8 @@ function Login() {
       navigate("/dashboard");
     } catch (error) {
       setError(error.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -57,7 +61,11 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <input type="submit" value="Iniciar sesión" />
+        <LoadingButton
+          isLoading={isLoading}
+          loadingMessage="Ingresando"
+          text="Iniciar Sesión"
+        />
       </form>
     </div>
   );

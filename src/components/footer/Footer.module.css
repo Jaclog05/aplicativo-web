@@ -37,6 +37,7 @@
 
 .footerLeft p {
   margin: 5px 0;
+  margin-bottom: 0;
 }
 
 .title {
@@ -47,6 +48,7 @@
 .footerCenter > p {
   text-align: left;
   margin-left: 5px;
+  margin-bottom: 0;
 }
 
 .footerCenter h4,
@@ -84,4 +86,5 @@
   text-align: center;
   padding: 20px 0px;
   font-size: 13px;
+  margin-bottom: 0;
 }
