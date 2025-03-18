@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./EditPricesForm.module.css";
+import Alert from "react-bootstrap/Alert";
 
 function EditPricesForm() {
   const { VITE_API_BASE_URL } = import.meta.env;
   const [prices, setPrices] = useState([]);
   const pricesRef = useRef([]);
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState("")
+  const [success, setSuccess] = useState("")
 
   useEffect(() => {
     const chachedData = sessionStorage.getItem("squareMPrices");
@@ -22,7 +25,7 @@ function EditPricesForm() {
           sessionStorage.setItem("squareMPrices", JSON.stringify(data))
           pricesRef.current = data;
         })
-        .catch((error) => console.error("Error fetching prices: ", error)).
+        .catch((error) => setError(error.message)).
         finally(() => setLoading(false))
       }
 
@@ -44,7 +47,7 @@ function EditPricesForm() {
     );
 
     if (hasEmptyFields) {
-      alert("Por favor, asegúrate de llenar todos los campos con valores válidos.");
+      setError("Por favor, asegúrate de llenar todos los campos con valores válidos.");
       return;
     }
 
@@ -59,16 +62,37 @@ function EditPricesForm() {
         throw new Error("Error updating prices");
       }
 
-      alert("Precios actualizados correctamente");
+      setSuccess("Precios actualizados correctamente");
       setPrices([...pricesRef.current]);
     } catch (error) {
-      console.error("Error:", error);
-      alert("Hubo un problema al actualizar los precios");
+      setError("Hubo un problema al actualizar los precios");
     }
   }
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
+      {
+        success.length > 0 &&(
+          <Alert
+            variant="success"
+            onClose={() => setSuccess("")}
+            className="fixed-top w-100 text-center px-2"
+            dismissible
+          >
+            {success}
+          </Alert>
+        )
+      }
+      {error && (
+        <Alert
+          variant="danger"
+          onClose={() => setError(false)}
+          className="fixed-top w-100 text-center px-2"
+          dismissible
+        >
+          {error}
+        </Alert>
+      )}
       {
         loading ?
           <h4>Obteniendo precios...</h4>

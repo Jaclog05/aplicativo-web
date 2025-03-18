@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import styles from "./Login.module.css";
 import avaluoLogo from "../../assets/avaluo-icon.svg";
 import LoadingButton from "../../components/LoadingButton";
+import Alert from "react-bootstrap/Alert";
 
 const { VITE_API_BASE_URL } = import.meta.env;
 
@@ -44,9 +45,18 @@ function Login() {
 
   return (
     <div className={styles.viewPage}>
+      {error && (
+        <Alert
+          variant="danger"
+          onClose={() => setError(false)}
+          className="fixed-top w-100 text-center mt-5 px-2"
+          dismissible
+        >
+          {error}
+        </Alert>
+      )}
       <form className={styles.wrapper} onSubmit={handleSubmit}>
         <img src={avaluoLogo} alt="avaluo Logo" className={styles.imgIcon} />
-        {error && <p className={styles.error}>{error}</p>}
         <input
           type="text"
           placeholder="Ingrese su usuario"
