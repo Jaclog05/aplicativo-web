@@ -8,7 +8,7 @@ function LoadingButton({ text, isLoading, loadingMessage }) {
       type="submit"
       variant="primary"
       disabled={isLoading}
-      style={{gridArea: 'submit'}}
+      style={{gridArea: 'submit', width: '100%'}}
     >
       {isLoading ? (
         <>

@@ -21,7 +21,7 @@ function Map({ coords, bounds }) {
       center={coords}
       bounds={mapBounds}
       scrollWheelZoom={false}
-      style={{height: "305px", width: "305px", gridArea: "map", margin: "0 auto"}}
+      style={{height: "250px", width: "100%", gridArea: "map", margin: "0 auto"}}
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

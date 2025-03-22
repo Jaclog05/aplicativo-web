@@ -35,7 +35,7 @@
    "name name email map map"
    "addr addr strat map map"
    "type type status map map"
-   "area area price map map"
+   "area price age map map"
    ". . . . submit";
   gap: 15px;
   align-items: center;
@@ -75,6 +75,10 @@
 
 .status {
   grid-area: status;
+}
+
+.age {
+  grid-area: age;
 }
 
 .area {
