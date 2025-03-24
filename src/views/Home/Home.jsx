@@ -1,32 +1,34 @@
-import React from 'react'
-import styles from './Home.module.css';
-import InfoStep from '../../components/infoStep/InfoStep';
-import AppraisalComponent from '../../components/appraisal/AppraisalComponent';
-import { HashLink } from 'react-router-hash-link';
-import Footer from '../../components/footer/Footer';
+import React from "react";
+import InfoStep from "../../components/infoStep/InfoStep";
+import AppraisalComponent from "../../components/appraisal/AppraisalComponent";
+import { HashLink } from "react-router-hash-link";
+import Footer from "../../components/footer/Footer";
 
 function Home() {
   return (
-    <div className={styles.homeWrapper}>
-      <div className={styles.coverWrapper}>
-        <p className={styles.coverMainText}>
-          Texto de Presentación
-        </p>
-        <p className={styles.coverSecondaryText}>
-          En este texto se mostrará una pequeña descripción
-          de lo que podemos hacer en este sitio o cualquier otra que se decida
+    <div className="w-100">
+      <div
+        className="text-center text-white bg-secondary py-5 d-flex flex-column align-items-center justify-content-center"
+        style={{ height: "70vh" }}
+      >
+        <p className="display-4 fw-bold">Texto de Presentación</p>
+        <p className="w-50">
+          En este texto se mostrará una pequeña descripción de lo que podemos
+          hacer en este sitio o cualquier otra que se decida
         </p>
         <HashLink
-          smooth to='/#appraisal_section' className={styles.coverButton}
+          smooth
+          to="/#appraisal_section"
+          className="btn btn-primary"
         >
           Empezar
         </HashLink>
       </div>
-      <div className={styles.infoSection}>
-        <p className={styles.infoSectionTitle}>
+      <div className="px-5 pb-4 d-flex flex-column">
+        <h4 className="row flex-grow-1 py-3">
           ¿Cómo funciona este aplicativo?
-        </p>
-        <div className={styles.stepsWrapper}>
+        </h4>
+        <div className="row flex-grow-5 d-flex justify-content-around gap-2">
           <InfoStep
             title="Paso 1"
             description="Información general del inmueble"
@@ -44,10 +46,10 @@ function Home() {
           />
         </div>
       </div>
-      <AppraisalComponent/>
-      <Footer/>
+      <AppraisalComponent />
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

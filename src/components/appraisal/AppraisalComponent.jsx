@@ -62,10 +62,10 @@ function AppraisalComponent() {
   }, [questions, step]);
 
   return (
-    <div id="appraisal_section" className={styles.appraisalSection}>
-      <div className={styles.appraisalHeader}>
+    <div id="appraisal_section" className="px-5 pb-4 d-flex flex-column bg-secondary text-white">
+      <div className="d-flex justify-content-start align-items-center py-3 gap-2">
         <img src={avaluoLogo} alt="avaluo Logo" className={styles.imgIcon} />
-        <p className={styles.appraisalComponentTitle}>
+        <h3 className="py-2 mb-0">
           Paso {step}:{" "}
           {
             [
@@ -74,9 +74,9 @@ function AppraisalComponent() {
               "Obten un precio estimado",
             ][step - 1]
           }
-        </p>
+        </h3>
       </div>
-      <div className={styles.appraisalBody}>
+      <div className="py-2">
         {step == 1 && (
           <GeneralInfoForm
             onContinue={handleGeneralInfoSubmit}

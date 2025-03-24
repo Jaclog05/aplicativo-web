@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styles from "./appraisal/AppraisalComponent.module.css";
 import Map from "./map/Map";
 import SearchBar from "./searchBar/SearchBar";
 import LoadingButton from "./LoadingButton";
@@ -15,8 +14,8 @@ function GeneralInfoForm({ onContinue, isLoading }) {
   return (
     <form className="container p-2 h-100" onSubmit={onContinue}>
       <div className="row h-100">
-        <div className="col-md-8">
-          <div className="row h-100">
+        <div className="col-md-8 mb-2">
+          <div className="row h-100 mb-5">
             <div className="col-md-6">
               <input
                 type="text"
