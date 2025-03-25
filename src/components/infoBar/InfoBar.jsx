@@ -1,9 +1,8 @@
-import React from 'react'
-import styles from './InfoBar.module.css'
-import InfoIcon from '../../assets/info-icon.svg'
-import { OverlayTrigger, Tooltip } from 'react-bootstrap'
+import React from "react";
+import InfoIcon from "../../assets/info-icon.svg";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
-function InfoBar({indicator, subgroup, parameter, explanation}) {
+function InfoBar({ indicator, subgroup, parameter, explanation }) {
 
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip-2" {...props}>
@@ -12,21 +11,31 @@ function InfoBar({indicator, subgroup, parameter, explanation}) {
   );
 
   return (
-    <div className={styles.wrapper}>
-      <div>{indicator}</div>
-      <div>{subgroup}</div>
-      <div>
+    <div className="d-md-flex justify-content-md-between col-12 col-md-8 text-center gap-2">
+      <div className="flex-fill text-white justify-content-center align-items-center bg-success mb-1 rounded-4 px-2">
+        {indicator}
+      </div>
+      <div className="flex-fill text-white justify-content-center align-items-center bg-success mb-1 rounded-4 px-2">
+        {subgroup}
+      </div>
+      <div className="flex-fill d-flex text-white justify-content-center align-items-center bg-success mb-1 rounded-4 px-2">
         {parameter}
         <OverlayTrigger
-          placement="right"
+          placement="bottom"
           delay={{ show: 250, hide: 400 }}
           overlay={renderTooltip}
         >
-          <img src={InfoIcon} alt='info-icon' className={styles.icon} />
+          <img
+            src={InfoIcon}
+            alt="info-icon"
+            className="fill-white mx-1"
+            width="20"
+            height="20"
+          />
         </OverlayTrigger>
       </div>
     </div>
-  )
+  );
 }
 
-export default InfoBar
+export default InfoBar;

@@ -17,7 +17,7 @@ function GuidingQuestionsForm({
   const selectedAnswer = answers[currentIndex];
 
   return (
-    <div>
+    <div className="d-grid w-100">
       <ProgressBarComponent questionId={id} questionsLength={questionsLength} />
       <InfoBar
         indicator={indicator}
@@ -26,7 +26,7 @@ function GuidingQuestionsForm({
         explanation={explanation}
       />
       <form
-        className="my-4 mx-5 row"
+        className="my-4 row"
         onSubmit={onContinue}
         style={{ backgroundColor: "#D9D9D9" }}
       >

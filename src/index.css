@@ -8,3 +8,22 @@
   background-color: var(--bs-primary);
   color: white;
 }
+
+:global(.tooltip-inner) {
+  background-color: #3C3C43 !important;
+  color: #fff !important;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 6px;
+  font-size: 12px;
+  max-width: 331px;
+  text-align: justify;
+}
+
+:global(.tooltip.show) {
+  opacity: 0.8 !important;
+}
+
+:global(.tooltip-arrow::before) {
+  background-color: #3C3C43 !important;
+}
