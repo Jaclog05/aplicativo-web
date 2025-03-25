@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styles from "./SearchBar.module.css";
 import SearchBarInput from "./SearchBarInput";
 import SearchResults from "./SearchResults";
 
@@ -15,7 +14,7 @@ function SearchBar({setCoords, setBounds}) {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <div className="d-grid position-relative">
       <SearchBarInput
         input={input}
         setInput={setInput}

@@ -1,5 +1,4 @@
 import React, {useState, useCallback} from "react";
-import styles from "./SearchBarInput.module.css";
 import debounce from "just-debounce-it";
 
 function SearchBarInput({ input, setInput, setResults }) {
