@@ -1,5 +1,4 @@
 import React, { useState, useReducer, useEffect } from "react";
-import styles from "../appraisal/AppraisalComponent.module.css";
 import avaluoLogo from "../../assets/avaluo-icon.svg";
 import GeneralInfoForm from "../GeneralInfoForm";
 import GuidingQuestionsForm from "../GuidingQuestionsForm";
@@ -64,7 +63,7 @@ function AppraisalComponent() {
   return (
     <div id="appraisal_section" className="px-5 pb-4 d-flex flex-column bg-secondary text-white">
       <div className="d-flex justify-content-start align-items-center py-3 gap-2">
-        <img src={avaluoLogo} alt="avaluo Logo" className={styles.imgIcon} />
+        <img src={avaluoLogo} alt="avaluo Logo" width="40px" />
         <h3 className="py-2 mb-0">
           Paso {step}:{" "}
           {

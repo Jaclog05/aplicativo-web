@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import styles from "./appraisal/AppraisalComponent.module.css";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import PdfReport from "./pdfReport/PdfReport";
 
@@ -52,34 +51,36 @@ function ResultsForm({ onReset, appraisal, generalInfo, sqMeterPrice }) {
   }, [])
 
   return (
-    <form className={styles.formResults}>
-      <p className={styles.resultsDescription}>
+    <form className="d-flex flex-column justify-content-around align-items-stretch text-center">
+      <p className="fs-4">
         El precio de venta para la propiedad ubicada en
         <br/>
-        <strong className={styles.addressText} >
+        <strong className="fst-italic fs-3" >
           {generalInfo.address}
         </strong>
         <br />
         tiene un precio estimado de
         <br />
       </p>
-      <p className={styles.appraisalResult}>$ {formatPrice(appraisal)}</p>
-      <PDFDownloadLink
-        document={
-          <PdfReport
-            data={generalInfo}
-            appraisal={appraisal}
-            sqMeterPrice={sqMeterPrice}
-          />
-        }
-        fileName="Reporte_Avaluo.pdf"
-        className={styles.paperButton}
-      >
-        {({ loading }) => (loading ? "Generando..." : "Descargar Informe")}
-      </PDFDownloadLink>
-      <button onClick={onReset} className={styles.submit}>
-        Nuevo Avalúo
-      </button>
+      <p className="fs-1">$ {formatPrice(appraisal)}</p>
+      <div className="d-flex flex-column align-items-md-center gap-2">
+        <PDFDownloadLink
+          document={
+            <PdfReport
+              data={generalInfo}
+              appraisal={appraisal}
+              sqMeterPrice={sqMeterPrice}
+            />
+          }
+          fileName="Reporte_Avaluo.pdf"
+          className="bg-success text-white text-decoration-none p-2 rounded"
+        >
+          {({ loading }) => (loading ? "Generando..." : "Descargar Informe")}
+        </PDFDownloadLink>
+        <button onClick={onReset} className="btn btn-primary">
+          Nuevo Avalúo
+        </button>
+      </div>
     </form>
   );
 }
