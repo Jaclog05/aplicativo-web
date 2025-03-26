@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import styles from "./Login.module.css";
 import avaluoLogo from "../../assets/avaluo-icon.svg";
 import LoadingButton from "../../components/LoadingButton";
 import Alert from "react-bootstrap/Alert";
@@ -44,7 +43,7 @@ function Login() {
   };
 
   return (
-    <div className={styles.viewPage}>
+    <div className="d-flex justify-content-center align-items-center w-100 vh-100">
       {error && (
         <Alert
           variant="danger"
@@ -55,11 +54,16 @@ function Login() {
           {error}
         </Alert>
       )}
-      <form className={styles.wrapper} onSubmit={handleSubmit}>
-        <img src={avaluoLogo} alt="avaluo Logo" className={styles.imgIcon} />
+      <form
+        className="d-flex flex-column align-items-stretch gap-2 p-2 rounded bg-secondary w-75 w-md-50"
+        style={{ maxWidth: "400px" }}
+        onSubmit={handleSubmit}
+      >
+        <img src={avaluoLogo} alt="avaluo Logo" className="mx-auto my-1" width='100' height="100" />
         <input
           type="text"
           placeholder="Ingrese su usuario"
+          className="form-control"
           value={user}
           onChange={(e) => setUser(e.target.value)}
           required
@@ -67,6 +71,7 @@ function Login() {
         <input
           type="password"
           placeholder="Ingrese su contraseña"
+          className="form-control"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required

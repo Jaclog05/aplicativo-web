@@ -1,18 +1,20 @@
 import React from 'react'
-import styles from './AboutUs.module.css';
 import Footer from '../../components/footer/Footer';
 
 function AboutUs() {
   return (
-    <div className={styles.aboutUsViewWrapper}>
-      <div className={styles.coverWrapper}>
-        <p className={styles.coverMainText}>
+    <div className="w-100">
+      <div
+        className="text-center text-white bg-secondary py-5 d-flex flex-column align-items-center justify-content-center"
+        style={{height: '70vh'}}
+      >
+        <p className="display-4 fw-bold">
           Sobre Nosotros
         </p>
       </div>
-      <div className={styles.aboutUsSection}>
-        <div className={styles.aboutUsSectionBodyWrapper}>
-          <p className={styles.aboutUsText}>
+      <div className="p-5">
+        <div className="px-5">
+          <p className="text-center">
             Somos un grupo de arquitectos, apasionados por compartir el conocimiento
             que hemos adquirido durante nuestros cinco años de carrera universitaria.
             Nos hemos propuesto a través de este documento incentivar a la mejora de la calidad
