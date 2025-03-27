@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import styles from './Table.module.css'
 
 const {VITE_API_BASE_URL} = import.meta.env
 
@@ -36,13 +35,13 @@ function Table() {
   }, [])
 
   return (
-    <div className={styles.container}>
+    <div className="table-responsive">
       {
         loading ?
           <h4>Obteniendo registros...</h4> :
-          <table className={styles.table}>
-            <thead>
-              <tr>
+          <table className="table table-bordered align-middle overflow-scroll border border-5">
+            <thead className='text-center'>
+              <tr className='table-success'>
                 <th>Id registro</th>
                 <th>Nombre Usuario</th>
                 <th>Resultado Avalúo</th>

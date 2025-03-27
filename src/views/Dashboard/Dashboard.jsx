@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import styles from './Dashboard.module.css'
 import Sidebar from '../../components/sidebar/Sidebar'
 import Table from '../../components/table/Table'
 import EditPricesForm from '../../components/editPricesForm/EditPricesForm.jsx'
@@ -18,17 +17,17 @@ function Dashboard() {
   }
 
   return (
-    <div className={styles.wrapper}>
+    <div className="d-md-flex flex-md-row vh-100 row-md-12">
       <Sidebar onClick={handleClick} options={options}/>
-      <div className={styles.rightSideWrapper}>
+      <div className="p-2 p-md-5 h-100 d-flex flex-column text-center text-md-start col-md-10">
         {
           options[0] ?
             <>
-              <p className={styles.titles}>Registros del aplicativo web</p> 
+              <p className="fs-4">Registros del aplicativo web</p> 
               <Table/>
             </> :
             <>
-              <p className={styles.titles}>Editar precio Metro cuadrado</p>
+              <p className="fs-4">Editar precio Metro cuadrado</p>
               <EditPricesForm/>
             </>
         }

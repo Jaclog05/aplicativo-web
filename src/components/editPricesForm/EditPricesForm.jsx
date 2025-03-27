@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import styles from "./EditPricesForm.module.css";
 import Alert from "react-bootstrap/Alert";
+import LoadingButton from "../LoadingButton";
 
 function EditPricesForm() {
   const { VITE_API_BASE_URL } = import.meta.env;
@@ -9,6 +9,7 @@ function EditPricesForm() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState("")
   const [success, setSuccess] = useState("")
+  const [isUpdating, setIsUpdating] = useState(false)
 
   useEffect(() => {
     const chachedData = sessionStorage.getItem("squareMPrices");
@@ -50,7 +51,7 @@ function EditPricesForm() {
       setError("Por favor, asegúrate de llenar todos los campos con valores válidos.");
       return;
     }
-
+    setIsUpdating(true)
     try {
       const response = await fetch(`${VITE_API_BASE_URL}/square-meter-prices`, {
         method: "PUT",
@@ -64,13 +65,16 @@ function EditPricesForm() {
 
       setSuccess("Precios actualizados correctamente");
       setPrices([...pricesRef.current]);
+      sessionStorage.removeItem("squareMPrices");
     } catch (error) {
       setError("Hubo un problema al actualizar los precios");
+    } finally {
+      setIsUpdating(false)
     }
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form className="w-100 bg-secondary rounded p-2 text-white" onSubmit={handleSubmit}>
       {
         success.length > 0 &&(
           <Alert
@@ -97,19 +101,19 @@ function EditPricesForm() {
         loading ?
           <h4>Obteniendo precios...</h4>
         :
-        <div className={styles.container}>
-          <div className={styles.column}>
-            <h3>Vivienda usada</h3>
+        <div className="d-flex flex-column flex-md-row gap-2">
+          <div className="flex-md-fill text-center">
+            <h3 className="fs-5">Vivienda usada</h3>
             {
               prices.filter(item => item.status === "usada")
               .map(item => (
-                <div key={item.id} className={styles.inputGroup}>
+                <div key={item.id} className="d-flex flex-column mb-2 w-100">
                   <input
                     type="number"
                     id={`used-${item.id}`}
                     defaultValue={item.price}
                     onChange={(e) => handleChange(item.id, e.target.value)}
-                    className={styles.input}
+                    className="form-control text-center text-md-start"
                     placeholder={`Estrato ${item.stratum}`}
                     min="0"
                   />
@@ -118,18 +122,18 @@ function EditPricesForm() {
             }
           </div>
 
-          <div className={styles.column}>
-            <h3>Vivienda nueva</h3>
+          <div className="flex-md-fill text-center">
+            <h3 className="fs-5">Vivienda nueva</h3>
             {
               prices.filter(item => item.status === "nueva")
               .map(item => (
-                <div key={item.id} className={styles.inputGroup}>
+                <div key={item.id} className="d-flex flex-column mb-2 w-100">
                   <input
                     type="number"
                     id={`new-${item.id}`}
                     defaultValue={item.price}
                     onChange={(e) => handleChange(item.id, e.target.value)}
-                    className={styles.input}
+                    className="form-control text-center text-md-start"
                     placeholder={`Estrato ${item.stratum}`}
                     min="0"
                   />
@@ -139,9 +143,11 @@ function EditPricesForm() {
           </div>
         </div>
       }
-      <button type="submit" className={styles.submitButton}>
-        Actualizar precios
-      </button>
+      <LoadingButton
+        isLoading={isUpdating}
+        loadingMessage="Actualizando Precios"
+        text="Actualizar Precios"
+      />
     </form>
   );
 }

@@ -27,3 +27,9 @@
 :global(.tooltip-arrow::before) {
   background-color: #3C3C43 !important;
 }
+
+.nav-link-sidebar-hover:hover {
+  cursor: pointer;
+  background: #8B8B8B;
+  color: #FFF
+}
