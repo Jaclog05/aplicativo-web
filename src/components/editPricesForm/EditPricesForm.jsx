@@ -1,148 +1,177 @@
-import React, { useState, useEffect, useRef } from "react";
-import Alert from "react-bootstrap/Alert";
+import React, { useEffect, useRef, useState } from "react";
 import LoadingButton from "../LoadingButton";
+import Alert from "react-bootstrap/Alert";
 
 function EditPricesForm() {
   const { VITE_API_BASE_URL } = import.meta.env;
   const [prices, setPrices] = useState([]);
-  const pricesRef = useRef([]);
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState("")
-  const [success, setSuccess] = useState("")
-  const [isUpdating, setIsUpdating] = useState(false)
+  const [isLoading, setIsLoading] = useState(true);
+  const [isUpdating, setIsUpdating] = useState(false);
+  const [alert, setAlert] = useState({ show: false, message: "", variant: "" })
+
+
+  const formRef = useRef(null);
+
+  const formatNumber = (num) => {
+    return num?.toLocaleString('es-ES') || '';
+  };
 
   useEffect(() => {
-    const chachedData = sessionStorage.getItem("squareMPrices");
+    const cachedPrices = sessionStorage.getItem("squareMPrices");
 
-    if(chachedData){
-      setPrices(JSON.parse(chachedData));
-      setLoading(false)
-    }else {
-      const fetchSquareMeterPrices = () => {
-        fetch(`${VITE_API_BASE_URL}/square-meter-prices`)
+    if (cachedPrices) {
+      setPrices(JSON.parse(cachedPrices));
+      setIsLoading(false);
+    } else {
+      fetch(`${VITE_API_BASE_URL}/square-meter-prices`)
         .then((res) => res.json())
         .then((data) => {
           setPrices(data);
-          sessionStorage.setItem("squareMPrices", JSON.stringify(data))
-          pricesRef.current = data;
+          sessionStorage.setItem("squareMPrices", JSON.stringify(data));
+          setIsLoading(false);
         })
-        .catch((error) => setError(error.message)).
-        finally(() => setLoading(false))
-      }
-
-      fetchSquareMeterPrices();
+        .catch((err) => {
+          setAlert({
+            show: true,
+            message: "Error al obtener precios",
+            variant: "danger"
+          })
+          setIsLoading(false);
+        });
     }
   }, []);
-
-  const handleChange = (id, value) => {
-    pricesRef.current = pricesRef.current.map((item) =>
-      item.id === id ? { ...item, price: Number(value) } : item
-    );
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const hasEmptyFields = pricesRef.current.some(item =>
-      item.price === 0 || item.price === null || isNaN(item.price) || item.price < 0
-    );
+    const formData = new FormData(formRef.current);
 
-    if (hasEmptyFields) {
-      setError("Por favor, asegúrate de llenar todos los campos con valores válidos.");
+    let hasErrors = false;
+    const updatedPrices = prices.map((priceObj) => {
+      const rawValue = formData.get(`price-${priceObj.status}-${priceObj.id}`);
+      const cleanedValue = rawValue.replace(/\./g, '');
+
+      if (!cleanedValue || isNaN(cleanedValue)) {
+        hasErrors = true;
+        return priceObj;
+      }
+
+      return {
+        ...priceObj,
+        price: Number(cleanedValue),
+      };
+    });
+
+    if (hasErrors) {
+      setAlert({
+        show: true,
+        message: "Todos los campos deben contener números válidos",
+        variant: "danger"
+      });
       return;
     }
-    setIsUpdating(true)
+
+    setIsUpdating(true);
+
     try {
       const response = await fetch(`${VITE_API_BASE_URL}/square-meter-prices`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(pricesRef.current)
-      })
+        body: JSON.stringify(updatedPrices),
+      });
 
       if (!response.ok) {
-        throw new Error("Error updating prices");
+        setAlert({
+          show: true,
+          message: "No se pudieron actualizar los precios",
+          variant: "danger"
+        });
+        return;
       }
 
-      setSuccess("Precios actualizados correctamente");
-      setPrices([...pricesRef.current]);
-      sessionStorage.removeItem("squareMPrices");
+      setPrices(updatedPrices);
+      sessionStorage.setItem("squareMPrices", JSON.stringify(updatedPrices));
+      setAlert({
+        show: true,
+        message: "Precios actualizados correctamente",
+        variant: "success"
+      })
     } catch (error) {
-      setError("Hubo un problema al actualizar los precios");
+      setAlert({
+        show: true,
+        message: "Error al actualizar precios",
+        variant: "danger"
+      })
     } finally {
-      setIsUpdating(false)
+      setIsUpdating(false);
     }
+  };
+
+  if (isLoading) {
+    return <p>Cargando...</p>;
   }
 
+  const usedPrices = prices.filter((item) => item.status === "usada");
+  const newPrices = prices.filter((item) => item.status === "nueva");
+
   return (
-    <form className="w-100 bg-secondary rounded p-2 text-white" onSubmit={handleSubmit}>
+    <form
+      ref={formRef}
+      className="w-100 bg-secondary rounded p-2 text-white"
+      onSubmit={handleSubmit}
+    >
       {
-        success.length > 0 &&(
+        alert.show &&(
           <Alert
-            variant="success"
-            onClose={() => setSuccess("")}
+            variant={alert.variant}
+            onClose={() => setAlert({ ...alert, show: false })}
             className="fixed-top w-100 text-center px-2"
             dismissible
           >
-            {success}
+            {alert.message}
           </Alert>
         )
       }
-      {error && (
-        <Alert
-          variant="danger"
-          onClose={() => setError(false)}
-          className="fixed-top w-100 text-center px-2"
-          dismissible
-        >
-          {error}
-        </Alert>
-      )}
-      {
-        loading ?
-          <h4>Obteniendo precios...</h4>
-        :
-        <div className="d-flex flex-column flex-md-row gap-2">
-          <div className="flex-md-fill text-center">
-            <h3 className="fs-5">Vivienda usada</h3>
-            {
-              prices.filter(item => item.status === "usada")
-              .map(item => (
-                <div key={item.id} className="d-flex flex-column mb-2 w-100">
-                  <input
-                    type="number"
-                    id={`used-${item.id}`}
-                    defaultValue={item.price}
-                    onChange={(e) => handleChange(item.id, e.target.value)}
-                    className="form-control text-center text-md-start"
-                    placeholder={`Estrato ${item.stratum}`}
-                    min="0"
-                  />
-                </div>
-              ))
-            }
-          </div>
-
-          <div className="flex-md-fill text-center">
-            <h3 className="fs-5">Vivienda nueva</h3>
-            {
-              prices.filter(item => item.status === "nueva")
-              .map(item => (
-                <div key={item.id} className="d-flex flex-column mb-2 w-100">
-                  <input
-                    type="number"
-                    id={`new-${item.id}`}
-                    defaultValue={item.price}
-                    onChange={(e) => handleChange(item.id, e.target.value)}
-                    className="form-control text-center text-md-start"
-                    placeholder={`Estrato ${item.stratum}`}
-                    min="0"
-                  />
-                </div>
-              ))
-            }
-          </div>
+      <div className="d-flex flex-column flex-md-row gap-2">
+        <div className="flex-md-fill text-center">
+          <h3 className="fs-5">Vivienda usada</h3>
+          {usedPrices.map((item) => (
+            <div key={item.id} className="d-flex flex-column mb-2 w-100">
+              <input
+                type="text"
+                name={`price-${item.status}-${item.id}`}
+                defaultValue={formatNumber(item.price)}
+                className="form-control text-center text-md-start"
+                placeholder={`Estrato ${item.stratum}`}
+                onKeyDown={(e) => {
+                  if (!/[0-9]|Backspace|Delete|ArrowLeft|ArrowRight/.test(e.key)) {
+                    e.preventDefault();
+                  }
+                }}
+              />
+            </div>
+          ))}
         </div>
-      }
+        <div className="flex-md-fill text-center">
+          <h3 className="fs-5">Vivienda nueva</h3>
+          {newPrices.map((item) => (
+            <div key={item.id} className="d-flex flex-column mb-2 w-100">
+              <input
+                type="text"
+                name={`price-${item.status}-${item.id}`}
+                defaultValue={formatNumber(item.price)}
+                className="form-control text-center text-md-start"
+                placeholder={`Estrato ${item.stratum}`}
+                onKeyDown={(e) => {
+                  if (!/[0-9]|Backspace|Delete|ArrowLeft|ArrowRight/.test(e.key)) {
+                    e.preventDefault();
+                  }
+                }}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
       <LoadingButton
         isLoading={isUpdating}
         loadingMessage="Actualizando Precios"

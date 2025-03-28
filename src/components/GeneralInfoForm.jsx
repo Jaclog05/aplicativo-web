@@ -10,6 +10,24 @@ function GeneralInfoForm({ onContinue, isLoading }) {
   ]);
 
   const [status, setStatus] = useState("");
+  const [areaDisplay, setAreaDisplay] = useState("");
+  const [rawArea, setRawArea] = useState("");
+  const [priceDisplay, setPriceDisplay] = useState("");
+  const [rawPrice, setRawPrice] = useState("");
+
+  const handleAreaChange = (e) => {
+    const value = e.target.value.replace(/\D/g, "");
+    const numValue = parseInt(value || 0, 10);
+    setRawArea(numValue)
+    setAreaDisplay(numValue.toLocaleString("es-CO"))
+  }
+
+  const handlePriceChange = (e) => {
+    const value = e.target.value.replace(/\D/g, "");
+    const numValue = parseInt(value || 0, 10);
+    setRawPrice(numValue);
+    setPriceDisplay(numValue.toLocaleString("es-CO"));
+  };
 
   return (
     <form className="container p-2 h-100" onSubmit={onContinue}>
@@ -88,22 +106,31 @@ function GeneralInfoForm({ onContinue, isLoading }) {
             </div>
             <div className="col-md-4">
               <input
-                type="number"
+                type="hidden"
                 name="area"
+                value={rawArea}
+              />
+              <input
+                type="text"
                 placeholder="Area (m2)"
                 className="form-control"
-                step="1"
-                min="30"
+                value={areaDisplay}
+                onChange={handleAreaChange}
                 required
               />
             </div>
             <div className="col-md-4">
               <input
-                type="number"
+                type="hidden"
                 name="price"
+                value={rawPrice}
+              />
+              <input
+                type="text"
                 placeholder="Precio (COP)"
                 className="form-control"
-                min="10000000"
+                value={priceDisplay}
+                onChange={handlePriceChange}
                 required
               />
             </div>
@@ -113,6 +140,7 @@ function GeneralInfoForm({ onContinue, isLoading }) {
                   type="number"
                   className="form-control"
                   placeholder="Años de uso"
+                  required
                 />
               </div>
             )}

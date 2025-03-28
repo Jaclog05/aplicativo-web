@@ -41,6 +41,18 @@ function AppraisalComponent() {
     const type = data["type"];
     const stratum = data["stratum"];
     const status = data["status"];
+    const area = parseInt(data.area, 10);
+    const price = parseInt(data.price, 10);
+
+    if (area < 30) {
+      alert("El área debe ser al menos 30 m²");
+      return;
+    }
+    
+    if (price < 10000000) {
+      alert("El precio debe ser al menos 10.000.000 COP");
+      return;
+    }
 
     dispatch({ type: "POST_GENERAL_INFO", value: data });
     const url = type === "unifamiliar"
