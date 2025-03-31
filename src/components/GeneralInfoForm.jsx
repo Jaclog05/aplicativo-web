@@ -4,11 +4,8 @@ import SearchBar from "./searchBar/SearchBar";
 import LoadingButton from "./LoadingButton";
 
 function GeneralInfoForm({ onContinue, isLoading }) {
-  const [coords, setCoords] = useState([11.0101922, -74.8231794084391]);
-  const [bounds, setBounds] = useState([
-    10.9138881, 11.1066443, -74.9192181, -74.753632,
-  ]);
 
+  const [coordinates, setCoordinates] = useState(null);
   const [status, setStatus] = useState("");
   const [areaDisplay, setAreaDisplay] = useState("");
   const [rawArea, setRawArea] = useState("");
@@ -57,7 +54,7 @@ function GeneralInfoForm({ onContinue, isLoading }) {
               />
             </div>
             <div className="col-md-6">
-              <SearchBar setBounds={setBounds} setCoords={setCoords} />
+              <SearchBar onAddressSelected={(coords) => setCoordinates(coords)}/>
             </div>
             <div className="col-md-6">
               <select
@@ -149,7 +146,7 @@ function GeneralInfoForm({ onContinue, isLoading }) {
 
         <div className="col-md-4">
           <div className="row g-1 h-100">
-            <Map coords={coords} bounds={bounds} />
+            <Map coordinates={coordinates}/>
             <div className="w-100">
               <LoadingButton
                 isLoading={isLoading}

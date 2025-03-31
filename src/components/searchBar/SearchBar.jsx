@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import SearchBarInput from "./SearchBarInput";
 import SearchResults from "./SearchResults";
 
-function SearchBar({setCoords, setBounds}) {
+function SearchBar({ onAddressSelected }) {
   const [results, setResults] = useState([]);
   const [input, setInput] = useState("");
 
-  const handleSuggestionSelected = (value, coords, bounds) => {
-    setInput(value);
+  const handleSuggestionSelected = (address, coordinates) => {
+    setInput(address);
     setResults([]);
-    setCoords(coords)
-    setBounds(bounds)
+    onAddressSelected?.(coordinates);
   };
 
   return (

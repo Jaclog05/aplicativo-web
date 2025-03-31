@@ -4,23 +4,30 @@ import styles from "./SearchResults.module.css";
 function SearchResults({ results, handleSuggestionSelected }) {
   return (
     <div className={styles.resultsWrapper}>
-      {results.map((result, id) => {
-        return (
-          <div
-            key={id}
-            className={styles.searchResult}
-            onClick={() => {
-              handleSuggestionSelected(
-                result.display_name,
-                [parseFloat(result.lat), parseFloat(result.lon)],
-                result.boundingbox
-              )
-            }}
-          >
-            {result.display_name}
-          </div>
-        );
-      })}
+      {results?.length === 0 ? (
+          <em className="fst-italic fst-italic text-center py-2">No se hallaron resultados</em>
+        ) : (
+          results?.map((result, id) => {
+            const address = result.place_name || "Dirección no disponible";
+            const coordinates = result.geometry?.coordinates;
+    
+            return (
+              <div
+                key={id}
+                className={styles.searchResult}
+                onClick={() => {
+                  console.log('coordinates', coordinates)
+                  if(coordinates) {
+                    handleSuggestionSelected(address, coordinates);
+                  }
+                }}
+              >
+                {address}
+              </div>
+            );
+          })
+        )
+      }
     </div>
   );
 }

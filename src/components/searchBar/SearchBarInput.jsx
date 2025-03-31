@@ -1,27 +1,37 @@
-import React, {useState, useCallback} from "react";
+import React, {useCallback} from "react";
 import debounce from "just-debounce-it";
 
 function SearchBarInput({ input, setInput, setResults }) {
+  const { VITE_MAPBOX_TOKEN } = import.meta.env;
 
-  const fetchSuggestionsDebounced = useCallback(
-    debounce((value) => {
-      fetchSuggestions(value)
-    }, 300)
-  , [])
-
-  const fetchSuggestions = async (value) => {
+  
+  const fetchSuggestions = useCallback(async (value) => {
     try {
-      const response = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${value}`)
+      const bbox = "-74.861526,10.904110,-74.751663,11.036908"
+      const countryLimit = "co";
+      const encodedQuery = encodeURIComponent(value)
+
+      const response = await fetch(
+        `https://api.mapbox.com/geocoding/v5/mapbox.places/${encodedQuery}.json?country=${countryLimit}&fuzzyMatch=true&bbox=${bbox}&types=address&access_token=${VITE_MAPBOX_TOKEN}`
+      )
+
       const data = await response.json()
-      setResults(data);
+      setResults(data.features || []);
     } catch (error) {
       console.log('error = ', error.message)
     }
-  };
+  }, [setResults]);
+
+  const debouncedFetch = useCallback(
+    debounce((value) => {
+      if(value.length > 2) fetchSuggestions(value);
+    }, 300),
+    [fetchSuggestions]
+  )
 
   const handleChange = (value) => {
     setInput(value);
-    fetchSuggestionsDebounced(value);
+    debouncedFetch(value);
   };
 
   return (
