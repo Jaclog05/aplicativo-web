@@ -1,7 +1,7 @@
 import React, {useCallback} from "react";
 import debounce from "just-debounce-it";
 
-function SearchBarInput({ input, setInput, setResults }) {
+function SearchBarInput({ input, setInput, setResults, setHasSearched }) {
   const { VITE_MAPBOX_TOKEN } = import.meta.env;
 
   
@@ -17,8 +17,10 @@ function SearchBarInput({ input, setInput, setResults }) {
 
       const data = await response.json()
       setResults(data.features || []);
+      setHasSearched(true)
     } catch (error) {
       console.log('error = ', error.message)
+      setHasSearched(true)
     }
   }, [setResults]);
 
@@ -31,6 +33,11 @@ function SearchBarInput({ input, setInput, setResults }) {
 
   const handleChange = (value) => {
     setInput(value);
+    if(value.trim() === "") {
+      setResults([]);
+      setHasSearched(false);
+      return;
+    }
     debouncedFetch(value);
   };
 
