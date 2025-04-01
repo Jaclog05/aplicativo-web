@@ -4,7 +4,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
-function Map({ coordinates }) {
+function Map({ coordinates, onMapImageUrl }) {
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
   const markerRef = useRef(null);
@@ -37,6 +37,11 @@ function Map({ coordinates }) {
         speed: 1.2
       });
       markerRef.current.setLngLat(coordinates)
+      const [lng, lat] = coordinates;
+      const markerStyle = "pin-s-l+000";
+      //const staticImageUrl = `https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/${lng},${lat},15,0/400x400@2x?access_token=${mapboxgl.accessToken}`;
+      const staticImageUrl = `https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/${markerStyle}(${lng},${lat})/${lng},${lat},14/500x300?access_token=${mapboxgl.accessToken}`
+      onMapImageUrl(staticImageUrl);
     }
   }, [coordinates]);
 

@@ -5,7 +5,8 @@ export const initialState = {
   generalInfo: {},
   questions: [],
   appraisal: 0,
-  squareMeterPrice: 0
+  squareMeterPrice: 0,
+  mapImageUrl: null
 };
 
 const calculateQualityScore = (answers) => {
@@ -38,6 +39,8 @@ export function appraisalReducer(state, action) {
       return { ...state, squareMeterPrice: action.value }
     case 'RESET':
       return initialState;
+    case 'SET_MAP_IMAGE_URL':
+      return { ...state, mapImageUrl: action.value }
     default:
       return state;
   }

@@ -16,7 +16,8 @@ function AppraisalComponent() {
     questions,
     appraisal,
     generalInfo,
-    squareMeterPrice
+    squareMeterPrice,
+    mapImageUrl
   } = state;
 
   const fetchData = async (url, actionType) => {
@@ -90,6 +91,7 @@ function AppraisalComponent() {
       <div className="py-2">
         {step == 1 && (
           <GeneralInfoForm
+            dispatch={dispatch}
             onContinue={handleGeneralInfoSubmit}
             isLoading={isLoading}
           />
@@ -113,6 +115,7 @@ function AppraisalComponent() {
             appraisal={appraisal}
             generalInfo={generalInfo}
             sqMeterPrice={squareMeterPrice}
+            mapImageUrl={mapImageUrl}
           />
         )}
       </div>

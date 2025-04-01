@@ -3,7 +3,7 @@ import Map from "./map/Map";
 import SearchBar from "./searchBar/SearchBar";
 import LoadingButton from "./LoadingButton";
 
-function GeneralInfoForm({ onContinue, isLoading }) {
+function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
 
   const [coordinates, setCoordinates] = useState(null);
   const [status, setStatus] = useState("");
@@ -146,7 +146,10 @@ function GeneralInfoForm({ onContinue, isLoading }) {
 
         <div className="col-md-4">
           <div className="row g-1 h-100">
-            <Map coordinates={coordinates}/>
+            <Map
+              coordinates={coordinates}
+              onMapImageUrl={(url) => dispatch({ type: 'SET_MAP_IMAGE_URL', value: url })}
+            />
             <div className="w-100">
               <LoadingButton
                 isLoading={isLoading}

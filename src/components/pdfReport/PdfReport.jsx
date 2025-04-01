@@ -2,7 +2,7 @@ import React from 'react'
 import { Page, Text, View, Document, StyleSheet, PDFViewer, Image } from '@react-pdf/renderer';
 import mapImage from '../../assets/mapImageExample.png';
 
-function PdfReport({data, appraisal, sqMeterPrice}) {
+function PdfReport({data, appraisal, sqMeterPrice, mapImageUrl}) {
 
   const styles = StyleSheet.create({
     page: { padding: 30, fontSize: 12, backgroundColor: '#F5F5F5' },
@@ -72,7 +72,7 @@ function PdfReport({data, appraisal, sqMeterPrice}) {
 
             <View style={styles.midSection}>
               <Text style={styles.title}>Ubicación del Inmueble</Text>
-              <Image style={styles.image} src={mapImage} />
+              <Image style={styles.image} src={mapImageUrl || mapImage} />
             </View>
           </View>
           
