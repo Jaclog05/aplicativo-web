@@ -36,7 +36,7 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
                 type="text"
                 name="username"
                 placeholder="Nombre"
-                className="form-control"
+                className="form-control bg-light border border-1 border-secondary placeholder-text-dark"
                 pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{3,}"
                 title="El nombre debe tener al menos 3 letras y no puede contener números ni caracteres especiales"
                 required
@@ -47,7 +47,7 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
                 type="email"
                 name="email"
                 placeholder="Correo Electrónico"
-                className="form-control"
+                className="form-control bg-light border border-1 border-secondary placeholder-text-dark"
                 pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                 title="Ingrese un correo electrónico válido (ejemplo: usuario@dominio.com)"
                 required
@@ -58,7 +58,7 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
             </div>
             <div className="col-md-6">
               <select
-                className="form-select"
+                className="form-select bg-light border border-1 border-secondary placeholder-text-dark"
                 name="stratum"
                 defaultValue=""
                 required
@@ -75,7 +75,7 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
             </div>
             <div className="col-md-6">
               <select
-                className="form-select"
+                className="form-select bg-light border border-1 border-secondary placeholder-text-dark"
                 name="type"
                 defaultValue=""
                 required
@@ -89,7 +89,7 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
             </div>
             <div className="col-md-6">
               <select
-                className="form-select"
+                className="form-select bg-light border border-1 border-secondary placeholder-text-dark"
                 name="status"
                 value={status}
                 onChange={(e) => setStatus(e.target.value)}
@@ -110,7 +110,7 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
               <input
                 type="text"
                 placeholder="Area (m2)"
-                className="form-control"
+                className="form-control bg-light border border-1 border-secondary placeholder-text-dark"
                 value={areaDisplay}
                 onChange={handleAreaChange}
                 required
@@ -125,7 +125,7 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
               <input
                 type="text"
                 placeholder="Precio (COP)"
-                className="form-control"
+                className="form-control bg-light border border-1 border-secondary placeholder-text-dark"
                 value={priceDisplay}
                 onChange={handlePriceChange}
                 required
@@ -135,7 +135,7 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
               <div className="col-md-4">
                 <input
                   type="number"
-                  className="form-control"
+                  className="form-control bg-light border border-1 border-secondary placeholder-text-dark"
                   placeholder="Años de uso"
                   required
                 />

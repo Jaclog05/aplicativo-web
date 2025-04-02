@@ -13,16 +13,16 @@ function NavBar() {
   }
 
   return (
-    <nav className="navbar navbar-light bg-light d-flex justify-content-between py-0 px-2">
+    <nav className="navbar navbar-light bg-secondary d-flex justify-content-between py-0 px-2">
       <Link to="/" className="navbar-brand p-0 m-0">
-        <div className="d-flex align-items-center justify-content-between gap-2 py-2 fs-5">
+        <div className="d-flex align-items-center text-light justify-content-between gap-2 py-2 fs-5">
           <img src={avaluoLogo} alt="avaluo Logo" />
           <p className="mb-0">Aplicativo Web Nombre</p>
         </div>
       </Link>
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link to="/aboutUs" className="nav-link nav-link-hover px-1">
+          <Link to="/aboutUs" className="nav-link nav-link-hover px-1 text-light">
             Sobre Nosotros
           </Link>
         </li>

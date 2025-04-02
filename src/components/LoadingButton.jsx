@@ -6,7 +6,7 @@ function LoadingButton({ text, isLoading, loadingMessage }) {
     <Button
       className="bootstrap-scope"
       type="submit"
-      variant="primary"
+      variant="secondary"
       disabled={isLoading}
       style={{gridArea: 'submit', width: '100%'}}
     >

@@ -12,6 +12,7 @@
   width: 100%;
   box-sizing: border-box;
   color: #000;
+  border-radius: 0 0 1rem 1rem;
 }
 
 .searchResult {

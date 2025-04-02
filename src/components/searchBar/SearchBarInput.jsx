@@ -45,7 +45,7 @@ function SearchBarInput({ input, setInput, setResults, setHasSearched }) {
     <input
       type="text"
       placeholder="Direccion del inmueble"
-      className='form-control'
+      className='form-control bg-light border border-1 border-secondary placeholder-text-dark'
       name="address"
       value={input}
       onChange={(e) => handleChange(e.target.value)}

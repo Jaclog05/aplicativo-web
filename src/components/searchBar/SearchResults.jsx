@@ -18,7 +18,6 @@ function SearchResults({ results, handleSuggestionSelected, hasSearched, inputVa
               key={id}
               className={styles.searchResult}
               onClick={() => {
-                console.log('coordinates', coordinates)
                 if(coordinates) {
                   handleSuggestionSelected(address, coordinates);
                 }

@@ -9,8 +9,6 @@ function Map({ coordinates, onMapImageUrl }) {
   const mapRef = useRef(null);
   const markerRef = useRef(null);
 
-  // Inicializar mapa
-
   useEffect(() => {
     const map = new mapboxgl.Map({
       container: mapContainerRef.current,
@@ -39,14 +37,18 @@ function Map({ coordinates, onMapImageUrl }) {
       markerRef.current.setLngLat(coordinates)
       const [lng, lat] = coordinates;
       const markerStyle = "pin-s-l+000";
-      //const staticImageUrl = `https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/${lng},${lat},15,0/400x400@2x?access_token=${mapboxgl.accessToken}`;
       const staticImageUrl = `https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/${markerStyle}(${lng},${lat})/${lng},${lat},14/500x300?access_token=${mapboxgl.accessToken}`
       onMapImageUrl(staticImageUrl);
     }
   }, [coordinates]);
 
   return (
-    <div id='map-container' ref={mapContainerRef} style={{height: "250px", width: "100%", margin: "0 auto"}}>
+    <div
+      id='map-container'
+      className="w-100 rounded border border-2 border-secondary"
+      ref={mapContainerRef} 
+      style={{height: "250px"}}
+    >
 
     </div>
   );

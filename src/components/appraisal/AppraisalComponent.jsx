@@ -74,10 +74,10 @@ function AppraisalComponent() {
   }, [questions, step]);
 
   return (
-    <div id="appraisal_section" className="px-5 pb-4 d-flex flex-column bg-secondary text-white">
+    <div id="appraisal_section" className="px-5 pb-4 mb-md-5 d-flex flex-column bg-primary text-dark">
       <div className="d-flex justify-content-start align-items-center py-3 gap-2">
         <img src={avaluoLogo} alt="avaluo Logo" width="40px" />
-        <h3 className="py-2 mb-0">
+        <h3 className="py-2 mb-0 fw-bold">
           Paso {step}:{" "}
           {
             [
@@ -88,6 +88,7 @@ function AppraisalComponent() {
           }
         </h3>
       </div>
+      <hr className="mt-0 text-secondary"/>
       <div className="py-2">
         {step == 1 && (
           <GeneralInfoForm
