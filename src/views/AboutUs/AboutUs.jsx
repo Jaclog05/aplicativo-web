@@ -5,7 +5,7 @@ function AboutUs() {
   return (
     <div className="w-100">
       <div
-        className="text-center text-white bg-secondary py-5 d-flex flex-column align-items-center justify-content-center"
+        className="text-center text-dark bg-primary py-5 d-flex flex-column align-items-center justify-content-center"
         style={{height: '70vh'}}
       >
         <p className="display-4 fw-bold">
