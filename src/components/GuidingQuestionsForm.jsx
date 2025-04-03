@@ -28,7 +28,6 @@ function GuidingQuestionsForm({
       <form
         className="my-4 row"
         onSubmit={onContinue}
-        style={{ backgroundColor: "#D9D9D9" }}
       >
         <div className="col-md-8 d-flex flex-column justify-content-center gap-2 text-black">
           <p className="h5 p-2">

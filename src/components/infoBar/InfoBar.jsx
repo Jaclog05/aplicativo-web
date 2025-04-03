@@ -12,13 +12,13 @@ function InfoBar({ indicator, subgroup, parameter, explanation }) {
 
   return (
     <div className="d-md-flex justify-content-md-between col-12 col-md-8 text-center gap-2">
-      <div className="flex-fill text-white justify-content-center align-items-center bg-success mb-1 rounded-4 px-2">
+      <div className="flex-fill text-white justify-content-center align-items-center bg-secondary mb-1 rounded-4 px-2">
         {indicator}
       </div>
-      <div className="flex-fill text-white justify-content-center align-items-center bg-success mb-1 rounded-4 px-2">
+      <div className="flex-fill text-white justify-content-center align-items-center bg-secondary mb-1 rounded-4 px-2">
         {subgroup}
       </div>
-      <div className="flex-fill d-flex text-white justify-content-center align-items-center bg-success mb-1 rounded-4 px-2">
+      <div className="flex-fill d-flex text-white justify-content-center align-items-center bg-secondary mb-1 rounded-4 px-2">
         {parameter}
         <OverlayTrigger
           placement="bottom"
