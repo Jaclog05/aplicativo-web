@@ -43,7 +43,7 @@ function Login() {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center w-100 vh-100">
+    <div className="d-flex justify-content-center align-items-center w-100 vh-100 bg-light">
       {error && (
         <Alert
           variant="danger"
@@ -55,7 +55,7 @@ function Login() {
         </Alert>
       )}
       <form
-        className="d-flex flex-column align-items-stretch gap-2 p-2 rounded bg-secondary w-75 w-md-50"
+        className="d-flex flex-column align-items-stretch gap-2 p-2 rounded bg-primary w-75 w-md-50"
         style={{ maxWidth: "400px" }}
         onSubmit={handleSubmit}
       >
@@ -63,7 +63,7 @@ function Login() {
         <input
           type="text"
           placeholder="Ingrese su usuario"
-          className="form-control"
+          className="form-control border border-1 border-secondary"
           value={user}
           onChange={(e) => setUser(e.target.value)}
           required
@@ -71,7 +71,7 @@ function Login() {
         <input
           type="password"
           placeholder="Ingrese su contraseña"
-          className="form-control"
+          className="form-control border border-1 border-secondary"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
