@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import avaluoLogo from "../../assets/avaluo-icon.svg";
 import LoadingButton from "../../components/LoadingButton";
 import Alert from "react-bootstrap/Alert";
+import MainIcon from "../../components/MainIcon";
 
 const { VITE_API_BASE_URL } = import.meta.env;
 
@@ -55,11 +55,11 @@ function Login() {
         </Alert>
       )}
       <form
-        className="d-flex flex-column align-items-stretch gap-2 p-2 rounded bg-primary w-75 w-md-50"
+        className="d-flex flex-column align-items-stretch gap-2 p-2 rounded bg-primary w-75 w-md-50 text-secondary"
         style={{ maxWidth: "400px" }}
         onSubmit={handleSubmit}
       >
-        <img src={avaluoLogo} alt="avaluo Logo" className="mx-auto my-1" width='100' height="100" />
+        <MainIcon size="100"/>
         <input
           type="text"
           placeholder="Ingrese su usuario"

@@ -1,5 +1,5 @@
 import React from "react";
-import avaluoLogo from "../../assets/avaluo-icon.svg";
+import MainIcon from "../MainIcon";
 
 function Footer() {
   return (
@@ -7,13 +7,7 @@ function Footer() {
       <div className="row py-3 px-5">
         <div className="col-md-4">
           <div className="h-100 d-flex align-items-stretch justify-content-center">
-            <img
-              src={avaluoLogo}
-              alt="Avaluo Logo"
-              className="me-3"
-              width="80"
-              height="80"
-            />
+            <MainIcon size="70"/>
             <div>
               <p className="fw-bold mb-1 text-dark">Aplicativo Web Nombre</p>
               <p className="mb-0">Calculo de avalúos inmobiliarios</p>
@@ -71,7 +65,7 @@ function Footer() {
         </div>
       </div>
       <hr className="mx-5" />
-      <p className="text-center mb-0">
+      <p className="text-center mb-0" style={{fontSize: '0.7rem'}}>
         Todos los derechos reservados © {new Date().getFullYear()}
       </p>
     </footer>
