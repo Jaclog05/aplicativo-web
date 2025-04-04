@@ -39,9 +39,9 @@ function Table() {
       {
         loading ?
           <h4>Obteniendo registros...</h4> :
-          <table className="table table-bordered align-middle overflow-scroll border border-5">
+          <table className="table table-bordered table-striped align-middle overflow-scroll border border-5 border-dark">
             <thead className='text-center'>
-              <tr className='table-success'>
+              <tr className=''>
                 <th>Id registro</th>
                 <th>Nombre Usuario</th>
                 <th>Resultado Avalúo</th>

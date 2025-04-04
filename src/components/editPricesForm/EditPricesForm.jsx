@@ -117,7 +117,7 @@ function EditPricesForm() {
   return (
     <form
       ref={formRef}
-      className="w-100 bg-secondary rounded p-2 text-white"
+      className="w-100 bg-primary shadow rounded p-2 text-dark"
       onSubmit={handleSubmit}
     >
       {
@@ -134,15 +134,17 @@ function EditPricesForm() {
       }
       <div className="d-flex flex-column flex-md-row gap-2">
         <div className="flex-md-fill text-center">
-          <h3 className="fs-5">Vivienda usada</h3>
+          <h3 className="fs-5 fw-bold">Vivienda usada</h3>
           {usedPrices.map((item) => (
             <div key={item.id} className="d-flex flex-column mb-2 w-100">
+              <label htmlFor={`price-${item.status}-${item.id}`} className="fw-bold text-start my-0 mx-2" style={{fontSize: '14px'}}>
+                Estrato {item.stratum}
+              </label>
               <input
                 type="text"
                 name={`price-${item.status}-${item.id}`}
                 defaultValue={formatNumber(item.price)}
-                className="form-control text-center text-md-start"
-                placeholder={`Estrato ${item.stratum}`}
+                className="form-control text-center text-md-start border border-1 border-dark"
                 onKeyDown={(e) => {
                   if (!/[0-9]|Backspace|Delete|ArrowLeft|ArrowRight/.test(e.key)) {
                     e.preventDefault();
@@ -153,15 +155,17 @@ function EditPricesForm() {
           ))}
         </div>
         <div className="flex-md-fill text-center">
-          <h3 className="fs-5">Vivienda nueva</h3>
+          <h3 className="fs-5 fw-bold">Vivienda nueva</h3>
           {newPrices.map((item) => (
             <div key={item.id} className="d-flex flex-column mb-2 w-100">
+              <label htmlFor={`price-${item.status}-${item.id}`} className="fw-bold text-start my-0 mx-2" style={{fontSize: '14px'}}>
+                Estrato {item.stratum}
+              </label>
               <input
                 type="text"
                 name={`price-${item.status}-${item.id}`}
                 defaultValue={formatNumber(item.price)}
-                className="form-control text-center text-md-start"
-                placeholder={`Estrato ${item.stratum}`}
+                className="form-control text-center text-md-start border border-1 border-dark"
                 onKeyDown={(e) => {
                   if (!/[0-9]|Backspace|Delete|ArrowLeft|ArrowRight/.test(e.key)) {
                     e.preventDefault();

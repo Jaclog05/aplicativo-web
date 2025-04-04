@@ -30,8 +30,8 @@
 
 .nav-link-sidebar-hover:hover {
   cursor: pointer;
-  background: #8B8B8B;
-  color: #FFF
+  background: #f2f9f1;
+  color: #5c715e
 }
 
 .placeholder-text-dark::placeholder {

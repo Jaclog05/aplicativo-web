@@ -74,11 +74,11 @@ function ResultsForm({ onReset, appraisal, generalInfo, sqMeterPrice, mapImageUr
             />
           }
           fileName={`Reporte_Avaluo_${generalInfo.username}.pdf`}
-          className="bg-success text-white text-decoration-none p-2 rounded"
+          className="bg-secondary text-white text-decoration-none p-2 rounded shadow"
         >
           {({ loading }) => (loading ? "Generando..." : "Descargar Informe")}
         </PDFDownloadLink>
-        <button onClick={onReset} className="btn btn-primary">
+        <button onClick={onReset} className="btn btn-success text-secondary shadow">
           Nuevo Avalúo
         </button>
       </div>
