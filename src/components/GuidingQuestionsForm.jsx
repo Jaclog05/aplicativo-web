@@ -63,7 +63,7 @@ function GuidingQuestionsForm({
 
         <div className="col-md-12 d-flex justify-content-md-end p-2">
           {Object.keys(answers).length === questionsLength ? (
-            <button type="submit" className="btn btn-primary col-12 col-md-3">
+            <button type="submit" className="btn btn-secondary col-12 col-md-3">
               Calcular Avalúo
             </button>
           ) : (

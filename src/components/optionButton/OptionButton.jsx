@@ -1,6 +1,4 @@
 import React from "react";
-import ThumbUpIcon from "../../assets/thumb-up-icon.svg";
-import ThumbDownIcon from "../../assets/thumb-down-icon.svg";
 
 function OptionButton({ option, value, onSelect, isSelected }) {
   function showIcon(option) {

@@ -4,11 +4,6 @@
   font-family: 'Lustria', sans-serif;
 }
 
-.nav-link-hover:hover {
-  background-color: var(--bs-primary);
-  color: white;
-}
-
 :global(.tooltip-inner) {
   background-color: #3C3C43 !important;
   color: #fff !important;

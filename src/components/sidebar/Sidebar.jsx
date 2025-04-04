@@ -1,5 +1,4 @@
 import React from "react";
-import adminProfileIcon from "../../assets/user-profile-svgrepo.svg";
 import { useNavigate } from "react-router-dom";
 
 function Sidebar({ onClick, options }) {

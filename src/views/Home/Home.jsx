@@ -36,16 +36,19 @@ function Home() {
             title="Paso 1"
             description="Información general del inmueble"
             explanation="Breve explicación de ese paso"
+            iconClass="bi bi-house-fill"
           />
           <InfoStep
             title="Paso 2"
             description="Preguntas orientadoras"
             explanation="Breve explicación de ese paso"
+            iconClass="bi bi-patch-question-fill"
           />
           <InfoStep
             title="Paso 3"
             description="Obten un precio estimado"
             explanation="Breve explicación de ese paso"
+            iconClass="bi bi-currency-exchange"
           />
         </div>
       </div>

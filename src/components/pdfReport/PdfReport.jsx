@@ -1,6 +1,5 @@
 import React from 'react'
-import { Page, Text, View, Document, StyleSheet, PDFViewer, Image } from '@react-pdf/renderer';
-import mapImage from '../../assets/mapImageExample.png';
+import { Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
 
 function PdfReport({data, appraisal, sqMeterPrice, mapImageUrl}) {
 
