@@ -10,7 +10,7 @@ function InfoStep({ title, description, explanation, iconClass }) {
         <i className={`me-3 ${iconClass}`} style={{ fontSize: "3rem" }}></i>
         <div>
           <h4 className="fw-bold">{title}</h4>
-          <p>{description}</p>
+          <p className="fw-bold">{description}</p>
         </div>
       </div>
       <div className="d-flex align-items-center justify-content-center p-3 flex-grow-1 text-center">

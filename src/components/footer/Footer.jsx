@@ -9,7 +9,7 @@ function Footer() {
           <div className="h-100 d-flex align-items-stretch justify-content-center">
             <MainIcon size="70"/>
             <div>
-              <p className="fw-bold mb-1 text-dark">Aplicativo Web Nombre</p>
+              <p className="fw-bold mb-1 text-dark">Avaluo360</p>
               <p className="mb-0">Calculo de avalúos inmobiliarios</p>
             </div>
           </div>

@@ -11,10 +11,11 @@ function Home() {
         className="text-center text-dark bg-primary py-5 d-flex flex-column align-items-center justify-content-center"
         style={{ height: "75vh" }}
       >
-        <p className="display-4 fw-bold">Texto de Presentación</p>
+        <p className="display-5 fw-bold">Descubre cuánto vale tu hogar hoy</p>
         <p className="w-50">
-          En este texto se mostrará una pequeña descripción de lo que podemos
-          hacer en este sitio o cualquier otra que se decida
+          No necesitas ser un experto:
+          <br/>
+          Solo dinos las características de tu inmueble y nosotros hacemos el resto.
         </p>
         <HashLink
           smooth
@@ -35,19 +36,19 @@ function Home() {
           <InfoStep
             title="Paso 1"
             description="Información general del inmueble"
-            explanation="Breve explicación de ese paso"
+            explanation="Ingresa los datos básicos de tu propiedad en segundos."
             iconClass="bi bi-house-fill"
           />
           <InfoStep
             title="Paso 2"
             description="Preguntas orientadoras"
-            explanation="Breve explicación de ese paso"
+            explanation="Responde algunas preguntas clave para afinar el avalúo."
             iconClass="bi bi-patch-question-fill"
           />
           <InfoStep
             title="Paso 3"
             description="Obten un precio estimado"
-            explanation="Breve explicación de ese paso"
+            explanation="Recibe el valor estimado y descarga tu informe detallado."
             iconClass="bi bi-currency-exchange"
           />
         </div>
