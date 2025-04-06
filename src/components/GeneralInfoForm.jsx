@@ -93,7 +93,6 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
                 name="houseReference"
                 className="form-control bg-light border border-1 border-secondary placeholder-text-dark"
                 placeholder="Referencia Catastral"
-                required
               />
             </div>
             <div className="col-md-4">
