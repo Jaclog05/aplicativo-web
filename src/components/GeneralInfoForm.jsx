@@ -35,7 +35,7 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
               <input
                 type="text"
                 name="username"
-                placeholder="Nombre"
+                placeholder="Nombre*"
                 className="form-control bg-light border border-1 border-secondary placeholder-text-dark"
                 pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]{3,}"
                 title="El nombre debe tener al menos 3 letras y no puede contener números ni caracteres especiales"
@@ -46,7 +46,7 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
               <input
                 type="email"
                 name="email"
-                placeholder="Correo Electrónico"
+                placeholder="Correo Electrónico*"
                 className="form-control bg-light border border-1 border-secondary placeholder-text-dark"
                 pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
                 title="Ingrese un correo electrónico válido (ejemplo: usuario@dominio.com)"
@@ -64,7 +64,7 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
                 required
               >
                 <option value="" disabled>
-                  Estrato
+                  Estrato*
                 </option>
                 {[1, 2, 3, 4, 5, 6].map((num) => (
                   <option key={num} value={num}>
@@ -73,7 +73,7 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
                 ))}
               </select>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
               <select
                 className="form-select bg-light border border-1 border-secondary placeholder-text-dark"
                 name="type"
@@ -81,13 +81,22 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
                 required
               >
                 <option value="" disabled>
-                  Tipo de Vivienda
+                  Tipo de Vivienda*
                 </option>
                 <option value="unifamiliar">Unifamiliar</option>
                 <option value="multifamiliar">Multifamiliar</option>
               </select>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-4">
+              <input
+                type="number"
+                name="houseReference"
+                className="form-control bg-light border border-1 border-secondary placeholder-text-dark"
+                placeholder="Referencia Catastral"
+                required
+              />
+            </div>
+            <div className="col-md-4">
               <select
                 className="form-select bg-light border border-1 border-secondary placeholder-text-dark"
                 name="status"
@@ -95,7 +104,7 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
                 onChange={(e) => setStatus(e.target.value)}
               >
                 <option value="" disabled>
-                  Estado de la Vivienda
+                  Estado de la Vivienda*
                 </option>
                 <option value="usada">Usada</option>
                 <option value="nueva">Nueva</option>
@@ -109,7 +118,7 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
               />
               <input
                 type="text"
-                placeholder="Area (m2)"
+                placeholder="Area (m2)*"
                 className="form-control bg-light border border-1 border-secondary placeholder-text-dark"
                 value={areaDisplay}
                 onChange={handleAreaChange}
@@ -124,7 +133,7 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
               />
               <input
                 type="text"
-                placeholder="Precio (COP)"
+                placeholder="Precio (COP)*"
                 className="form-control bg-light border border-1 border-secondary placeholder-text-dark"
                 value={priceDisplay}
                 onChange={handlePriceChange}
@@ -135,8 +144,9 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
               <div className="col-md-4">
                 <input
                   type="number"
+                  name="years"
                   className="form-control bg-light border border-1 border-secondary placeholder-text-dark"
-                  placeholder="Años de uso"
+                  placeholder="Años de uso*"
                   required
                 />
               </div>
@@ -159,6 +169,9 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
             </div>
           </div>
         </div>
+        <p className="fst-italic m-md-0 mt-2 text-md-start text-center" style={{fontSize: '0.8rem'}}>
+          *Campos obligatorios
+        </p>
       </div>
     </form>
   );
