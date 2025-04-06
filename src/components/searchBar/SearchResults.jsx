@@ -1,6 +1,14 @@
 import React from "react";
 import styles from "./SearchResults.module.css";
 
+function cleanSuggestionPlaceName(placeName) {
+  const sections = placeName.split(",");
+  if(sections.length > 1 && /^\s*\d{1,6}\s+/.test(sections[1])) {
+    sections[1] = sections[1].replace(/^\s*\d{1,6}\s*/, "")
+  }
+  return sections.join(",").trim();
+}
+
 function SearchResults({ results, handleSuggestionSelected, hasSearched, inputValue }) {
   return (
     <div className={styles.resultsWrapper}>
@@ -10,7 +18,8 @@ function SearchResults({ results, handleSuggestionSelected, hasSearched, inputVa
         </em>
       ) : (
         results?.map((result, id) => {
-          const address = result.place_name || "Dirección no disponible";
+          const originalAddress = result.place_name || "Dirección no disponible";
+          const address = cleanSuggestionPlaceName(originalAddress)
           const coordinates = result.geometry?.coordinates;
   
           return (
