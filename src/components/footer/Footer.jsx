@@ -6,9 +6,9 @@ function Footer() {
     <footer className="bg-secondary text-light mt-3 py-3">
       <div className="row py-3 px-5">
         <div className="col-md-4">
-          <div className="h-100 d-flex align-items-stretch justify-content-center">
-            <MainIcon size="70"/>
-            <div>
+          <div className="h-100 d-flex flex-md-row flex-column align-items-md-stretch justify-content-md-center align-items-center gap-2">
+            <MainIcon size="70" className=""/>
+            <div className="text-center text-md-start">
               <p className="fw-bold mb-1 text-dark">Avaluo360</p>
               <p className="mb-0">Calculo de avalúos inmobiliarios</p>
             </div>
