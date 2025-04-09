@@ -46,7 +46,7 @@ function PdfReport({data, appraisal, sqMeterPrice, mapImageUrl, zipCode}) {
               <View style={{...styles.row, gap: '10px'}}>
                 <View style={{...styles.midSection, backgroundColor: 'white'}}>
                   <Text style={styles.label}>Ref. Catastral:</Text>
-                  <Text style={styles.value}>{data.houseReference === "" ? data.houseReference : "--"}</Text>
+                  <Text style={styles.value}>{data.houseReference}</Text>
                 </View>
                 <View style={{...styles.midSection, backgroundColor: 'white'}}>
                   <Text style={styles.label}>Codigo Postal:</Text>
