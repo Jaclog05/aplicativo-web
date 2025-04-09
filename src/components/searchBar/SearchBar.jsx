@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import SearchBarInput from "./SearchBarInput";
 import SearchResults from "./SearchResults";
+import { AppraisalsDispatchContext } from "../../appraisalContext";
 
-function SearchBar({ onAddressSelected, dispatch }) {
+function SearchBar({ onAddressSelected }) {
+  const dispatch = useContext(AppraisalsDispatchContext)
   const [results, setResults] = useState([]);
   const [input, setInput] = useState("");
   const [hasSearched, setHasSearched] = useState(false)

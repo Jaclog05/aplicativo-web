@@ -1,10 +1,13 @@
-import React, {useEffect, useRef, forwardRef} from "react";
+import React, {useEffect, useRef, useContext} from "react";
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { AppraisalsDispatchContext } from "../../appraisalContext";
 
 mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
 
-function Map({ coordinates, onMapImageUrl }) {
+function Map({ coordinates }) {
+  const dispatch = useContext(AppraisalsDispatchContext)
+
   const mapContainerRef = useRef(null);
   const mapRef = useRef(null);
   const markerRef = useRef(null);
@@ -38,7 +41,7 @@ function Map({ coordinates, onMapImageUrl }) {
       const [lng, lat] = coordinates;
       const markerStyle = "pin-s-l+000";
       const staticImageUrl = `https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/${markerStyle}(${lng},${lat})/${lng},${lat},14/500x300?access_token=${mapboxgl.accessToken}`
-      onMapImageUrl(staticImageUrl);
+      dispatch({ type: 'SET_MAP_IMAGE_URL', value: staticImageUrl })
     }
   }, [coordinates]);
 
