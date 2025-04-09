@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import PdfReport from "./pdfReport/PdfReport";
 
-function ResultsForm({ onReset, appraisal, generalInfo, sqMeterPrice, mapImageUrl }) {
+function ResultsForm({ onReset, appraisal, generalInfo, sqMeterPrice, mapImageUrl, zipCode }) {
   const { VITE_API_BASE_URL } = import.meta.env;
 
   const formatPrice = (price) =>
@@ -71,6 +71,7 @@ function ResultsForm({ onReset, appraisal, generalInfo, sqMeterPrice, mapImageUr
               appraisal={appraisal}
               sqMeterPrice={sqMeterPrice}
               mapImageUrl={mapImageUrl}
+              zipCode={zipCode}
             />
           }
           fileName={`Reporte_Avaluo_${generalInfo.username}.pdf`}

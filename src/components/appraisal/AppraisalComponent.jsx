@@ -16,7 +16,8 @@ function AppraisalComponent() {
     appraisal,
     generalInfo,
     squareMeterPrice,
-    mapImageUrl
+    mapImageUrl,
+    zipCode
   } = state;
 
   const fetchData = async (url, actionType) => {
@@ -125,6 +126,7 @@ function AppraisalComponent() {
             generalInfo={generalInfo}
             sqMeterPrice={squareMeterPrice}
             mapImageUrl={mapImageUrl}
+            zipCode={zipCode}
           />
         )}
       </div>

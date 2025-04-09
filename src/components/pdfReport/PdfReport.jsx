@@ -1,7 +1,7 @@
 import React from 'react'
 import { Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
 
-function PdfReport({data, appraisal, sqMeterPrice, mapImageUrl}) {
+function PdfReport({data, appraisal, sqMeterPrice, mapImageUrl, zipCode}) {
 
   const styles = StyleSheet.create({
     page: { padding: 30, fontSize: 12, backgroundColor: '#F5F5F5' },
@@ -42,6 +42,16 @@ function PdfReport({data, appraisal, sqMeterPrice, mapImageUrl}) {
               <View style={styles.section}>
                 <Text style={styles.label}>Dirección:</Text>
                 <Text style={styles.value}>{data.address}</Text>
+              </View>
+              <View style={{...styles.row, gap: '10px'}}>
+                <View style={{...styles.midSection, backgroundColor: 'white'}}>
+                  <Text style={styles.label}>Ref. Catastral:</Text>
+                  <Text style={styles.value}>{data.houseReference === "" ? data.houseReference : "--"}</Text>
+                </View>
+                <View style={{...styles.midSection, backgroundColor: 'white'}}>
+                  <Text style={styles.label}>Codigo Postal:</Text>
+                  <Text style={styles.value}>{zipCode ? zipCode : "--"}</Text>
+                </View>
               </View>
               <View style={{...styles.row, gap: '10px'}}>
                 <View style={{...styles.midSection, backgroundColor: 'white'}}>

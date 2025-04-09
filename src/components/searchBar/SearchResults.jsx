@@ -21,6 +21,7 @@ function SearchResults({ results, handleSuggestionSelected, hasSearched, inputVa
           const originalAddress = result.place_name || "Dirección no disponible";
           const address = cleanSuggestionPlaceName(originalAddress)
           const coordinates = result.geometry?.coordinates;
+          const zipCode = result.context[0].text;
   
           return (
             <div
@@ -28,7 +29,7 @@ function SearchResults({ results, handleSuggestionSelected, hasSearched, inputVa
               className={styles.searchResult}
               onClick={() => {
                 if(coordinates) {
-                  handleSuggestionSelected(address, coordinates);
+                  handleSuggestionSelected(address, coordinates, zipCode);
                 }
               }}
             >

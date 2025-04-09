@@ -54,7 +54,10 @@ function GeneralInfoForm({ onContinue, isLoading, dispatch }) {
               />
             </div>
             <div className="col-md-6">
-              <SearchBar onAddressSelected={(coords) => setCoordinates(coords)}/>
+              <SearchBar
+                onAddressSelected={(coords) => setCoordinates(coords)}
+                dispatch={dispatch}
+              />
             </div>
             <div className="col-md-6">
               <select
