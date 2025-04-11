@@ -3,7 +3,7 @@ import Map from "./map/Map";
 import SearchBar from "./searchBar/SearchBar";
 import LoadingButton from "./LoadingButton";
 
-function GeneralInfoForm({ onContinue, isLoading }) {
+function GeneralInfoForm({ onContinue }) {
 
   const [coordinates, setCoordinates] = useState(null);
   const [status, setStatus] = useState("");
@@ -162,7 +162,6 @@ function GeneralInfoForm({ onContinue, isLoading }) {
             />
             <div className="w-100">
               <LoadingButton
-                isLoading={isLoading}
                 loadingMessage="Cargando Preguntas"
                 text="Continuar"
               />
