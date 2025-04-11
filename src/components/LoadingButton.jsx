@@ -1,10 +1,7 @@
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
-import { AppraisalsContext } from "../appraisalContext";
-import { useContext } from "react";
 
-function LoadingButton({ text, loadingMessage }) {
-  const { isLoading } = useContext(AppraisalsContext)
+function LoadingButton({ isLoading, text, loadingMessage }) {
 
   return (
     <Button

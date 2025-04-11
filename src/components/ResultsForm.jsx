@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import PdfReport from "./pdfReport/PdfReport";
+import { AppraisalsContext } from "../appraisalContext";
 
-function ResultsForm({ onReset, appraisal, generalInfo, sqMeterPrice, mapImageUrl, zipCode }) {
+function ResultsForm({ onReset }) {
   const { VITE_API_BASE_URL } = import.meta.env;
+  const {appraisal, generalInfo, squareMeterPrice, mapImageUrl, zipCode} = useContext(AppraisalsContext)
 
   const formatPrice = (price) =>
     new Intl.NumberFormat("es-ES", {
@@ -69,7 +71,7 @@ function ResultsForm({ onReset, appraisal, generalInfo, sqMeterPrice, mapImageUr
             <PdfReport
               data={generalInfo}
               appraisal={appraisal}
-              sqMeterPrice={sqMeterPrice}
+              sqMeterPrice={squareMeterPrice}
               mapImageUrl={mapImageUrl}
               zipCode={zipCode}
             />

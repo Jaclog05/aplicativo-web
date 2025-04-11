@@ -5,21 +5,17 @@ import ResultsForm from "../ResultsForm";
 import { appraisalReducer, initialState } from "../../appraisalReducer";
 import { AppraisalsContext, AppraisalsDispatchContext } from "../../appraisalContext";
 
+const { VITE_API_BASE_URL } = import.meta.env;
+
 function AppraisalComponent() {
-  const { VITE_API_BASE_URL } = import.meta.env;
-  const [appraisalState, dispatch] = useReducer(appraisalReducer, initialState);
-  const {
-    step,
-    questions,
-    appraisal,
-    generalInfo,
-    squareMeterPrice,
-    mapImageUrl,
-    zipCode
-  } = appraisalState;
+
+  const [ appraisalState, dispatch ] = useReducer(appraisalReducer, initialState);
+  const [isLoading, setIsLoading] = useState(false)
+  const { step, questions } = appraisalState;
+
 
   const fetchData = async (url, actionType) => {
-    dispatch({ type: 'SET_IS_LOADING', value: true })
+    setIsLoading(true)
 
     try {
       const res = await fetch(url);
@@ -31,7 +27,7 @@ function AppraisalComponent() {
     } catch (error) {
       console.error(`Error al obtener ${actionType}:`, error);
     } finally {
-      dispatch({ type: 'SET_IS_LOADING', value: false })
+      setIsLoading(false)
     }
   };
 
@@ -102,6 +98,7 @@ function AppraisalComponent() {
           <div className="py-2">
             {step == 1 && (
               <GeneralInfoForm
+                isLoading={isLoading}
                 onContinue={handleGeneralInfoSubmit}
               />
             )}
@@ -116,11 +113,6 @@ function AppraisalComponent() {
             {step == 3 && (
               <ResultsForm
                 onReset={() => dispatch({ type: "RESET" })}
-                appraisal={appraisal}
-                generalInfo={generalInfo}
-                sqMeterPrice={squareMeterPrice}
-                mapImageUrl={mapImageUrl}
-                zipCode={zipCode}
               />
             )}
           </div>
