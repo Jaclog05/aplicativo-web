@@ -1,24 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import genericImage from "../assets/generic-image.svg";
 import InfoBar from "./infoBar/InfoBar";
 import OptionButton from "./optionButton/OptionButton";
 import ProgressBarComponent from "./progressBar/ProgressBarComponent";
+import { AppraisalsContext, AppraisalsDispatchContext } from "../appraisalContext";
 
-function GuidingQuestionsForm({
-  dispatch,
-  onContinue,
-  currentIndex,
-  currentQuestion,
-  questionsLength,
-  answers,
-}) {
-  const { id, question, options, indicator, subgroup, parameter, explanation } =
-    currentQuestion;
+function GuidingQuestionsForm({ onContinue }) {
+
+  const { answers, currentIndex, questions } = useContext(AppraisalsContext)
+  const dispatch = useContext(AppraisalsDispatchContext)
+
+  if (!questions || questions.length === 0) return null;
+
+  const currentQuestion = questions[currentIndex]
+
+  const { id, question, options, indicator, subgroup, parameter, explanation } = currentQuestion;
+
+  const questionsLength = questions.length;
   const selectedAnswer = answers[currentIndex];
 
   return (
     <div className="d-grid w-100">
-      <ProgressBarComponent questionId={id} questionsLength={questionsLength} />
+      <ProgressBarComponent
+        questionId={id}
+        questionsLength={questionsLength}
+      />
       <InfoBar
         indicator={indicator}
         subgroup={subgroup}
@@ -40,13 +46,7 @@ function GuidingQuestionsForm({
                 option={option}
                 value={value}
                 isSelected={selectedAnswer === value}
-                onSelect={(value) =>
-                  dispatch({
-                    type: "SET_ANSWER",
-                    index: currentIndex,
-                    answer: value,
-                  })
-                }
+                currentIndex={currentIndex}
               />
             ))}
           </div>

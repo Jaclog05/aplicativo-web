@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
+import { AppraisalsDispatchContext } from "../../appraisalContext";
 
-function OptionButton({ option, value, onSelect, isSelected }) {
+function OptionButton({ option, value, currentIndex, isSelected }) {
+
+  const dispatch = useContext(AppraisalsDispatchContext);
+
   function showIcon(option) {
     if (option == "Si" || option == "Bueno" || option == "Es agradable") {
       return (
@@ -35,7 +39,7 @@ function OptionButton({ option, value, onSelect, isSelected }) {
         type="button"
         key={option}
         value={value}
-        onClick={() => onSelect(value)}
+        onClick={() => dispatch({ type: "SET_ANSWER", index: currentIndex, answer: value })}
       >
         {showIcon(option)}
         {option}

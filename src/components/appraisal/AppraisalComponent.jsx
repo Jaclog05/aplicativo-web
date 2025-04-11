@@ -8,11 +8,8 @@ import { AppraisalsContext, AppraisalsDispatchContext } from "../../appraisalCon
 function AppraisalComponent() {
   const { VITE_API_BASE_URL } = import.meta.env;
   const [appraisalState, dispatch] = useReducer(appraisalReducer, initialState);
-  const [isLoading, setIsLoading] = useState(false);
   const {
     step,
-    currentIndex,
-    answers,
     questions,
     appraisal,
     generalInfo,
@@ -22,7 +19,8 @@ function AppraisalComponent() {
   } = appraisalState;
 
   const fetchData = async (url, actionType) => {
-    setIsLoading(true);
+    dispatch({ type: 'SET_IS_LOADING', value: true })
+
     try {
       const res = await fetch(url);
       const data = await res.json();
@@ -33,7 +31,7 @@ function AppraisalComponent() {
     } catch (error) {
       console.error(`Error al obtener ${actionType}:`, error);
     } finally {
-      setIsLoading(false);
+      dispatch({ type: 'SET_IS_LOADING', value: false })
     }
   };
 
@@ -105,16 +103,10 @@ function AppraisalComponent() {
             {step == 1 && (
               <GeneralInfoForm
                 onContinue={handleGeneralInfoSubmit}
-                isLoading={isLoading}
               />
             )}
             {step == 2 && (
               <GuidingQuestionsForm
-                dispatch={dispatch}
-                answers={answers}
-                currentIndex={currentIndex}
-                currentQuestion={questions[currentIndex]}
-                questionsLength={questions.length}
                 onContinue={() => {
                   dispatch({ type: "SET_APPRAISAL" });
                   dispatch({ type: "NEXT_STEP" });
