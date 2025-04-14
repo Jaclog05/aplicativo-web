@@ -4,6 +4,7 @@ import GuidingQuestionsForm from "../GuidingQuestionsForm";
 import ResultsForm from "../ResultsForm";
 import { appraisalReducer, initialState } from "../../appraisalReducer";
 import { AppraisalsContext, AppraisalsDispatchContext } from "../../appraisalContext";
+import { useFetchAppraisalData } from "../../hooks/useFetchAppraisalData";
 
 const { VITE_API_BASE_URL } = import.meta.env;
 
@@ -12,24 +13,8 @@ function AppraisalComponent() {
   const [ appraisalState, dispatch ] = useReducer(appraisalReducer, initialState);
   const [isLoading, setIsLoading] = useState(false)
   const { step, questions } = appraisalState;
+  const { fetchSquareMeterPrice, fetchQuestions } = useFetchAppraisalData(dispatch);
 
-
-  const fetchData = async (url, actionType) => {
-    setIsLoading(true)
-
-    try {
-      const res = await fetch(url);
-      const data = await res.json();
-      dispatch({
-        type: actionType,
-        value: actionType === "SET_QUESTIONS" ? data.slice(0, 3) : data[0].price,
-      });
-    } catch (error) {
-      console.error(`Error al obtener ${actionType}:`, error);
-    } finally {
-      setIsLoading(false)
-    }
-  };
 
   const handleGeneralInfoSubmit = (e) => {
     e.preventDefault();
@@ -51,15 +36,11 @@ function AppraisalComponent() {
     }
 
     dispatch({ type: "POST_GENERAL_INFO", value: data });
-    const url = type === "unifamiliar"
-      ? `${VITE_API_BASE_URL}/questions?type=Unifamiliar`
-      : `${VITE_API_BASE_URL}/questions`;
+    const questionsUrl = `${VITE_API_BASE_URL}/questions?type=${type}`
+    const sqMeterPriceUrl = `${VITE_API_BASE_URL}/square-meter-prices?stratum=${stratum}&status=${status}`
 
-    fetchData(url, 'SET_QUESTIONS');
-    fetchData(
-      `${VITE_API_BASE_URL}/square-meter-prices?stratum=${stratum}&status=${status}`,
-      'SET_SQUARE_METER_PRICE'
-    );
+    fetchQuestions(questionsUrl, setIsLoading);
+    fetchSquareMeterPrice(sqMeterPriceUrl, setIsLoading);
   };
 
   useEffect(() => {
