@@ -1,7 +1,7 @@
 export const useFetchAppraisalData = (dispatch) => {
 
-  const fetchSquareMeterPrice = async (url, setIsLoading) => {
-    setIsLoading(true)
+  const fetchSquareMeterPrice = async (url) => {
+    dispatch({ type: 'SET_IS_LOADING', value: true });
     try {
       const res = await fetch(url);
       const data = await res.json();
@@ -9,12 +9,12 @@ export const useFetchAppraisalData = (dispatch) => {
     } catch (error) {
       console.error(`Error al obtener el precio por metro cuadrado:`, error);
     } finally {
-      setIsLoading(false)
+      dispatch({ type: 'SET_IS_LOADING', value: false });
     }
   };
 
-  const fetchQuestions = async (url, setIsLoading) => {
-    setIsLoading(true)
+  const fetchQuestions = async (url) => {
+    dispatch({ type: 'SET_IS_LOADING', value: true });
     try {
       const res = await fetch(url);
       const data = await res.json()
@@ -22,7 +22,7 @@ export const useFetchAppraisalData = (dispatch) => {
     } catch (error) {
       console.error('Error al obtener las preguntas orientadoras', error);
     } finally {
-      setIsLoading(false)
+      dispatch({ type: 'SET_IS_LOADING', value: false });
     }
   }
 

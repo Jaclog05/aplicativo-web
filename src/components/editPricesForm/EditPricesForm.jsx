@@ -1,12 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import LoadingButton from "../LoadingButton";
 import Alert from "react-bootstrap/Alert";
+import { AppraisalsDispatchContext } from "../../appraisalContext";
 
 function EditPricesForm() {
   const { VITE_API_BASE_URL } = import.meta.env;
   const [prices, setPrices] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [isUpdating, setIsUpdating] = useState(false);
+  const dispatch = useContext(AppraisalsDispatchContext)
   const [alert, setAlert] = useState({ show: false, message: "", variant: "" })
 
 
@@ -71,7 +72,7 @@ function EditPricesForm() {
       return;
     }
 
-    setIsUpdating(true);
+    dispatch({ type: 'SET_IS_LOADING', value: true });
 
     try {
       const response = await fetch(`${VITE_API_BASE_URL}/square-meter-prices`, {
@@ -103,7 +104,7 @@ function EditPricesForm() {
         variant: "danger"
       })
     } finally {
-      setIsUpdating(false);
+      dispatch({ type: 'SET_IS_LOADING', value: false });
     }
   };
 
@@ -177,7 +178,6 @@ function EditPricesForm() {
         </div>
       </div>
       <LoadingButton
-        isLoading={isUpdating}
         loadingMessage="Actualizando Precios"
         text="Actualizar Precios"
       />

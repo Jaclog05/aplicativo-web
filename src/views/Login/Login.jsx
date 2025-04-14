@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import LoadingButton from "../../components/LoadingButton";
 import Alert from "react-bootstrap/Alert";
 import MainIcon from "../../components/MainIcon";
+import { AppraisalsDispatchContext } from "../../appraisalContext";
 
 const { VITE_API_BASE_URL } = import.meta.env;
 
@@ -10,13 +11,13 @@ function Login() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
+  const dispatch = useContext(AppraisalsDispatchContext)
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-    setIsLoading(true);
+    dispatch({ type: 'SET_IS_LOADING', value: true });
     try {
       const response = await fetch(`${VITE_API_BASE_URL}/login`, {
         method: "POST",
@@ -38,7 +39,7 @@ function Login() {
     } catch (error) {
       setError(error.message);
     } finally {
-      setIsLoading(false);
+      dispatch({ type: 'SET_IS_LOADING', value: false });
     }
   };
 
@@ -77,7 +78,6 @@ function Login() {
           required
         />
         <LoadingButton
-          isLoading={isLoading}
           loadingMessage="Ingresando"
           text="Iniciar Sesión"
         />
