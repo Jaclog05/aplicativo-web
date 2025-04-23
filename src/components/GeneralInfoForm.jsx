@@ -1,30 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Map from "./map/Map";
 import SearchBar from "./searchBar/SearchBar";
 import LoadingButton from "./LoadingButton";
+import { useGeneralInfoForm } from "../hooks/useGeneralInfoForm";
 
 function GeneralInfoForm({ onContinue }) {
 
-  const [coordinates, setCoordinates] = useState(null);
-  const [status, setStatus] = useState("");
-  const [areaDisplay, setAreaDisplay] = useState("");
-  const [rawArea, setRawArea] = useState("");
-  const [priceDisplay, setPriceDisplay] = useState("");
-  const [rawPrice, setRawPrice] = useState("");
-
-  const handleAreaChange = (e) => {
-    const value = e.target.value.replace(/\D/g, "");
-    const numValue = parseInt(value || 0, 10);
-    setRawArea(numValue)
-    setAreaDisplay(numValue.toLocaleString("es-CO"))
-  }
-
-  const handlePriceChange = (e) => {
-    const value = e.target.value.replace(/\D/g, "");
-    const numValue = parseInt(value || 0, 10);
-    setRawPrice(numValue);
-    setPriceDisplay(numValue.toLocaleString("es-CO"));
-  };
+  const { formData, handleFieldChange, handleNumberFieldChange, setField } = useGeneralInfoForm();
 
   return (
     <form className="container p-2 h-100" onSubmit={onContinue}>
@@ -54,9 +36,7 @@ function GeneralInfoForm({ onContinue }) {
               />
             </div>
             <div className="col-md-6">
-              <SearchBar
-                onAddressSelected={(coords) => setCoordinates(coords)}
-              />
+              <SearchBar onAddressSelected={setField('coordinates')} />
             </div>
             <div className="col-md-6">
               <select
@@ -101,8 +81,8 @@ function GeneralInfoForm({ onContinue }) {
               <select
                 className="form-select bg-light border border-1 border-secondary placeholder-text-dark"
                 name="status"
-                value={status}
-                onChange={(e) => setStatus(e.target.value)}
+                value={formData.status}
+                onChange={handleFieldChange('status')}
               >
                 <option value="" disabled>
                   Estado de la Vivienda*
@@ -115,14 +95,14 @@ function GeneralInfoForm({ onContinue }) {
               <input
                 type="hidden"
                 name="area"
-                value={rawArea}
+                value={formData.rawArea}
               />
               <input
                 type="text"
                 placeholder="Area (m2)*"
                 className="form-control bg-light border border-1 border-secondary placeholder-text-dark"
-                value={areaDisplay}
-                onChange={handleAreaChange}
+                value={formData.areaDisplay}
+                onChange={handleNumberFieldChange('rawArea', 'areaDisplay')}
                 required
               />
             </div>
@@ -130,18 +110,18 @@ function GeneralInfoForm({ onContinue }) {
               <input
                 type="hidden"
                 name="price"
-                value={rawPrice}
+                value={formData.rawPrice}
               />
               <input
                 type="text"
                 placeholder="Precio (COP)*"
                 className="form-control bg-light border border-1 border-secondary placeholder-text-dark"
-                value={priceDisplay}
-                onChange={handlePriceChange}
+                value={formData.priceDisplay}
+                onChange={handleNumberFieldChange('rawPrice', 'priceDisplay')}
                 required
               />
             </div>
-            {status === "usada" && (
+            {formData.status === "usada" && (
               <div className="col-md-4">
                 <input
                   type="number"
@@ -157,9 +137,7 @@ function GeneralInfoForm({ onContinue }) {
 
         <div className="col-md-4">
           <div className="row g-1 h-100">
-            <Map
-              coordinates={coordinates}
-            />
+            <Map coordinates={formData.coordinates} />
             <div className="w-100">
               <LoadingButton
                 loadingMessage="Cargando Preguntas"
