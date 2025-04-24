@@ -2,7 +2,9 @@ import React from "react";
 import InfoIcon from "../../assets/info-icon.svg";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
-function InfoBar({ indicator, subgroup, parameter, explanation }) {
+function InfoBar({ currentQuestion }) {
+
+  const { indicator, subgroup, parameter, explanation } = currentQuestion;
 
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip-2" {...props}>
