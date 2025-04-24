@@ -1,13 +1,14 @@
-import React, { useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import PdfReport from "./pdfReport/PdfReport";
-import { AppraisalsContext } from "../appraisalContext";
+import { AppraisalsContext, AppraisalsDispatchContext } from "../appraisalContext";
 import { useSubmitAppraisal } from "../hooks/useSubmitAppraisal";
 import { formatCurrency } from "../utils/formatCurrency";
 
-function ResultsForm({ onReset }) {
+function ResultsForm() {
 
   const {appraisal, generalInfo, squareMeterPrice, mapImageUrl, zipCode} = useContext(AppraisalsContext)
+  const dispatch = useContext(AppraisalsDispatchContext)
 
   useSubmitAppraisal();
 
@@ -38,7 +39,10 @@ function ResultsForm({ onReset }) {
         >
           {({ loading }) => (loading ? "Generando..." : "Descargar Informe")}
         </PDFDownloadLink>
-        <button onClick={onReset} className="btn btn-success text-secondary shadow">
+        <button
+          onClick={() => dispatch({ type: "RESET" })}
+          className="btn btn-success text-secondary shadow"
+        >
           Nuevo Avalúo
         </button>
       </div>

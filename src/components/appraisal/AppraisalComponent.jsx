@@ -2,19 +2,15 @@ import React, { useContext } from "react";
 import GeneralInfoForm from "../GeneralInfoForm";
 import GuidingQuestionsForm from "../GuidingQuestionsForm";
 import ResultsForm from "../ResultsForm";
-import { AppraisalsContext, AppraisalsDispatchContext } from "../../appraisalContext";
-import { useGeneralInfoSubmit } from "../../hooks/useGeneralInfoSubmit";
+import { AppraisalsContext } from "../../appraisalContext";
 import { STEPS_CONFIG } from "../../constants/stepsConfig";
 
 function AppraisalComponent() {
 
   const appraisalState = useContext(AppraisalsContext)
-  const dispatch = useContext(AppraisalsDispatchContext)
 
   const { step } = appraisalState;
   const currentStep = STEPS_CONFIG[step - 1];
-
-  const handleGeneralInfoSubmit = useGeneralInfoSubmit(dispatch)
 
   return (
     <div id="appraisal_section" className="px-5 pb-4 mb-md-5 d-flex flex-column bg-primary text-dark">
@@ -26,22 +22,9 @@ function AppraisalComponent() {
       </div>
       <hr className="mt-0 text-secondary"/>
       <div className="py-2">
-        {step == 1 && (
-          <GeneralInfoForm onContinue={(e) => { handleGeneralInfoSubmit(e) }} />
-        )}
-        {step == 2 && (
-          <GuidingQuestionsForm
-            onContinue={() => {
-              dispatch({ type: "SET_APPRAISAL" });
-              dispatch({ type: "NEXT_STEP" });
-            }}
-          />
-        )}
-        {step == 3 && (
-          <ResultsForm
-            onReset={() => dispatch({ type: "RESET" })}
-          />
-        )}
+        { step == 1 && <GeneralInfoForm /> }
+        { step == 2 && <GuidingQuestionsForm /> }
+        { step == 3 && <ResultsForm /> }
       </div>
     </div>
   );

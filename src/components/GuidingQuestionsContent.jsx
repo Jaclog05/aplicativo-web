@@ -5,7 +5,7 @@ import InfoBar from './infoBar/InfoBar';
 import OptionButton from './optionButton/OptionButton';
 import { AppraisalsContext, AppraisalsDispatchContext } from '../appraisalContext';
 
-function GuidingQuestionsContent({ onContinue }) {
+function GuidingQuestionsContent() {
 
   const { answers, currentIndex, questions } = useContext(AppraisalsContext);
   const dispatch = useContext(AppraisalsDispatchContext)
@@ -30,7 +30,10 @@ function GuidingQuestionsContent({ onContinue }) {
       />
       <form
         className="my-4 row"
-        onSubmit={onContinue}
+        onSubmit={() => {
+          dispatch({ type: "SET_APPRAISAL" });
+          dispatch({ type: "NEXT_STEP" });
+        }}
       >
         <div className="col-md-8 d-flex flex-column justify-content-center gap-2 text-black">
           <p className="h5 p-2">

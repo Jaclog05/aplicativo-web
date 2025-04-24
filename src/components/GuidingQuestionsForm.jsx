@@ -4,7 +4,7 @@ import GuidingQuestionsContent from "./GuidingQuestionsContent";
 import { AppraisalsContext } from "../appraisalContext";
 import { useInitializeGuidingQuestions } from "../hooks/useInitializeGuidingQuestions";
 
-function GuidingQuestionsForm({ onContinue }) {
+function GuidingQuestionsForm() {
 
   const { questions } = useContext(AppraisalsContext)
 
@@ -17,7 +17,7 @@ function GuidingQuestionsForm({ onContinue }) {
       {
         loading ?
           <SpinnerLoader /> :
-          <GuidingQuestionsContent onContinue={onContinue} />
+          <GuidingQuestionsContent />
       }
     </div>
   );

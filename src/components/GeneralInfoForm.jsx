@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import Map from "./map/Map";
 import SearchBar from "./searchBar/SearchBar";
 import LoadingButton from "./LoadingButton";
 import { useGeneralInfoForm } from "../hooks/useGeneralInfoForm";
+import { useGeneralInfoSubmit } from "../hooks/useGeneralInfoSubmit"
+import { AppraisalsDispatchContext } from "../appraisalContext";
 
-function GeneralInfoForm({ onContinue }) {
+function GeneralInfoForm() {
+
+  const dispatch = useContext(AppraisalsDispatchContext)
 
   const { formData, handleFieldChange, handleNumberFieldChange, setField } = useGeneralInfoForm();
+  const handleGeneralInfoSubmit = useGeneralInfoSubmit(dispatch)
 
   return (
-    <form className="container p-2 h-100" onSubmit={onContinue}>
+    <form className="container p-2 h-100" onSubmit={(e) => handleGeneralInfoSubmit(e) }>
       <div className="row h-100">
         <div className="col-md-8 mb-2">
           <div className="row h-100 mb-5">
