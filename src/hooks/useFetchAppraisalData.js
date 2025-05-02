@@ -18,7 +18,7 @@ export const useFetchAppraisalData = (dispatch) => {
     try {
       const res = await fetch(url);
       const data = await res.json()
-      dispatch({ type: 'SET_QUESTIONS', value: data.slice(0, 3) })
+      dispatch({ type: 'SET_QUESTIONS', value: data })
     } catch (error) {
       console.error('Error al obtener las preguntas orientadoras', error);
     } finally {

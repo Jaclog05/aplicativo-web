@@ -1,4 +1,4 @@
-export const initialState = {
+/* export const initialState = {
   step: 1,
   currentIndex: 0,
   answers: {},
@@ -9,7 +9,31 @@ export const initialState = {
   mapImageUrl: null,
   zipCode: 0,
   isLoading: false
-};
+}; */
+
+export const initialState = {
+  "step": 2,
+  "currentIndex": 0,
+  "answers": "{}",
+  "generalInfo": {
+    "username": "Roberto Martinez",
+    "email": "roberto@gmail.com",
+    "address": "Carrera 27 50,Barranquilla, Atlántico, Colombia",
+    "stratum": "3",
+    "type": "multifamiliar",
+    "houseReference": "252525",
+    "status": "usada",
+    "area": "180",
+    "price": "250000000",
+    "years": "4"
+  },
+  "questions": [],
+  "appraisal": 0,
+  "squareMeterPrice": 3750000,
+  "mapImageUrl": "https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-s-l+000(-74.7943,10.971201)/-74.7943,10.971201,14/500x300?access_token=pk.eyJ1IjoiamFpZGVyNyIsImEiOiJjbThxanBoZXowZDF0Mm1xMTR1dGNnendwIn0.Gkx1gV9RihoP8JhxFp6T1Q",
+  "zipCode": "080012",
+  "isLoading": false
+}
 
 const calculateQualityScore = (answers) => {
   return parseFloat(
