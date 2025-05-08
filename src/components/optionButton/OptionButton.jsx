@@ -6,27 +6,31 @@ function OptionButton({ option, value, currentIndex, isSelected }) {
   const dispatch = useContext(AppraisalsDispatchContext);
 
   function showIcon(option) {
-    if (option == "Si" || option == "Bueno" || option == "Es agradable") {
+    if (option == "Si" || option == "Bueno" || option == "Buena" || option == "Es agradable") {
       return (
         <i
           className="bi bi-hand-thumbs-up-fill"
           style={{fontSize: '3rem', color: isSelected? "#ddeedf" : "#5c715e"}}
         ></i>
       );
-    } else if (option == "No" || option == "Malo" || option == "No me agrada") {
+    } else if (option == "No" || option == "Malo" || option == "Deficiente" || option == "No me agrada") {
       return (
         <i
           className="bi bi-hand-thumbs-down-fill"
           style={{fontSize: '3rem', color: isSelected ? "#ddeedf" :"#5c715e"}}
         ></i>
       );
-    } else {
+    } else if (option == "Regular" || option == "No es agradable ni desagradable"){
       return (
         <i
           className="bi bi-emoji-neutral-fill"
           style={{fontSize: '3rem', color: isSelected ? "#ddeedf" :"#5c715e"}}
         ></i>
       );
+    } else {
+      return (
+        <i></i>
+      )
     }
   }
   return (
