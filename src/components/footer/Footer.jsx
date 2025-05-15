@@ -1,5 +1,8 @@
 import React from "react";
 import MainIcon from "../MainIcon";
+import LogoIgac from "../../assets/LogoIgac.jpg";
+import LogoMinciencias from "../../assets/logoMinciencias.png"
+import LogoUniatlantico from "../../assets/LogoUniatlantico.png"
 
 function Footer() {
   return (
@@ -30,7 +33,7 @@ function Footer() {
 
         <div className="col-md-4 text-md-start text-center">
           <p className="fw-bold mb-1 text-dark">Enlaces de interés</p>
-          <ul className="list-unstyled">
+          <ul className="list-unstyled d-flex mb-0 gap-2">
             <li>
               <a
                 href="https://minciencias.gov.co/"
@@ -38,7 +41,7 @@ function Footer() {
                 rel="noopener noreferrer"
                 className="text-primary text-decoration-none text-white"
               >
-                Minciencias
+                <img src={LogoMinciencias} alt="logo_minciencias" width="30" height="30"/>
               </a>
             </li>
             <li>
@@ -48,7 +51,7 @@ function Footer() {
                 rel="noopener noreferrer"
                 className="text-primary text-decoration-none text-white"
               >
-                Universidad del Atlántico
+                <img src={LogoUniatlantico} alt="logo_uniatlantico" width="30" height="30"/>
               </a>
             </li>
             <li>
@@ -58,7 +61,7 @@ function Footer() {
                 rel="noopener noreferrer"
                 className="text-primary text-decoration-none text-white"
               >
-                IGAC
+                <img src={LogoIgac} alt="logo_igac" width="30" height="30"/>
               </a>
             </li>
           </ul>
