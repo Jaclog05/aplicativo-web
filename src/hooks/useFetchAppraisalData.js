@@ -13,18 +13,5 @@ export const useFetchAppraisalData = (dispatch) => {
     }
   };
 
-  const fetchQuestions = async (url) => {
-    dispatch({ type: 'SET_IS_LOADING', value: true });
-    try {
-      const res = await fetch(url);
-      const data = await res.json()
-      dispatch({ type: 'SET_QUESTIONS', value: data })
-    } catch (error) {
-      console.error('Error al obtener las preguntas orientadoras', error);
-    } finally {
-      dispatch({ type: 'SET_IS_LOADING', value: false });
-    }
-  }
-
-  return { fetchSquareMeterPrice, fetchQuestions }
+  return { fetchSquareMeterPrice }
 }
