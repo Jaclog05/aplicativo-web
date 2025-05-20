@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import { AppraisalsDispatchContext } from "../../appraisalContext";
 
-function OptionButton({ option, value, currentIndex, isSelected }) {
+function OptionButton({ option, value, currentIndex, parameterType, isSelected }) {
 
   const dispatch = useContext(AppraisalsDispatchContext);
 
@@ -43,7 +43,12 @@ function OptionButton({ option, value, currentIndex, isSelected }) {
         type="button"
         key={option}
         value={value}
-        onClick={() => dispatch({ type: "SET_ANSWER", index: currentIndex, answer: value })}
+        onClick={() => dispatch({
+          type: "SET_ANSWER",
+          index: currentIndex,
+          value: value,
+          parameterType: parameterType
+        })}
       >
         {showIcon(option)}
         {option}

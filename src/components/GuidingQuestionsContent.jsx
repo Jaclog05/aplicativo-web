@@ -12,10 +12,10 @@ function GuidingQuestionsContent() {
 
   const currentQuestion = questions[currentIndex]
 
-  const { id, question, options } = currentQuestion;
+  const { id, question, options, parameterType } = currentQuestion;
 
   const questionsLength = questions.length;
-  const selectedAnswer = answers[currentIndex];
+  const selectedAnswer = answers[currentIndex]?.value;
 
   const allAnswered = Object.keys(answers).length === questionsLength
 
@@ -45,6 +45,7 @@ function GuidingQuestionsContent() {
                 key={option}
                 option={option}
                 value={value}
+                parameterType={parameterType}
                 isSelected={selectedAnswer === value}
                 currentIndex={currentIndex}
               />

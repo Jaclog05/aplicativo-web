@@ -6,9 +6,15 @@ import { useSubmitAppraisal } from "../hooks/useSubmitAppraisal";
 import { formatCurrency } from "../utils/formatCurrency";
 
 function ResultsForm() {
-
-  const {appraisal, generalInfo, squareMeterPrice, mapImageUrl, zipCode} = useContext(AppraisalsContext)
-  const dispatch = useContext(AppraisalsDispatchContext)
+  const {
+    appraisal,
+    generalInfo,
+    squareMeterPrice,
+    mapImageUrl,
+    zipCode,
+    appraisalWithDeprecation,
+  } = useContext(AppraisalsContext);
+  const dispatch = useContext(AppraisalsDispatchContext);
 
   useSubmitAppraisal();
 
@@ -16,13 +22,13 @@ function ResultsForm() {
     <form className="d-flex flex-column justify-content-around align-items-stretch text-center">
       <p className="fs-4">
         El precio de venta para la propiedad ubicada en
-        <br/>
-        <strong className="fst-italic fs-3" >{ generalInfo.address }</strong>
+        <br />
+        <strong className="fst-italic fs-3">{generalInfo.address}</strong>
         <br />
         tiene un precio estimado de
         <br />
       </p>
-      <p className="fs-1">$ {formatCurrency(appraisal)}</p>
+      <p className="fs-1">$ {formatCurrency(appraisalWithDeprecation)}</p>
       <div className="d-flex flex-column align-items-md-center gap-2">
         <PDFDownloadLink
           document={
