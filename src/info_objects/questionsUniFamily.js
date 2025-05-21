@@ -219,7 +219,7 @@ export const questionsUniFamilyArray = [
     "question": "¿Tu lugar de trabajo se encuentra a un máximo de 15 minutos de distancia de la vivienda? (Independientemente de tu medio de transporte)",
     "options": {
       "No": 0,
-      "Si": 0
+      "Si": 1
     },
     "parameterType": "Plus"
   },
@@ -231,9 +231,9 @@ export const questionsUniFamilyArray = [
     "explanation": "Contexto de la vivienda analizado desde una escala barrial. Es todo lo que rodea la obra arquitectónica (unidad residencial) y la afecta directamente en una distancia aproximada de 500 metros a la redonda. ",
     "question": "¿Qué percibes del barrio donde se encuentra la vivienda?",
     "options": {
-      "Es agradable": 0,
+      "Es agradable": 1,
       "No me agrada": 0,
-      "No es agradable ni desagradable": 0
+      "No es agradable ni desagradable": 0.5
     },
     "parameterType": "Plus"
   },
@@ -246,8 +246,8 @@ export const questionsUniFamilyArray = [
     "question": "¿El sector cuenta con algún tipo de vigilancia?",
     "options": {
       "No": 0,
-      "Si": 0,
-      "A veces": 0
+      "Si": 1,
+      "A veces": 0.5
     },
     "parameterType": "Plus"
   },
@@ -398,7 +398,7 @@ export const questionsUniFamilyArray = [
     "question": "¿La  vivienda cuenta con un sistema de automatización como iluminacion inteligente, climatizacion automatizada, seguridad y acceso, persianas y cortinas automatizadas, electrodomesticos y entretenimiento?",
     "options": {
       "No": 0,
-      "Si": 0
+      "Si": 1
     },
     "parameterType": "Plus"
   },

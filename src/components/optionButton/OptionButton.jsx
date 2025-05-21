@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import { AppraisalsDispatchContext } from "../../appraisalContext";
 
-function OptionButton({ option, value, currentIndex, parameterType, isSelected }) {
+function OptionButton({ option, value, currentIndex, parameterType, isSelected, paramName }) {
 
   const dispatch = useContext(AppraisalsDispatchContext);
 
@@ -20,7 +20,7 @@ function OptionButton({ option, value, currentIndex, parameterType, isSelected }
           style={{fontSize: '3rem', color: isSelected ? "#ddeedf" :"#5c715e"}}
         ></i>
       );
-    } else if (option == "Regular" || option == "No es agradable ni desagradable"){
+    } else if (option == "Regular" || option == "No es agradable ni desagradable" || option == "A veces"){
       return (
         <i
           className="bi bi-emoji-neutral-fill"
@@ -39,7 +39,7 @@ function OptionButton({ option, value, currentIndex, parameterType, isSelected }
         className={`shadow d-flex flex-column align-items-center justify-content-center gap-2 btn w-100 py-3 fw-bold
           ${isSelected ? "btn-secondary" : "btn-success"} ${isSelected ? "text-success" : "text-secondary"}`
         }
-        style={{ minHeight: "138px" }}
+        style={{ height: "100%", minWidth: '100px' }}
         type="button"
         key={option}
         value={value}
@@ -47,7 +47,8 @@ function OptionButton({ option, value, currentIndex, parameterType, isSelected }
           type: "SET_ANSWER",
           index: currentIndex,
           value: value,
-          parameterType: parameterType
+          parameterType: parameterType,
+          paramName: paramName,
         })}
       >
         {showIcon(option)}

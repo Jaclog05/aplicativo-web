@@ -35,7 +35,7 @@ function GuidingQuestionsContent() {
           dispatch({ type: "NEXT_STEP" });
         }}
       >
-        <div className="col-md-8 d-flex flex-column justify-content-center gap-2 text-black">
+        <div className="col-md-9 d-flex flex-column justify-content-center gap-2 text-black">
           <p className="h5 p-2">
             {id}. {question}
           </p>
@@ -48,12 +48,13 @@ function GuidingQuestionsContent() {
                 parameterType={parameterType}
                 isSelected={selectedAnswer === value}
                 currentIndex={currentIndex}
+                paramName={currentQuestion.parameter}
               />
             ))}
           </div>
         </div>
 
-        <div className="text-center my-3 col-md-4">
+        <div className="text-center my-3 col-md-3">
           <img
             src={genericImage}
             alt="generic Image"

@@ -12,6 +12,7 @@ export const initialState = {
   zipCode: 0,
   isLoading: false,
   fittoValue: 0,
+  plusParams: [],
   appraisalWithDeprecation: 0
 };
 
@@ -34,6 +35,9 @@ const getFittoPercentage = (age, depreciationClass) => {
   return row[depreciationClass];
 }
 
+const filterPlusParameters = (answers) => {
+  return Object.values(answers).filter(answer => answer.parameterType === "Plus" && answer.value !== 0)
+}
 
 const getDepreciationClass = (score) => {
   if (score >= 91 && score <= 100) return '1';
@@ -72,6 +76,7 @@ export function appraisalReducer(state, action) {
         answers: {
           ...state.answers,
           [action.index]: {
+            paramName: action.paramName,
             parameterType: action.parameterType,
             value: action.value
           }
@@ -81,11 +86,12 @@ export function appraisalReducer(state, action) {
       const qualityScore = calculateQualityScore(state.answers)
       const depreciationScore = calculateDepreciationScore(state.answers)
       const depreciationClass = getDepreciationClass(depreciationScore)
+      const plusParams = filterPlusParameters(state.answers)
       const fittoValue = getFittoPercentage(state.generalInfo.years, depreciationClass);
 
       const appraisalValue = calculateAppraisal(qualityScore, state.squareMeterPrice, state.generalInfo.area, fittoValue)
       const appraisalWithDeprecation = calculateAppraisalWithDepreciation(appraisalValue, fittoValue)
-      return { ...state, appraisal: appraisalValue, fittoValue, appraisalWithDeprecation };
+      return { ...state, appraisal: appraisalValue, fittoValue, plusParams, appraisalWithDeprecation };
     case 'SET_SQUARE_METER_PRICE':
       return { ...state, squareMeterPrice: action.value }
     case 'RESET':

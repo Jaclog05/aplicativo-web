@@ -7,12 +7,12 @@ import { formatCurrency } from "../utils/formatCurrency";
 
 function ResultsForm() {
   const {
-    appraisal,
     generalInfo,
     squareMeterPrice,
     mapImageUrl,
     zipCode,
     appraisalWithDeprecation,
+    plusParams,
   } = useContext(AppraisalsContext);
   const dispatch = useContext(AppraisalsDispatchContext);
 
@@ -34,10 +34,11 @@ function ResultsForm() {
           document={
             <PdfReport
               data={generalInfo}
-              appraisal={appraisal}
+              appraisal={appraisalWithDeprecation}
               sqMeterPrice={squareMeterPrice}
               mapImageUrl={mapImageUrl}
               zipCode={zipCode}
+              plusParams={plusParams}
             />
           }
           fileName={`Reporte_Avaluo_${generalInfo.username}.pdf`}
