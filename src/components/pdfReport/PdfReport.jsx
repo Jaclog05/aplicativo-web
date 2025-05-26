@@ -18,7 +18,7 @@ function PdfReport({data, appraisal, sqMeterPrice, mapImageUrl, zipCode, plusPar
     row: { flexDirection: 'row', alignItems: 'stretch' },
     rowBetween: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 5 },
     image: { width: 200, height: 200, marginTop: 10, borderRadius: 5 },
-    star: { fontSize: 14, color: '#EFB810', marginLeft: 4, marginVertical: 'auto' }
+    star: { fontSize: 14, color: '#EFB810', marginRight: 4, marginVertical: 'auto' }
   });
 
   const formatPrice = (price) => new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(price);
@@ -114,14 +114,13 @@ function PdfReport({data, appraisal, sqMeterPrice, mapImageUrl, zipCode, plusPar
                         marginBottom: 5
                       }}
                     >
-                      <Text style={styles.value}> - </Text>
-                      <Text style={styles.value}>{param.paramName}</Text>
                       <Svg width="15" height="15" viewBox="0 0 16 16" style={styles.star}>
                         <Path
                           d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
                           fill="#EFB810"
                         />
                       </Svg>
+                      <Text style={styles.value}>{param.paramName}</Text>
                     </View>
                   ))
                 }

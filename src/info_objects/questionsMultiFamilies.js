@@ -335,7 +335,7 @@ export const questionsMultiFamiliesArray = [
     "subgroup": "Criterios Especificos",
     "parameter": "Mascotas",
     "explanation": "Animal domesticado que convive y acompaña al ser humano.",
-    "question": "¿Cuentas con espacios especificos para sacar a pasear a tu mascota?",
+    "question": "¿Cuenta con espacios destinados para el esparcimiento y uso biológico de las mascotas?",
     "options": {
       "No": 0,
       "Si": 0.02
@@ -595,8 +595,9 @@ export const questionsMultiFamiliesArray = [
     "explanation": "Va ligado al término ergonomía, siendo la disciplina que se encarga de establecer espacios útiles de acuerdo a las características físicas y psicológicas en este caso del ser humano en la vivienda.",
     "question": "¿Los mobiliarios fijos interfieren con la circulación o el desarrollo de otra actividad? (Aparatos sanitarios, puertas y ventanas, entre otros)",
     "options": {
-      "No": 0,
-      "Si": 0.04
+      "Si": 0.04,
+      "Algunos": 0.02,
+      "No": 0
     },
     "parameterType": "Regular"
   },
@@ -608,8 +609,9 @@ export const questionsMultiFamiliesArray = [
     "explanation": "El término flexibilidad está ligado a qué tan maleables son los espacios de la vivienda, de manera que nos permitan jugar y/o variar la posición de los mobiliarios. ",
     "question": "¿Los diferentes espacios de la vivienda le permiten cambiar la posición de los mobiliarios?",
     "options": {
-      "No": 0,
-      "Si": 0.04
+      "Si": 0.04,
+      "Algunos": 0.02,
+      "No": 0
     },
     "parameterType": "Regular"
   },
@@ -702,7 +704,7 @@ export const questionsMultiFamiliesArray = [
     "subgroup": "Solidez",
     "parameter": "Mantenimiento/Patologias",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
-    "question": "¿El techo tiene filtraciones o daños?",
+    "question": "La cubierta tiene filtraciones o daños?",
     "options": {
       "No hay filtraciones, el techo está en perfecto estado": 20,
       "Hay manchas pequeñas en el techo, pero no gotea": 15,
@@ -805,7 +807,7 @@ export const questionsMultiFamiliesArray = [
     "subgroup": "Sostenibilidad",
     "parameter": "Sostenibilidad Ambiental",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
-    "question": "¿Posee un techo verde o jardin vertical, que contriya a la reduccion de el calor y la mejora de la calidad del aire?",
+    "question": "¿Posee un techo verde o jardin vertical, que contribuya a la reducción de el calor y la mejora de la calidad del aire?",
     "options": {
       "No": 0,
       "Si": 0.008

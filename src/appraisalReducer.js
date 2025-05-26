@@ -12,6 +12,9 @@ export const initialState = {
   zipCode: 0,
   isLoading: false,
   fittoValue: 0,
+  qualityScore: 0,
+  depreciationScore: 0,
+  depreciationClass: '',
   plusParams: [],
   appraisalWithDeprecation: 0
 };
@@ -20,7 +23,7 @@ const calculateQualityScore = (answers) => {
   const total = Object.values(answers)
     .filter(answer => answer.parameterType === 'Regular')
     .reduce((acc, answer) => acc + answer.value, 0);
-  return parseFloat(total.toFixed(2));
+  return parseFloat(total.toFixed(5));
 }
 
 const calculateDepreciationScore = (answers) => {
@@ -91,7 +94,7 @@ export function appraisalReducer(state, action) {
 
       const appraisalValue = calculateAppraisal(qualityScore, state.squareMeterPrice, state.generalInfo.area, fittoValue)
       const appraisalWithDeprecation = calculateAppraisalWithDepreciation(appraisalValue, fittoValue)
-      return { ...state, appraisal: appraisalValue, fittoValue, plusParams, appraisalWithDeprecation };
+      return { ...state, appraisal: appraisalValue, fittoValue, plusParams, qualityScore, depreciationScore, depreciationClass, appraisalWithDeprecation };
     case 'SET_SQUARE_METER_PRICE':
       return { ...state, squareMeterPrice: action.value }
     case 'RESET':
