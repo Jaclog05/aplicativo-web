@@ -33,7 +33,7 @@ function Footer() {
 
         <div className="col-md-4 text-md-start text-center">
           <p className="fw-bold mb-1 text-dark">Enlaces de interés</p>
-          <ul className="list-unstyled d-flex mb-0 gap-2">
+          <ul className="list-unstyled d-flex justify-content-center justify-content-md-start mb-0 gap-2">
             <li>
               <a
                 href="https://minciencias.gov.co/"

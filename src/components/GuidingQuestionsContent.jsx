@@ -19,6 +19,8 @@ function GuidingQuestionsContent() {
 
   const allAnswered = Object.keys(answers).length === questionsLength
 
+  const useFlex = Object.entries(options).length < 4;
+
   return (
     <>
       <ProgressBarComponent
@@ -39,7 +41,7 @@ function GuidingQuestionsContent() {
           <p className="h5 p-2">
             {id}. {question}
           </p>
-          <div className="row-12 d-md-flex gap-2 px-3">
+          <div className={`row-12 ${useFlex ? 'd-md-flex' : ''} gap-2 px-3`}>
             {Object.entries(options).map(([option, value]) => (
               <OptionButton
                 key={option}
