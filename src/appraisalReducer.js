@@ -69,6 +69,8 @@ export function appraisalReducer(state, action) {
       return { ...state, step: state.step + 1 };
     case 'SET_QUESTIONS':
       return { ...state, questions: action.value }
+    case 'PREV_QUESTION':
+      return { ...state, currentIndex: Math.min(state.currentIndex - 1, state.questions.length - 1) };
     case 'NEXT_QUESTION':
       return { ...state, currentIndex: Math.min(state.currentIndex + 1, state.questions.length - 1) };
     case 'POST_GENERAL_INFO':

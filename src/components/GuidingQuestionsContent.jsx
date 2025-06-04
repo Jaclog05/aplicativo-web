@@ -11,13 +11,16 @@ function GuidingQuestionsContent() {
   const dispatch = useContext(AppraisalsDispatchContext)
 
   const currentQuestion = questions[currentIndex]
-
   const { id, question, options, parameterType } = currentQuestion;
 
   const questionsLength = questions.length;
   const selectedAnswer = answers[currentIndex]?.value;
 
+  const isLastQuestion = currentIndex === questionsLength - 1;
   const allAnswered = Object.keys(answers).length === questionsLength
+
+  const showCalculateButton = isLastQuestion && allAnswered;
+  const showNextButton = !showCalculateButton;
 
   const useFlex = Object.entries(options).length < 4;
 
@@ -65,23 +68,30 @@ function GuidingQuestionsContent() {
           />
         </div>
 
-        <div className="col-md-12 d-flex justify-content-md-end p-2">
-          {allAnswered ?
-            (
-              <button type="submit" className="btn btn-secondary col-12 col-md-3">
-                Calcular Avalúo
-              </button>
-            ) : (
-              <button
-                type="button"
-                className="btn btn-secondary col-12 col-md-3"
-                onClick={() => dispatch({ type: "NEXT_QUESTION" })}
-                disabled={selectedAnswer === undefined}
-              >
-                Siguiente
-              </button>
-            )
-          }
+        <div className="col-md-12 d-md-flex gap-2 justify-content-md-end p-2">
+          <button
+            type="button"
+            className="btn btn-light col-12 col-md-2 mb-2"
+            onClick={() => dispatch({ type: "PREV_QUESTION" })}
+            disabled={currentIndex === 0}
+          >
+            Anterior
+          </button>
+          {showCalculateButton && (
+            <button type="submit" className="btn btn-secondary col-12 col-md-3 mb-2">
+              Calcular Avalúo
+            </button>
+          )}
+          {showNextButton && (
+            <button
+              type="button"
+              className="btn btn-light col-12 col-md-2 mb-2"
+              onClick={() => dispatch({ type: "NEXT_QUESTION" })}
+              disabled={selectedAnswer === undefined}
+            >
+              Siguiente
+            </button>
+          )}
         </div>
       </form>
     </>
