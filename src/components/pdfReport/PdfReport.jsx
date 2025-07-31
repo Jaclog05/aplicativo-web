@@ -18,7 +18,9 @@ function PdfReport({data, appraisal, sqMeterPrice, mapImageUrl, zipCode, plusPar
     row: { flexDirection: 'row', alignItems: 'stretch' },
     rowBetween: { flexDirection: 'row', justifyContent: 'space-between', marginBottom: 5 },
     image: { width: 200, height: 200, marginTop: 10, borderRadius: 5 },
-    star: { fontSize: 14, color: '#EFB810', marginRight: 4, marginVertical: 'auto' }
+    star: { fontSize: 14, color: '#EFB810', marginRight: 4, marginVertical: 'auto' },
+    termTitle: { fontSize: 12, fontWeight: 'bold', marginBottom: 6, color: '#000000' },
+    termText: { fontSize: 11, marginBottom: 4, textAlign: 'justify' }
   });
 
   const formatPrice = (price) => new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(price);
@@ -127,6 +129,66 @@ function PdfReport({data, appraisal, sqMeterPrice, mapImageUrl, zipCode, plusPar
               </View>
             )
           }
+        </Page>
+
+        <Page size="A4" style={styles.page}>
+          <View>
+            <Text style={{...styles.title, textAlign: 'center', color: '#000000'}}>Términos y Condiciones de Uso</Text>
+
+            <Text style={styles.termTitle}>1. Finalidad del aplicativo</Text>
+            <Text style={styles.termText}>
+              Este aplicativo web ha sido desarrollado como parte del proyecto de investigación titulado:
+              “Instrumento de medición basado en parámetros de calidad para el cálculo del precio de la
+              vivienda no VIS como propuesta piloto aplicado en la ciudad de Barranquilla”, en el marco
+              de la línea de Dinámicas Inmobiliarias del Instituto Geográfico Agustín Codazzi (IGAC).
+              Su propósito es brindar una estimación referencial del costo aproximado de la vivienda no
+              VIS a partir de parámetros ingresados por el usuario, utilizando una metodología académica
+              que considera factores de calidad, localización y tipología del inmueble.
+            </Text>
+
+            <Text style={styles.termTitle}>2. Carácter no vinculante</Text>
+            <Text style={styles.termText}>
+              Los resultados generados por esta herramienta tienen carácter puramente informativo y estimativo.
+              No constituyen un avalúo oficial ni reemplazan los avalúos realizados por profesionales acreditados.
+              Esta herramienta no está regulada por la Ley 1673 de 2013 ni por el Decreto 556 de 2014, que regulan
+              la actividad del avaluador en Colombia. Tampoco cumple con los estándares exigidos por las Normas
+              Internacionales de Valoración (IVS). Por tanto, sus resultados no tienen validez legal, fiscal,
+              comercial ni judicial.
+            </Text>
+
+            <Text style={styles.termTitle}>3. Limitación de responsabilidad</Text>
+            <Text style={styles.termText}>
+              Los desarrolladores de esta herramienta no asumen responsabilidad por decisiones tomadas a partir
+              de los valores estimados, ni por las posibles diferencias entre los resultados obtenidos y los
+              precios reales del mercado inmobiliario. El uso de la herramienta implica que el usuario acepta
+              plenamente la naturaleza estimativa del resultado y comprende sus limitaciones técnicas y jurídicas.
+            </Text>
+
+            <Text style={styles.termTitle}>4. Propiedad intelectual</Text>
+            <Text style={styles.termText}>
+              La metodología, estructura, textos, elementos visuales y funcionamiento general de este aplicativo
+              son propiedad intelectual del equipo investigador. Está prohibida su reproducción total o parcial
+              sin previa autorización escrita.
+            </Text>
+
+            <Text style={styles.termTitle}>5. Protección de datos personales</Text>
+            <Text style={styles.termText}>
+              La información suministrada por los usuarios (como características del inmueble, ubicación aproximada
+              u otras variables) es recolectada únicamente con fines analíticos y para la generación del resultado
+              estimado. No se solicitarán datos personales sensibles como nombre, documento de identidad o información
+              financiera. Los datos serán tratados bajo los principios de legalidad, seguridad, confidencialidad y
+              finalidad, conforme a la Ley 1581 de 2012 y el Decreto 1377 de 2013, sobre protección de datos personales
+              en Colombia. En ningún caso la información será comercializada ni compartida con terceros sin autorización
+              expresa del usuario.
+            </Text>
+
+            <Text style={styles.termTitle}>6. Aceptación de los términos</Text>
+            <Text style={styles.termText}>
+              El uso de esta herramienta implica la aceptación expresa de estos Términos y Condiciones, así como la
+              comprensión de sus limitaciones y alcance. Si el usuario no está de acuerdo con alguna de estas disposiciones,
+              se recomienda abstenerse de utilizar el aplicativo.
+            </Text>
+          </View>
         </Page>
       </Document>
   )
