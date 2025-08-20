@@ -221,7 +221,8 @@ export const questionsUniFamilyArray = [
       "No": 0,
       "Si": 1
     },
-    "parameterType": "Plus"
+    "parameterType": "Plus",
+    "parameterPlusTitle": "Cercania al lugar de trabajo"
   },
   {
     "id": 18,
@@ -235,7 +236,8 @@ export const questionsUniFamilyArray = [
       "No me agrada": 0,
       "No es agradable ni desagradable": 0.5
     },
-    "parameterType": "Plus"
+    "parameterType": "Plus",
+    "parameterPlusTitle": "Percepción subjetiva del entorno"
   },
   {
     "id": 19,
@@ -249,7 +251,8 @@ export const questionsUniFamilyArray = [
       "Si": 1,
       "A veces": 0.5
     },
-    "parameterType": "Plus"
+    "parameterType": "Plus",
+    "parameterPlusTitle": "Seguridad del sector"
   },
   {
     "id": 20,
@@ -400,7 +403,8 @@ export const questionsUniFamilyArray = [
       "No": 0,
       "Si": 1
     },
-    "parameterType": "Plus"
+    "parameterType": "Plus",
+    "parameterPlusTitle": "Domótica"
   },
   {
     "id": 31,
