@@ -1,5 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react'
 import { HashLink } from "react-router-hash-link";
+import coverImage1 from '/images/cover_image_1.webp';
+import coverImage2 from '/images/cover_image_2.webp';
+import coverImage3 from '/images/cover_image_3.webp';
+import coverImage4 from '/images/cover_image_4.webp';
 
 function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -8,10 +12,10 @@ function HeroSection() {
   const timerRef = useRef(null)
 
   const slides = [
-    'public/images/cover_image_1.webp',
-    'public/images/cover_image_2.webp',
-    'public/images/cover_image_3.webp',
-    'public/images/cover_image_4.webp'
+    coverImage1,
+    coverImage2,
+    coverImage3,
+    coverImage4,
   ];
 
   const resetTimer = () => {
