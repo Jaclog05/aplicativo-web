@@ -53,7 +53,7 @@ function GuidingQuestionsContent() {
                 parameterType={parameterType}
                 isSelected={selectedAnswer === value}
                 currentIndex={currentIndex}
-                paramName={currentQuestion.parameter}
+                paramName={currentQuestion.parameterPlusTitle || currentQuestion.parameter}
               />
             ))}
           </div>
