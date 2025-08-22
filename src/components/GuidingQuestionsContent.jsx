@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import genericImage from '../assets/generic-image.svg';
 import ProgressBarComponent from './progressBar/ProgressBarComponent';
 import InfoBar from './infoBar/InfoBar';
@@ -8,10 +8,11 @@ import { AppraisalsContext, AppraisalsDispatchContext } from '../appraisalContex
 function GuidingQuestionsContent() {
 
   const { answers, currentIndex, questions } = useContext(AppraisalsContext);
-  const dispatch = useContext(AppraisalsDispatchContext)
+  const dispatch = useContext(AppraisalsDispatchContext);
+  const [currentImage, setCurrentImage] = useState(genericImage);
 
   const currentQuestion = questions[currentIndex]
-  const { id, question, options, parameterType } = currentQuestion;
+  const { id, question, options, parameterType, imageId } = currentQuestion;
 
   const questionsLength = questions.length;
   const selectedAnswer = answers[currentIndex]?.value;
@@ -23,6 +24,22 @@ function GuidingQuestionsContent() {
   const showNextButton = !showCalculateButton;
 
   const useFlex = Object.entries(options).length < 4;
+
+  useEffect(() => {
+    const imagePath = `/images/guiding_question_image_${imageId}.webp`;
+
+    const img = new Image();
+    img.src = imagePath;
+
+    img.onload = () => {
+      setCurrentImage(imagePath);
+    };
+
+    img.onerror = () => {
+      setCurrentImage(genericImage);
+    };
+
+  }, [imageId]);
 
   return (
     <>
@@ -40,7 +57,7 @@ function GuidingQuestionsContent() {
           dispatch({ type: "NEXT_STEP" });
         }}
       >
-        <div className="col-md-9 d-flex flex-column justify-content-center gap-2 text-black">
+        <div className="col-md-8 d-flex flex-column justify-content-start gap-2 text-black">
           <p className="h5 p-2">
             {id}. {question}
           </p>
@@ -59,40 +76,44 @@ function GuidingQuestionsContent() {
           </div>
         </div>
 
-        <div className="text-center my-3 col-md-3">
+        <div className="col-md-4 d-flex flex-column justify-content-center align-items-center my-3 my-md-0">
           <img
-            src={genericImage}
-            alt="generic Image"
-            className="img-fluid"
-            style={{ maxWidth: "200px" }}
+            src={currentImage}
+            alt={`Ilustración para la pregunta ${imageId}`}
+            className="img-fluid border border-3 border-secondary rounded-3"
+            style={{ maxWidth: "250px" }}
+            onError={(e) => {
+              e.target.src = genericImage
+            }}
           />
-        </div>
 
-        <div className="col-md-12 d-md-flex gap-2 justify-content-md-end p-2">
-          <button
-            type="button"
-            className="btn btn-light col-12 col-md-2 mb-2"
-            onClick={() => dispatch({ type: "PREV_QUESTION" })}
-            disabled={currentIndex === 0}
-          >
-            Anterior
-          </button>
-          {showCalculateButton && (
-            <button type="submit" className="btn btn-secondary col-12 col-md-3 mb-2">
-              Calcular Avalúo
-            </button>
-          )}
-          {showNextButton && (
+          <div className="m-2 d-flex gap-2 flex-md-row flex-column" style={{width: "250px"}}>
             <button
               type="button"
-              className="btn btn-light col-12 col-md-2 mb-2"
-              onClick={() => dispatch({ type: "NEXT_QUESTION" })}
-              disabled={selectedAnswer === undefined}
+              className="btn btn-light flex-fill"
+              onClick={() => dispatch({ type: "PREV_QUESTION" })}
+              disabled={currentIndex === 0}
             >
-              Siguiente
+              Anterior
             </button>
-          )}
+            {showCalculateButton && (
+              <button type="submit" className="btn btn-secondary">
+                Calcular Avalúo
+              </button>
+            )}
+            {showNextButton && (
+              <button
+                type="button"
+                className="btn btn-light flex-fill"
+                onClick={() => dispatch({ type: "NEXT_QUESTION" })}
+                disabled={selectedAnswer === undefined}
+              >
+                Siguiente
+              </button>
+            )}
+          </div>
         </div>
+
       </form>
     </>
   )

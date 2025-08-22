@@ -11,6 +11,7 @@ export const questionsMultiFamiliesArray = [
       "Bueno": 0.015,
       "Regular": 0.0075
     },
+    "imageId": 1,
     "parameterType": "Regular"
   },
   {
@@ -25,6 +26,7 @@ export const questionsMultiFamiliesArray = [
       "Bueno": 0.015,
       "Regular": 0.0075
     },
+    "imageId": 2,
     "parameterType": "Regular"
   },
   {
@@ -38,6 +40,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.015
     },
+    "imageId": 3,
     "parameterType": "Regular"
   },
   {
@@ -51,6 +54,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.015
     },
+    "imageId": 4,
     "parameterType": "Regular"
   },
   {
@@ -64,6 +68,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0.02,
       "Si": 0
     },
+    "imageId": 5,
     "parameterType": "Regular"
   },
   {
@@ -77,6 +82,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0.02,
       "Si": 0
     },
+    "imageId": 6,
     "parameterType": "Regular"
   },
   {
@@ -91,6 +97,7 @@ export const questionsMultiFamiliesArray = [
       "Bajo": 0.02,
       "Medio": 0.01
     },
+    "imageId": 7,
     "parameterType": "Regular"
   },
   {
@@ -104,6 +111,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.02
     },
+    "imageId": 8,
     "parameterType": "Regular"
   },
   {
@@ -117,6 +125,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.02
     },
+    "imageId": 9,
     "parameterType": "Regular"
   },
   {
@@ -130,6 +139,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.003
     },
+    "imageId": 10,
     "parameterType": "Regular"
   },
   {
@@ -143,6 +153,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.003
     },
+    "imageId": 11,
     "parameterType": "Regular"
   },
   {
@@ -156,6 +167,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.003
     },
+    "imageId": 12,
     "parameterType": "Regular"
   },
   {
@@ -169,6 +181,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.003
     },
+    "imageId": 13,
     "parameterType": "Regular"
   },
   {
@@ -182,6 +195,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.003
     },
+    "imageId": 14,
     "parameterType": "Regular"
   },
   {
@@ -195,6 +209,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.003
     },
+    "imageId": 15,
     "parameterType": "Regular"
   },
   {
@@ -208,6 +223,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.003
     },
+    "imageId": 16,
     "parameterType": "Regular"
   },
   {
@@ -221,6 +237,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 1
     },
+    "imageId": 17,
     "parameterType": "Plus",
     "parameterPlusTitle": "Cercania al lugar de trabajo"
   },
@@ -236,6 +253,7 @@ export const questionsMultiFamiliesArray = [
       "No me agrada": 0,
       "No es agradable ni desagradable": 0.5
     },
+    "imageId": 18,
     "parameterType": "Plus",
     "parameterPlusTitle": "Percepción subjetiva del entorno"
   },
@@ -251,6 +269,7 @@ export const questionsMultiFamiliesArray = [
       "Si": 1,
       "A veces": 0.5
     },
+    "imageId": 19,
     "parameterType": "Plus",
     "parameterPlusTitle": "Seguridad del sector"
   },
@@ -265,6 +284,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.02
     },
+    "imageId": 20,
     "parameterType": "Regular"
   },
   {
@@ -278,6 +298,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.012
     },
+    "imageId": 21,
     "parameterType": "Regular"
   },
   {
@@ -291,6 +312,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.012
     },
+    "imageId": 22,
     "parameterType": "Regular"
   },
   {
@@ -304,6 +326,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.012
     },
+    "imageId": 23,
     "parameterType": "Regular"
   },
   {
@@ -317,6 +340,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.012
     },
+    "imageId": 24,
     "parameterType": "Regular"
   },
   {
@@ -330,6 +354,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.012
     },
+    "imageId": 25,
     "parameterType": "Regular"
   },
   {
@@ -343,6 +368,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.02
     },
+    "imageId": 26,
     "parameterType": "Regular"
   },
   {
@@ -357,6 +383,7 @@ export const questionsMultiFamiliesArray = [
       "Bueno": 0.02,
       "Regular": 0.0075
     },
+    "imageId": 27,
     "parameterType": "Regular"
   },
   {
@@ -370,6 +397,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.02
     },
+    "imageId": 28,
     "parameterType": "Regular"
   },
   {
@@ -383,6 +411,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.02
     },
+    "imageId": 29,
     "parameterType": "Regular"
   },
   {
@@ -396,6 +425,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.01
     },
+    "imageId": 30,
     "parameterType": "Regular"
   },
   {
@@ -409,6 +439,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.01
     },
+    "imageId": 31,
     "parameterType": "Regular"
   },
   {
@@ -423,6 +454,7 @@ export const questionsMultiFamiliesArray = [
       "Bueno": 0.02,
       "Regular": 0.01
     },
+    "imageId": 32,
     "parameterType": "Regular"
   },
   {
@@ -437,6 +469,7 @@ export const questionsMultiFamiliesArray = [
       "Bueno": 0.02,
       "Regular": 0.01
     },
+    "imageId": 33,
     "parameterType": "Regular"
   },
   {
@@ -451,6 +484,7 @@ export const questionsMultiFamiliesArray = [
       "Regular": 0.01,
       "Deficiente": 0
     },
+    "imageId": 34,
     "parameterType": "Regular"
   },
   {
@@ -465,6 +499,7 @@ export const questionsMultiFamiliesArray = [
       "Regular": 0.01,
       "Deficiente": 0
     },
+    "imageId": 35,
     "parameterType": "Regular"
   },
   {
@@ -479,6 +514,7 @@ export const questionsMultiFamiliesArray = [
       "Regular": 0.015,
       "Deficiente": 0
     },
+    "imageId": 36,
     "parameterType": "Regular"
   },
   {
@@ -493,6 +529,7 @@ export const questionsMultiFamiliesArray = [
       "Artificial": 0.015,
       "No tiene ventilación": 0
     },
+    "imageId": 37,
     "parameterType": "Regular"
   },
   {
@@ -506,6 +543,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.03
     },
+    "imageId": 38,
     "parameterType": "Regular"
   },
   {
@@ -519,6 +557,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.03
     },
+    "imageId": 39,
     "parameterType": "Regular"
   },
   {
@@ -532,6 +571,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.02
     },
+    "imageId": 40,
     "parameterType": "Regular"
   },
   {
@@ -547,6 +587,7 @@ export const questionsMultiFamiliesArray = [
       "AM Y PM": 0,
       "Ninguno": 0.02
     },
+    "imageId": 41,
     "parameterType": "Regular"
   },
   {
@@ -562,6 +603,7 @@ export const questionsMultiFamiliesArray = [
       "AM Y PM": 0,
       "Ninguno": 0.02
     },
+    "imageId": 42,
     "parameterType": "Regular"
   },
   {
@@ -575,6 +617,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.06
     },
+    "imageId": 43,
     "parameterType": "Regular"
   },
   {
@@ -588,6 +631,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 1
     },
+    "imageId": 44,
     "parameterType": "Plus",
     "parameterPlusTitle": "Domótica"
   },
@@ -603,6 +647,7 @@ export const questionsMultiFamiliesArray = [
       "Algunos": 0.02,
       "No": 0
     },
+    "imageId": 45,
     "parameterType": "Regular"
   },
   {
@@ -617,6 +662,7 @@ export const questionsMultiFamiliesArray = [
       "Algunos": 0.02,
       "No": 0
     },
+    "imageId": 46,
     "parameterType": "Regular"
   },
   {
@@ -630,6 +676,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.0267
     },
+    "imageId": 47,
     "parameterType": "Regular"
   },
   {
@@ -644,6 +691,7 @@ export const questionsMultiFamiliesArray = [
       "Algunos": 0.0135,
       "Ninguno": 0
     },
+    "imageId": 48,
     "parameterType": "Regular"
   },
   {
@@ -657,6 +705,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.0267
     },
+    "imageId": 49,
     "parameterType": "Regular"
   },
   {
@@ -671,6 +720,7 @@ export const questionsMultiFamiliesArray = [
       "Ladrillo o bloque": 0,
       "Concreto/mortero a la vista": 0.02
     },
+    "imageId": 50,
     "parameterType": "Regular"
   },
   {
@@ -684,6 +734,7 @@ export const questionsMultiFamiliesArray = [
       "Baldosas / Cerámica": 0.04,
       "Sin acabado (piso en cemento o plantilla)": 0
     },
+    "imageId": 51,
     "parameterType": "Regular"
   },
   {
@@ -700,6 +751,7 @@ export const questionsMultiFamiliesArray = [
       "Grietas visibles mayores a 3mm o algunas separaciones en muros": 5,
       "Grandes grietas que atraviesan muros o columnas, riesgo estructural": 0
     },
+    "imageId": 52,
     "parameterType": "Depreciation"
   },
   {
@@ -716,6 +768,7 @@ export const questionsMultiFamiliesArray = [
       "Gotea constantemente en varias zonas": 5,
       "El techo está muy deteriorado o tiene riesgo de colapso": 0
     },
+    "imageId": 53,
     "parameterType": "Depreciation"
   },
   {
@@ -732,6 +785,7 @@ export const questionsMultiFamiliesArray = [
       "Muchos pisos o puertas están dañados, hay desgaste evidente": 5,
       "Los acabados están en mal estado o en partes inexistentes": 0,
     },
+    "imageId": 54,
     "parameterType": "Depreciation"
   },
   {
@@ -748,6 +802,7 @@ export const questionsMultiFamiliesArray = [
       "Se dañan frecuentemente, hay fugas o cortocircuitos": 5,
       "Instalaciones en mal estado, fallas graves o tuberías rotas": 0,
     },
+    "imageId": 55,
     "parameterType": "Depreciation"
   },
   {
@@ -764,6 +819,7 @@ export const questionsMultiFamiliesArray = [
       "Se dañan frecuentemente, hay fugas o cortocircuitos": 5,
       "Instalaciones en mal estado, fallas graves o tuberías rotas": 0,
     },
+    "imageId": 56,
     "parameterType": "Depreciation"
   },
   {
@@ -777,6 +833,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.008
     },
+    "imageId": 57,
     "parameterType": "Regular"
   },
   {
@@ -790,6 +847,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.008
     },
+    "imageId": 58,
     "parameterType": "Regular"
   },
   {
@@ -803,6 +861,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.008
     },
+    "imageId": 59,
     "parameterType": "Regular"
   },
   {
@@ -816,6 +875,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.008
     },
+    "imageId": 60,
     "parameterType": "Regular"
   },
   {
@@ -829,6 +889,7 @@ export const questionsMultiFamiliesArray = [
       "No": 0,
       "Si": 0.008
     },
+    "imageId": 61,
     "parameterType": "Regular"
   }
 ];
