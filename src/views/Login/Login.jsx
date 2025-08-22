@@ -60,7 +60,7 @@ function Login() {
         style={{ maxWidth: "400px" }}
         onSubmit={handleSubmit}
       >
-        <MainIcon size="100" className="mx-auto my-1"/>
+        <MainIcon size="120" className="mx-auto my-1"/>
         <input
           type="text"
           placeholder="Ingrese su usuario"

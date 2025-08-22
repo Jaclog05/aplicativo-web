@@ -17,8 +17,8 @@ function NavBar() {
     <nav className="navbar navbar-light bg-secondary d-flex justify-content-between py-0 px-2 shadow">
       <Link to="/" className="navbar-brand p-0 m-0">
         <div className="d-flex align-items-center text-light justify-content-between gap-2 py-2 fs-5">
-          <MainIcon size='2rem' className=""/>
-          <p className="mb-0">Avaluo360</p>
+          <MainIcon size='3rem' className=""/>
+          <p className="mb-0">EVALUARQ</p>
         </div>
       </Link>
       <ul className="navbar-nav">
