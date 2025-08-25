@@ -1,14 +1,21 @@
 import React from "react";
 import InfoIcon from "../../assets/info-icon.svg";
+import QuestionIcon from "../../assets/question-icon.svg";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 function InfoBar({ currentQuestion }) {
 
-  const { indicator, subgroup, parameter, explanation } = currentQuestion;
+  const { indicator, subgroup, parameter, explanation, measurement } = currentQuestion;
 
-  const renderTooltip = (props) => (
+  const renderInfoTooltip = (props) => (
     <Tooltip id="button-tooltip-2" {...props}>
       {explanation}
+    </Tooltip>
+  );
+
+  const renderMeasureTooltip = (props) => (
+    <Tooltip id="button-tooltip-2" {...props}>
+      {measurement}
     </Tooltip>
   );
 
@@ -25,7 +32,7 @@ function InfoBar({ currentQuestion }) {
         <OverlayTrigger
           placement="bottom"
           delay={{ show: 250, hide: 400 }}
-          overlay={renderTooltip}
+          overlay={renderInfoTooltip}
         >
           <img
             src={InfoIcon}
@@ -33,6 +40,19 @@ function InfoBar({ currentQuestion }) {
             className="fill-white mx-1"
             width="20"
             height="20"
+          />
+        </OverlayTrigger>
+        <OverlayTrigger
+          placement="bottom"
+          delay={{ show: 250, hide: 400 }}
+          overlay={renderMeasureTooltip}
+        >
+          <img
+            src={QuestionIcon}
+            alt="info-icon"
+            className="fill-white mx-1"
+            width="18"
+            height="18"
           />
         </OverlayTrigger>
       </div>

@@ -4,6 +4,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Accesibilidad",
     "parameter": "Accesibilidad",
+    "measurement": "Las preguntas orientadoras van enfocadas a conocer el estado (bueno, regular o malo) de las vías vehiculares y peatonales de acceso hasta la entrada principal de la unidad residencial. También la presencia de baldosas podotáctiles y rampas que ayudan al acceso fácil e independiente de las personas con discapacidad.",
     "explanation": "Elementos o espacios que nos permiten acceder a la vivienda, (Vías vehiculares, andenes, escaleras, ascensores, rampas, entre otros).",
     "question": "¿En qué estado se encuentran las vías vehiculares de acceso?",
     "options": {
@@ -19,6 +20,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Accesibilidad",
     "parameter": "Accesibilidad",
+    "measurement": "Las preguntas orientadoras van enfocadas a conocer el estado (bueno, regular o malo) de las vías vehiculares y peatonales de acceso hasta la entrada principal de la unidad residencial. También la presencia de baldosas podotáctiles y rampas que ayudan al acceso fácil e independiente de las personas con discapacidad.",
     "explanation": "Elementos o espacios que nos permiten acceder a la vivienda, (Vías vehiculares, andenes, escaleras, ascensores, rampas, entre otros).",
     "question": "¿En qué estado se encuentran las vías peatonales de acceso?",
     "options": {
@@ -34,6 +36,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Accesibilidad",
     "parameter": "Accesibilidad",
+    "measurement": "Las preguntas orientadoras van enfocadas a conocer el estado (bueno, regular o malo) de las vías vehiculares y peatonales de acceso hasta la entrada principal de la unidad residencial. También la presencia de baldosas podotáctiles y rampas que ayudan al acceso fácil e independiente de las personas con discapacidad.",
     "explanation": "Elementos o espacios que nos permiten acceder a la vivienda, (Vías vehiculares, andenes, escaleras, ascensores, rampas, entre otros).",
     "question": "¿En el espacio público los andenes cuentan con rampas para discapacitados?",
     "options": {
@@ -48,6 +51,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Accesibilidad",
     "parameter": "Accesibilidad",
+    "measurement": "Las preguntas orientadoras van enfocadas a conocer el estado (bueno, regular o malo) de las vías vehiculares y peatonales de acceso hasta la entrada principal de la unidad residencial. También la presence de baldosas podotáctiles y rampas que ayudan al acceso fácil e independiente de las personas con discapacidad.",
     "explanation": "Elementos o espacios que nos permiten acceder a la vivienda, (Vías vehiculares, andenes, escaleras, ascensores, rampas, entre otros).",
     "question": "¿En el espacio público los andenes cuentan con baldosas podotáctiles?",
     "options": {
@@ -62,6 +66,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Accesibilidad",
     "parameter": "Zona de riesgo",
+    "measurement": "Las preguntas orientadoras van enfocadas a conocer si fenómenos naturales (arroyos), industria (emoción de gases) o alto flujo vehicular (contaminación auditiva) afectan directamente a la unidad residencial. En este caso, la presencia de estos factores resulta en la disminución de la calidad. A su vez se toman en cuenta, factores de seguridad como la presencia de rutas de evacuación adecuadas en caso de incendio.",
     "explanation": "Elementos que representen una amenaza en el sitio ya sea que afecten la movilidad, la salud del residente o su seguridad.",
     "question": "A un máximo de 5 manzanas a la redonda de la vivienda ¿se presentan corrientes de agua (arroyos)?",
     "options": {
@@ -76,6 +81,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Accesibilidad",
     "parameter": "Zona de riesgo",
+    "measurement": "Las preguntas orientadoras van enfocadas a conocer si fenómenos naturales (arroyos), industria (emoción de gases) o alto flujo vehicular (contaminación auditiva) afectan directamente a la unidad residencial. En este caso, la presencia de estos factores resulta en la disminución de la calidad. A su vez se toman en cuenta, factores de seguridad como la presence de rutas de evacuación adecuadas en caso de incendio.",
     "explanation": "Elementos que representen una amenaza en el sitio ya sea que afecten la movilidad, la salud del residente o su seguridad.",
     "question": "A un máximo de 5 manzanas a la redonda de la vivienda ¿se encuentran industrias o fábricas que emiten gases nocivos para el medio ambiente?",
     "options": {
@@ -90,6 +96,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Accesibilidad",
     "parameter": "Zona de riesgo",
+    "measurement": "Las preguntas orientadoras van enfocadas a conocer si fenómenos naturales (arroyos), industria (emoción de gases) o alto flujo vehicular (contaminación auditiva) afectan directamente a la unidad residencial. En este caso, la presencia de estos factores resulta en la disminución de la calidad. A su vez se toman en cuenta, factores de seguridad como la presencia de rutas de evacuación adecuadas en caso de incendio.",
     "explanation": "Elementos que representen una amenaza en el sitio ya sea que afecten la movilidad, la salud del residente o su seguridad.",
     "question": "¿Cuál es el nivel de tráfico vehicular en la vía principal más cercana a la vivienda?",
     "options": {
@@ -105,6 +112,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Equipamientos",
     "parameter": "Equipamientos a escala barrial",
+    "measurement": "Este parámetro se enfoca en conocer si a un máximo de 3 manzanas de distancia se encuentra una droguería o un lugar de abastecimiento (tienda) donde los usuarios puedan acceder a ellos rápidamente",
     "explanation": "Espacios o edificaciones de pequeña escala que se deben encontrar en las inmediaciones de la vivienda (Ejemplo: Droguerías, tiendas de barrio, entre otros)",
     "question": "A un máximo de 3 manzanas a la redonda de la vivienda ¿se encuentra un lugar de abastecimiento (tienda de barrio)?",
     "options": {
@@ -119,6 +127,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Equipamientos",
     "parameter": "Equipamientos a escala barrial",
+    "measurement": "Este parámetro se enfoca en conocer si a un máximo de 3 manzanas de distancia se encuentra una droguería o un lugar de abastecimiento (tienda) donde los usuarios puedan acceder a ellos rápidamente",
     "explanation": "Espacios o edificaciones de pequeña escala que se deben encontrar en las inmediaciones de la vivienda (Ejemplo: Droguerías, tiendas de barrio, entre otros)",
     "question": "A un máximo de 3 manzanas a la redonda de la vivienda ¿se encuentra una farmacia/droguería?",
     "options": {
@@ -133,6 +142,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Equipamientos",
     "parameter": "Equipamientos a nivel ciudad",
+    "measurement": "",
     "explanation": "Edificaciones o espacios que cuentan con una mayor cobertura, es decir, que pueden estar mucho más lejanos a la vivienda, pero aún el servicio que ofrecen sigue siendo efectivo (Ejemplo: Centros comerciales, hospitales, plazas, supermercados, parques, entre otros).",
     "question": "A un máximo de 10 manzanas a la redonda de la vivienda ¿se encuentran centros educativos?",
     "options": {
@@ -147,6 +157,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Equipamientos",
     "parameter": "Equipamientos a nivel ciudad",
+    "measurement": "El parámetro va enfocado a conocer si en la localidad existen espacios como plazas y parques, hospitales, supermercados, escuelas o universidades, estaciones de policía o iglesias. A su vez, conocer si la vivienda cuenta con diversas rutas de buses de fácil y rápido acceso (a máximo 3 manzanas)",
     "explanation": "Edificaciones o espacios que cuentan con una mayor cobertura, es decir, que pueden estar mucho más lejanos a la vivienda, pero aún el servicio que ofrecen sigue siendo efectivo (Ejemplo: Centros comerciales, hospitales, plazas, supermercados, parques, entre otros).",
     "question": "A un máximo de 10 manzanas a la redonda de la vivienda ¿se encuentra un supermercado?",
     "options": {
@@ -161,6 +172,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Equipamientos",
     "parameter": "Equipamientos a nivel ciudad",
+    "measurement": "El parámetro va enfocado a conocer si en la localidad existen espacios como plazas y parques, hospitales, supermercados, escuelas o universidades, estaciones de policía o iglesias. A su vez, conocer si la vivienda cuenta con diversas rutas de buses de fácil y rápido acceso (a máximo 3 manzanas)",
     "explanation": "Edificaciones o espacios que cuentan con una mayor cobertura, es decir, que pueden estar mucho más lejanos a la vivienda, pero aún el servicio que ofrecen sigue siendo efectivo (Ejemplo: Centros comerciales, hospitales, plazas, supermercados, parques, entre otros).",
     "question": "A un máximo de 3 manzanas a la redonda de la vivienda ¿transita por lo menos una ruta de bus?",
     "options": {
@@ -175,6 +187,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Equipamientos",
     "parameter": "Equipamientos a nivel ciudad",
+    "measurement": "El parámetro va enfocado a conocer si en la localidad existen espacios como plazas y parques, hospitales, supermercados, escuelas o universidades, estaciones de policía o iglesias. A su vez, conocer si la vivienda cuenta con diversas rutas de buses de fácil y rápido acceso (a máximo 3 manzanas)",
     "explanation": "Edificaciones o espacios que cuentan con una mayor cobertura, es decir, que pueden estar mucho más lejanos a la vivienda, pero aún el servicio que ofrecen sigue siendo efectivo (Ejemplo: Centros comerciales, hospitales, plazas, supermercados, parques, entre otros).",
     "question": "A un máximo de 4 manzanas a la redonda de la vivienda ¿se encuentan parques o plazas?",
     "options": {
@@ -189,6 +202,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Equipamientos",
     "parameter": "Equipamientos a nivel ciudad",
+    "measurement": "El parámetro va enfocado a conocer si en la localidad existen espacios como plazas y parques, hospitales, supermercados, escuelas o universidades, estaciones de policía o iglesias. A su vez, conocer si la vivienda cuenta con diversas rutas de buses de fácil y rápido acceso (a máximo 3 manzanas)",
     "explanation": "Edificaciones o espacios que cuentan con una mayor cobertura, es decir, que pueden estar mucho más lejanos a la vivienda, pero aún el servicio que ofrecen sigue siendo efectivo (Ejemplo: Centros comerciales, hospitales, plazas, supermercados, parques, entre otros).",
     "question": "A un máximo de 10 manzanas a la redonda de la vivienda ¿encuentras un establecimiento donde te brinden asistencia medica?",
     "options": {
@@ -203,6 +217,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Equipamientos",
     "parameter": "Equipamientos a nivel ciudad",
+    "measurement": "El parámetro va enfocado a conocer si en la localidad existen espacios como plazas y parques, hospitales, supermercados, escuelas o universidades, estaciones de policía o iglesias. A su vez, conocer si la vivienda cuenta con diversas rutas de buses de fácil y rápido acceso (a máximo 3 manzanas)",
     "explanation": "Edificaciones o espacios que cuentan con una mayor cobertura, es decir, que pueden estar mucho más lejanos a la vivienda, pero aún el servicio que ofrecen sigue siendo efectivo (Ejemplo: Centros comerciales, hospitales, plazas, supermercados, parques, entre otros).",
     "question": "A un máximo de 10 manzanas a la redonda de la vivienda ¿encuentras una estación o CAI (Comando de Atención Inmediata) de la policia nacional?",
     "options": {
@@ -217,6 +232,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Equipamientos",
     "parameter": "Equipamientos a nivel ciudad",
+    "measurement": "El parámetro va enfocado a conocer si en la localidad existen espacios como plazas y parques, hospitales, supermercados, escuelas o universidades, estaciones de policía o iglesias. A su vez, conocer si la vivienda cuenta con diversas rutas de buses de fácil y rápido acceso (a máximo 3 manzanas)",
     "explanation": "Edificaciones o espacios que cuentan con una mayor cobertura, es decir, que pueden estar mucho más lejanos a la vivienda, pero aún el servicio que ofrecen sigue siendo efectivo (Ejemplo: Centros comerciales, hospitales, plazas, supermercados, parques, entre otros).",
     "question": "A un máximo de 10 manzanas a la redonda de la vivienda ¿encuentras un lugar de culto?",
     "options": {
@@ -231,6 +247,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Preferencias del usuario",
     "parameter": "Trabajo",
+    "measurement": "Este parámetro buscar dar a conocer al usuario la cercanía entre la unidad residencial y su lugar de trabajo y tomarlo como uno de los factores a tener en cuenta a la hora de evaluar las calidad de la vivienda",
     "explanation": "El parámetro se basa en evaluar si la vivienda se encuentra cerca o lejos del lugar de trabajo del usuario. ",
     "question": "¿Tu lugar de trabajo se encuentra a un máximo de 15 minutos de distancia de la vivienda? (Independientemente de tu medio de transporte)",
     "options": {
@@ -246,6 +263,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Percepción del usuario",
     "parameter": "Entorno inmediato",
+    "measurement": "Este parámetro busca tener en cuenta las sensaciones del usuario en el barrio en el que se encuentra la vivienda",
     "explanation": "Contexto de la vivienda analizado desde una escala barrial. Es todo lo que rodea la obra arquitectónica (unidad residencial) y la afecta directamente en una distancia aproximada de 500 metros a la redonda. ",
     "question": "¿Qué percibes del barrio donde se encuentra la vivienda?",
     "options": {
@@ -262,6 +280,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Percepción del usuario",
     "parameter": "Vigilancia del sector",
+    "measurement": "Para evaluar la vigilancia del sector, observa si hay presencia de casetas de seguridad, guardias, cámaras visibles o patrullaje policial durante tus recorridos habituales o en una sola visita. También puedes preguntar a vecinos cercanos si hay vigilancia contratada o comunitaria activa en la zona.",
     "explanation": "Medidas y sistemas implementados para garantizar la seguridad del entorno de la vivienda, tales como vigilancia privada, cámaras de seguridad o patrullaje policial.",
     "question": "¿El sector cuenta con algún tipo de vigilancia?",
     "options": {
@@ -278,6 +297,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Iluminacion natural",
+    "measurement": "Las preguntas orientadoras de esté parámetro van enfocadas a que el usuario lleve su atención hacia la cantidad de luz natural qué hay en los diferentes espacios de la vivienda. Se divide entre las zonas comunes (sala, comedor, cocina, etc.) y la zona privada (habitaciones) ya que cada una requiere una cantidad de iluminación diferente",
     "explanation": "Es aquel recurso natural que incide positivamente en los espacios. Se utiliza con el fin de optimizar la utilización de energías no renovables como la iluminación artificial.",
     "question": "¿Cómo percibes la iluminación natural en las zonas comunes dentro de la vivienda? (Sala, comedor, estudio, cocina, entre otros)",
     "options": {
@@ -293,6 +313,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Iluminacion natural",
+    "measurement": "Las preguntas orientadoras de esté parámetro van enfocadas a que el usuario lleve su atención hacia la cantidad de luz natural qué hay en los diferentes espacios de la vivienda. Se divide entre las zonas comunes (sala, comedor, cocina, etc.) y la zona privada (habitaciones) ya que cada una requiere una cantidad de iluminación diferente",
     "explanation": "Es aquel recurso natural que incide positivamente en los espacios. Se utiliza con el fin de optimizar la utilización de energías no renovables como la iluminación artificial.",
     "question": "¿Cómo percibes la iluminación natural al interior de las habitaciones?",
     "options": {
@@ -308,6 +329,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Ventilación",
+    "measurement": "Se busca que el usuario concentre su atención en el tipo de ventilación que poseen los baños de la unidad o la ausencia de ésta, además del resto de la vivienda.",
     "explanation": "Circulación de partículas de aire al interior de la vivienda (entradas y salidas). Representa una de las principales determinantes del diseño arquitectónico dado que una vivienda mal ventilada puede afectar la salud de quienes la habitan",
     "question": "¿Cómo percibes la ventilación al interior de la vivienda?",
     "options": {
@@ -323,6 +345,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Ventilación",
+    "measurement": "Se busca que el usuario concentre su atención en el tipo de ventilación que poseen los baños de la unidad o la ausencia de ésta, además del resto de la vivienda.",
     "explanation": "Circulación de partículas de aire al interior de la vivienda (entradas y salidas). Representa una de las principales determinantes del diseño arquitectónico dado que una vivienda mal ventilada puede afectar la salud de quienes la habitan",
     "question": "¿Cuentan con ventilación natural o artificial los baños de la vivienda?",
     "options": {
@@ -338,6 +361,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Instalaciones",
+    "measurement": "Este parámetro se enfocó en las instalaciones hidráulicas, con un mínimo de una llave de paso independiente en un punto húmedo (baños y zonas húmedas), e instalaciones eléctricas, con un mínimo de 5 circuitos protegidos por breakers.",
     "explanation": "Sistemas de tipo eléctrico, sanitario, entre otros, que nos posibilitan el acceso a los servicios básicos (electricidad, agua, gas, entre otros).",
     "question": "¿Cuenta con llaves de paso independientes en los puntos húmedos?",
     "options": {
@@ -352,6 +376,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Instalaciones",
+    "measurement": "Este parámetro se enfocó en las instalaciones hidráulicas, con un mínimo de una llave de paso independiente en un punto húmedo (baños y zonas húmedas), e instalaciones eléctricas, con un mínimo de 5 circuitos protegidos por breakers.",
     "explanation": "Sistemas de tipo eléctrico, sanitario, entre otros, que nos posibilitan el acceso a los servicios básicos (electricidad, agua, gas, entre otros).",
     "question": "¿Cuenta con mínimo 5 o 6 breakers/tacos el sistema eléctrico de la vivienda?",
     "options": {
@@ -366,6 +391,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Almacenamiento",
+    "measurement": "Las preguntas orientadoras de este parámetro van enfocadas hacia la cantidad de espacio destinado para guardar objetos, el usuario debe prestar especial atención hacia cuánto espacio de almacenamiento, como closet, alacenas, cuartos de depósito, etc. posee la vivienda.",
     "explanation": "El almacenamiento en una vivienda se determina como todos aquellos espacios u objetos en los cuales podemos guardar pertenencias e insumos.",
     "question": "¿La vivienda cuenta con espacios de almacenamiento suficientes? (Closet, cuarto de deposito, muebles de cocina, alacenas)",
     "options": {
@@ -380,6 +406,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Asoleamiento",
+    "measurement": "En este caso la incidencia directa del sol por un periodo de tiempo largo es causante de altas temperaturas al interior de la vivienda, es por esto que la ausencia de los rayos solares en todos los espacios de la unidad en horas críticas (9:00 - 16:00) aportan calidad a la residencia",
     "explanation": "En arquitectura el soleamiento se considera como la incidencia del sol en el objeto arquitectónico.",
     "question": "¿En qué jornada observas la incidencia directa de la luz solar en las alcobas (espacios privados)?",
     "options": {
@@ -396,6 +423,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Asoleamiento",
+    "measurement": "En este caso la incidencia directa del sol por un period de tiempo largo es causante de altas temperaturas al interior de la vivienda, es por esto que la ausencia de los rayos solares en todos los espacios de la unidad en horas críticas (9:00 - 16:00) aportan calidad a la residencia",
     "explanation": "En arquitectura el soleamiento se considera como la incidencia del sol en el objeto arquitectónico.",
     "question": "¿En qué jornada observas la incidencia directa de la luz solar en alguno de los siguientes espacios: sala, comedor, cocina y baños (espacios sociales)?",
     "options": {
@@ -412,6 +440,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Acabados funcionales",
+    "measurement": "",
     "explanation": "Es aquel elemento/material constructivo que permite mantener el estado de la vivienda útil por lapsos de tiempo más prolongados.",
     "question": "¿La vivienda cuenta con los acabados esenciales? (Ej: Enchape de baños, enchape sobre encimera de cocina, enchape de pisos)",
     "options": {
@@ -426,6 +455,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Domótica",
+    "measurement": "",
     "explanation": "Permite automatizar las tareas relacionadas con la seguridad, el bienestar y el confort mediante un sistema inteligente instalado en una vivienda o edificio.",
     "question": "¿La  vivienda cuenta con un sistema de automatización como iluminacion inteligente, climatizacion automatizada, seguridad y acceso, persianas y cortinas automatizadas, electrodomesticos y entretenimiento?",
     "options": {
@@ -441,6 +471,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Dimensiones funcionales",
+    "measurement": "Dentro de este parámetro se quiere evaluar que los mobiliarios fijos de la vivienda estén ubicados donde puedan permitirle al usuario hacer sus actividades correctamente y sin barreras, ejemplo: tener que cerrar una puerta para poder acceder del todo a un espacio.",
     "explanation": "Va ligado al término ergonomía, siendo la disciplina que se encarga de establecer espacios útiles de acuerdo a las características físicas y psicológicas en este caso del ser humano en la vivienda.",
     "question": "¿Los mobiliarios fijos interfieren con la circulación o el desarrollo de otra actividad? (Aparatos sanitarios, puertas y ventanas, entre otros)",
     "options": {
@@ -456,6 +487,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Flexibilidad",
+    "measurement": "La pregunta orientadora en este parámetro hace referencia a la capacidad que le otorga el espacio al usuario de cambiar la posición de sus mobiliarios y diseño interior a uno completamente diferente, sin que se vea afectada la circulación el lugar. Ejemplo: tener un espacio donde la cama solo pueda estar ubicada en el centro de la habitación",
     "explanation": "El término flexibilidad está ligado a qué tan maleables son los espacios de la vivienda, de manera que nos permitan jugar y/o variar la posición de los mobiliarios. ",
     "question": "¿Los diferentes espacios de la vivienda le permiten cambiar la posición de los mobiliarios?",
     "options": {
@@ -471,6 +503,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Espacios",
+    "measurement": "Las preguntas orientadoras en este parámetro buscan incluir las preferencias del usuario en el puntaje de calidad de su vivienda, como las habitaciones que desea, los espacios adicionales que posee la casa, etcEn este caso nos enfocados en los acabados esenciales con los que debe contar una vivienda, pisos, baños y cocina",
     "explanation": "Diferentes medios físicos que permiten el desarrollo de actividades cotidianas para el ser humano como dormir, asearse, recrearse, entre otros.",
     "question": "¿La vivienda cuenta con los espacios mínimos para ser habitable? (1 baño, cocina, zona de labores, sala/comedor, 1 habitación)",
     "options": {
@@ -485,6 +518,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Espacios",
+    "measurement": "Las preguntas orientadoras en este parámetro buscan incluir las preferencias del usuario en el puntaje de calidad de su vivienda, como las habitaciones que desea, los espacios adicionales que posee la casa, etcEn este caso nos enfocados en los acabados esenciales con los que debe contar una vivienda, pisos, baños y cocina",
     "explanation": "Diferentes medios físicos que permiten el desarrollo de actividades cotidianas para el ser humano como dormir, asearse, recrearse, entre otros.",
     "question": "¿Cuenta la vivienda con espacios adicionales como sala de TV (Independiente a sala/comedor), patio de ropas, estudio, balcón?",
     "options": {
@@ -500,6 +534,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Espacios",
+    "measurement": "Las preguntas orientadoras en este parámetro buscan incluir las preferencias del usuario en el puntaje de calidad de su vivienda, como las habitaciones que desea, los espacios adicionales que posee la casa, etcEn este caso nos enfocados en los acabados esenciales con los que debe contar a vivienda, pisos, baños y cocina",
     "explanation": "Diferentes medios físicos que permiten el desarrollo de actividades cotidianas para el ser humano como dormir, asearse, recrearse, entre otros.",
     "question": "¿Cuenta con parqueadero propio?",
     "options": {
@@ -514,6 +549,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Deleite",
     "parameter": "Calidad de acabados",
+    "measurement": "En este caso nos enfocados en los acabados esenciales con los que debe contar una vivienda, pisos, baños y cocina",
     "explanation": "Es aquel elemento/material constructivo que permite mantener el estado de la vivienda útil por lapsos de tiempo más prolongados.",
     "question": "¿Qué tipo de acabado tienen los muros de la vivienda?",
     "options": {
@@ -529,6 +565,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Deleite",
     "parameter": "Calidad de acabados",
+    "measurement": "En este caso nos enfocados en los acabados esenciales con los que debe contar una vivienda, pisos, baños y cocina",
     "explanation": "Es aquel elemento/material constructivo que permite mantener el estado de la vivienda útil por lapsos de tiempo más prolongados.",
     "question": "¿Qué tipo de acabado tienen los pisos de la vivienda?",
     "options": {
@@ -543,6 +580,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Solidez",
     "parameter": "Mantenimiento/Patologias",
+    "measurement": "",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
     "question": "¿Los muros o columnas tienen grietas o fisuras?",
     "options": {
@@ -560,6 +598,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Solidez",
     "parameter": "Mantenimiento/Patologias",
+    "measurement": "",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
     "question": "¿La cubierta tiene filtraciones o daños?",
     "options": {
@@ -577,6 +616,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Solidez",
     "parameter": "Mantenimiento/Patologias",
+    "measurement": "",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
     "question": "¿Cuál es el estado de los pisos, paredes y puertas?",
     "options": {
@@ -594,6 +634,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Solidez",
     "parameter": "Mantenimiento/Patologias",
+    "measurement": "",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
     "question": "¿Cómo funcionan los enchufes, luces y tuberías de agua?",
     "options": {
@@ -611,6 +652,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Solidez",
     "parameter": "Mantenimiento/Patologias",
+    "measurement": "",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
     "question": "¿La vivienda necesita mantenimiento urgente?",
     "options": {
@@ -628,6 +670,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Sostenibilidad",
     "parameter": "Sostenibilidad Ambiental",
+    "measurement": "En este caso el recurso en el que se enfocó este parámetro es el agua, es decir, como reutilizarla y almacenarla de manera adecuada y responsable.",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
     "question": "¿Cuenta con algún sistema de recolección o reutilizacion de aguas lluvias? ",
     "options": {
@@ -642,6 +685,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Sostenibilidad",
     "parameter": "Sostenibilidad Ambiental",
+    "measurement": "En este caso el recurso en el que se enfocó este parámetro es el agua, es decir, como reutilizarla y almacenarla de manera adecuada y responsable.",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
     "question": "¿La vivienda cuenta iluminación eficiente y sostenible, por ejemplo lámparas LED?",
     "options": {
@@ -656,6 +700,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Sostenibilidad",
     "parameter": "Sostenibilidad Ambiental",
+    "measurement": "En este caso el recurso en el que se enfocó este parámetro es el agua, es decir, como reutilizarla y almacenarla de manera adecuada y responsable.",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
     "question": "¿Existen dispositivos de ahorro de agua en grifos, duchas e inodoros ?",
     "options": {
@@ -670,6 +715,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Sostenibilidad",
     "parameter": "Sostenibilidad Ambiental",
+    "measurement": "En este caso el recurso en el que se enfocó este parámetro es el agua, es decir, como reutilizarla y almacenarla de manera adecuada y responsable.",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
     "question": "¿Posee un techo verde o jardin vertical, que contribuya a la reducción de el calor y la mejora de la calidad del aire?",
     "options": {
@@ -684,6 +730,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Sostenibilidad",
     "parameter": "Sostenibilidad Ambiental",
+    "measurement": "En este caso el recurso en el que se enfocó este parámetro es el agua, es decir, como reutilizarla y almacenarla de manera adecuada y responsable.",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
     "question": "¿La vivienda cuenta con sistemas de recolección de energía (ya sea solar, eólica, entre otras)?",
     "options": {
