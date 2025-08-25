@@ -4,6 +4,7 @@ import coverImage1 from '/images/cover_image_1.webp';
 import coverImage2 from '/images/cover_image_2.webp';
 import coverImage3 from '/images/cover_image_3.webp';
 import coverImage4 from '/images/cover_image_4.webp';
+import coverImage5 from '/images/cover_image_5.webp';
 
 function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -16,6 +17,7 @@ function HeroSection() {
     coverImage2,
     coverImage3,
     coverImage4,
+    coverImage5,
   ];
 
   const resetTimer = () => {
