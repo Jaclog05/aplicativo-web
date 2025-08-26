@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import PdfReport from "./pdfReport/PdfReport";
 import { AppraisalsContext, AppraisalsDispatchContext } from "../appraisalContext";
 import { useSubmitAppraisal } from "../hooks/useSubmitAppraisal";
 import { formatCurrency } from "../utils/formatCurrency";
+import SpinnerLoader from "./SpinnerLoader";
 
 function ResultsForm() {
   const {
@@ -17,6 +18,20 @@ function ResultsForm() {
   const dispatch = useContext(AppraisalsDispatchContext);
 
   useSubmitAppraisal();
+
+  const [showSpinner, setShowSpinner] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSpinner(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (showSpinner) {
+    return <SpinnerLoader message="Calculando avalúo..." />;
+  }
 
   return (
     <form className="d-flex flex-column justify-content-around align-items-stretch text-center">
