@@ -142,7 +142,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Equipamientos",
     "parameter": "Equipamientos a nivel ciudad",
-    "measurement": "",
+    "measurement": "Para identificar este tipo de equipamientos es necesario hacer un recorrido más extenso en los alrededores de la vivienda ya que pueden estar más alejados de ella.",
     "explanation": "Edificaciones o espacios que cuentan con una mayor cobertura, es decir, que pueden estar mucho más lejanos a la vivienda, pero aún el servicio que ofrecen sigue siendo efectivo (Ejemplo: Centros comerciales, hospitales, plazas, supermercados, parques, entre otros).",
     "question": "A un máximo de 10 manzanas a la redonda de la vivienda ¿se encuentran centros educativos?",
     "options": {
@@ -157,7 +157,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Equipamientos",
     "parameter": "Equipamientos a nivel ciudad",
-    "measurement": "El parámetro va enfocado a conocer si en la localidad existen espacios como plazas y parques, hospitales, supermercados, escuelas o universidades, estaciones de policía o iglesias. A su vez, conocer si la vivienda cuenta con diversas rutas de buses de fácil y rápido acceso (a máximo 3 manzanas)",
+    "measurement": "Para identificar este tipo de equipamientos es necesario hacer un recorrido más extenso en los alrededores de la vivienda ya que pueden estar más alejados de ella.",
     "explanation": "Edificaciones o espacios que cuentan con una mayor cobertura, es decir, que pueden estar mucho más lejanos a la vivienda, pero aún el servicio que ofrecen sigue siendo efectivo (Ejemplo: Centros comerciales, hospitales, plazas, supermercados, parques, entre otros).",
     "question": "A un máximo de 10 manzanas a la redonda de la vivienda ¿se encuentra un supermercado?",
     "options": {
@@ -172,7 +172,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Equipamientos",
     "parameter": "Equipamientos a nivel ciudad",
-    "measurement": "El parámetro va enfocado a conocer si en la localidad existen espacios como plazas y parques, hospitales, supermercados, escuelas o universidades, estaciones de policía o iglesias. A su vez, conocer si la vivienda cuenta con diversas rutas de buses de fácil y rápido acceso (a máximo 3 manzanas)",
+    "measurement": "Para identificar este tipo de equipamientos es necesario hacer un recorrido más extenso en los alrededores de la vivienda ya que pueden estar más alejados de ella.",
     "explanation": "Edificaciones o espacios que cuentan con una mayor cobertura, es decir, que pueden estar mucho más lejanos a la vivienda, pero aún el servicio que ofrecen sigue siendo efectivo (Ejemplo: Centros comerciales, hospitales, plazas, supermercados, parques, entre otros).",
     "question": "A un máximo de 3 manzanas a la redonda de la vivienda ¿transita por lo menos una ruta de bus?",
     "options": {
@@ -187,7 +187,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Equipamientos",
     "parameter": "Equipamientos a nivel ciudad",
-    "measurement": "El parámetro va enfocado a conocer si en la localidad existen espacios como plazas y parques, hospitales, supermercados, escuelas o universidades, estaciones de policía o iglesias. A su vez, conocer si la vivienda cuenta con diversas rutas de buses de fácil y rápido acceso (a máximo 3 manzanas)",
+    "measurement": "Para identificar este tipo de equipamientos es necesario hacer un recorrido más extenso en los alrededores de la vivienda ya que pueden estar más alejados de ella.",
     "explanation": "Edificaciones o espacios que cuentan con una mayor cobertura, es decir, que pueden estar mucho más lejanos a la vivienda, pero aún el servicio que ofrecen sigue siendo efectivo (Ejemplo: Centros comerciales, hospitales, plazas, supermercados, parques, entre otros).",
     "question": "A un máximo de 4 manzanas a la redonda de la vivienda ¿se encuentan parques o plazas?",
     "options": {
@@ -202,7 +202,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Equipamientos",
     "parameter": "Equipamientos a nivel ciudad",
-    "measurement": "El parámetro va enfocado a conocer si en la localidad existen espacios como plazas y parques, hospitales, supermercados, escuelas o universidades, estaciones de policía o iglesias. A su vez, conocer si la vivienda cuenta con diversas rutas de buses de fácil y rápido acceso (a máximo 3 manzanas)",
+    "measurement": "Para identificar este tipo de equipamientos es necesario hacer un recorrido más extenso en los alrededores de la vivienda ya que pueden estar más alejados de ella.",
     "explanation": "Edificaciones o espacios que cuentan con una mayor cobertura, es decir, que pueden estar mucho más lejanos a la vivienda, pero aún el servicio que ofrecen sigue siendo efectivo (Ejemplo: Centros comerciales, hospitales, plazas, supermercados, parques, entre otros).",
     "question": "A un máximo de 10 manzanas a la redonda de la vivienda ¿encuentras un establecimiento donde te brinden asistencia medica?",
     "options": {
@@ -217,7 +217,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Equipamientos",
     "parameter": "Equipamientos a nivel ciudad",
-    "measurement": "El parámetro va enfocado a conocer si en la localidad existen espacios como plazas y parques, hospitales, supermercados, escuelas o universidades, estaciones de policía o iglesias. A su vez, conocer si la vivienda cuenta con diversas rutas de buses de fácil y rápido acceso (a máximo 3 manzanas)",
+    "measurement": "Para identificar este tipo de equipamientos es necesario hacer un recorrido más extenso en los alrededores de la vivienda ya que pueden estar más alejados de ella.",
     "explanation": "Edificaciones o espacios que cuentan con una mayor cobertura, es decir, que pueden estar mucho más lejanos a la vivienda, pero aún el servicio que ofrecen sigue siendo efectivo (Ejemplo: Centros comerciales, hospitales, plazas, supermercados, parques, entre otros).",
     "question": "A un máximo de 10 manzanas a la redonda de la vivienda ¿encuentras una estación o CAI (Comando de Atención Inmediata) de la policia nacional?",
     "options": {
@@ -232,7 +232,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Entorno",
     "subgroup": "Equipamientos",
     "parameter": "Equipamientos a nivel ciudad",
-    "measurement": "El parámetro va enfocado a conocer si en la localidad existen espacios como plazas y parques, hospitales, supermercados, escuelas o universidades, estaciones de policía o iglesias. A su vez, conocer si la vivienda cuenta con diversas rutas de buses de fácil y rápido acceso (a máximo 3 manzanas)",
+    "measurement": "Para identificar este tipo de equipamientos es necesario hacer un recorrido más extenso en los alrededores de la vivienda ya que pueden estar más alejados de ella.",
     "explanation": "Edificaciones o espacios que cuentan con una mayor cobertura, es decir, que pueden estar mucho más lejanos a la vivienda, pero aún el servicio que ofrecen sigue siendo efectivo (Ejemplo: Centros comerciales, hospitales, plazas, supermercados, parques, entre otros).",
     "question": "A un máximo de 10 manzanas a la redonda de la vivienda ¿encuentras un lugar de culto?",
     "options": {
@@ -580,7 +580,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Solidez",
     "parameter": "Mantenimiento/Patologias",
-    "measurement": "",
+    "measurement": "Al momento de evaluar el parámetro, se sugiere analizar detenidamente cada opción de respuesta disponible, valorando las características y condiciones reales de la situación observada. Posteriormente elija la que mejor refleje la situación evaluada.",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
     "question": "¿Los muros o columnas tienen grietas o fisuras?",
     "options": {
@@ -598,7 +598,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Solidez",
     "parameter": "Mantenimiento/Patologias",
-    "measurement": "",
+    "measurement": "Al momento de evaluar el parámetro, se sugiere analizar detenidamente cada opción de respuesta disponible, valorando las características y condiciones reales de la situación observada. Posteriormente elija la que mejor refleje la situación evaluada.",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
     "question": "¿La cubierta tiene filtraciones o daños?",
     "options": {
@@ -616,7 +616,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Solidez",
     "parameter": "Mantenimiento/Patologias",
-    "measurement": "",
+    "measurement": "Al momento de evaluar el parámetro, se sugiere analizar detenidamente cada opción de respuesta disponible, valorando las características y condiciones reales de la situación observada. Posteriormente elija la que mejor refleje la situación evaluada.",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
     "question": "¿Cuál es el estado de los pisos, paredes y puertas?",
     "options": {
@@ -634,7 +634,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Solidez",
     "parameter": "Mantenimiento/Patologias",
-    "measurement": "",
+    "measurement": "Al momento de evaluar el parámetro, se sugiere analizar detenidamente cada opción de respuesta disponible, valorando las características y condiciones reales de la situación observada. Posteriormente elija la que mejor refleje la situación evaluada.",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
     "question": "¿Cómo funcionan los enchufes, luces y tuberías de agua?",
     "options": {
@@ -652,7 +652,7 @@ export const questionsUniFamilyArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Solidez",
     "parameter": "Mantenimiento/Patologias",
-    "measurement": "",
+    "measurement": "Al momento de evaluar el parámetro, se sugiere analizar detenidamente cada opción de respuesta disponible, valorando las características y condiciones reales de la situación observada. Posteriormente elija la que mejor refleje la situación evaluada.",
     "explanation": "Se enfoca en la optimización de recursos a través de sistemas que nos permitan la reutilización de estos en otras áreas o actividades",
     "question": "¿La vivienda necesita mantenimiento urgente?",
     "options": {
