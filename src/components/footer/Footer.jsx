@@ -1,14 +1,15 @@
 import React from "react";
 import MainIcon from "../MainIcon";
-import LogoIgac from "../../assets/LogoIgac.jpg";
-import LogoMinciencias from "../../assets/logoMinciencias.png"
-import LogoUniatlantico from "../../assets/LogoUniatlantico.png"
+import IgacIcon from "../IgacIcon";
+import UniAtlanticoIcon from "../UniAtlanticoIcon";
+import MinCienciasIcon from "../MinCienciasIcon";
+import './Footer.css';
 
 function Footer() {
   return (
     <footer className="bg-secondary text-light mt-3 py-3">
       <div className="row py-3 px-5">
-        <div className="col-md-4">
+        <div className="col-md-4 border-md-end">
           <div className="h-100 d-flex flex-md-row flex-column align-items-md-stretch justify-content-md-center align-items-center gap-2">
             <MainIcon size="100" className=""/>
             <div className="text-center text-md-start">
@@ -18,20 +19,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="col-md-4 text-md-start text-center">
-          <p className="fw-bold mb-1 text-dark">Contáctanos</p>
-          <p className="mb-1">
-            contacto@avaluos.com
-          </p>
-          <p className="mb-1">
-            {`(+57) 123 456 7890`}
-          </p>
-          <p className="mb-0">
-            Calle 123, Bogotá, Colombia
-          </p>
-        </div>
-
-        <div className="col-md-4 text-md-start text-center">
+        <div className="col-md-4 text-md-start text-center px-md-4">
           <p className="fw-bold mb-1 text-dark">Enlaces de interés</p>
           <ul className="list-unstyled d-flex justify-content-center justify-content-md-start mb-0 gap-2">
             <li>
@@ -39,9 +27,9 @@ function Footer() {
                 href="https://minciencias.gov.co/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary text-decoration-none text-white"
+                className="text-decoration-none icon-link"
               >
-                <img src={LogoMinciencias} alt="logo_minciencias" width="30" height="30"/>
+                <MinCienciasIcon width="45" height="50"/>
               </a>
             </li>
             <li>
@@ -49,9 +37,9 @@ function Footer() {
                 href="https://www.uniatlantico.edu.co/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary text-decoration-none text-white"
+                className="text-decoration-none icon-link"
               >
-                <img src={LogoUniatlantico} alt="logo_uniatlantico" width="30" height="30"/>
+                <UniAtlanticoIcon width="37.5" height="50"/>
               </a>
             </li>
             <li>
@@ -59,9 +47,9 @@ function Footer() {
                 href="https://www.igac.gov.co/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary text-decoration-none text-white"
+                className="text-decoration-none icon-link"
               >
-                <img src={LogoIgac} alt="logo_igac" width="30" height="30"/>
+                <IgacIcon width="34" height="45"/>
               </a>
             </li>
           </ul>
