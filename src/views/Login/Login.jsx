@@ -4,15 +4,21 @@ import LoadingButton from "../../components/LoadingButton";
 import Alert from "react-bootstrap/Alert";
 import MainIcon from "../../components/MainIcon";
 import { AppraisalsDispatchContext } from "../../appraisalContext";
+import { InputGroup, FormControl, Button } from "react-bootstrap";
 
 const { VITE_API_BASE_URL } = import.meta.env;
 
 function Login() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const dispatch = useContext(AppraisalsDispatchContext)
   const navigate = useNavigate();
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -61,22 +67,31 @@ function Login() {
         onSubmit={handleSubmit}
       >
         <MainIcon size="120" className="mx-auto my-1"/>
-        <input
+        <FormControl
           type="text"
           placeholder="Ingrese su usuario"
-          className="form-control border border-1 border-secondary"
+          className="border border-1 border-secondary"
           value={user}
           onChange={(e) => setUser(e.target.value)}
           required
         />
-        <input
-          type="password"
-          placeholder="Ingrese su contraseña"
-          className="form-control border border-1 border-secondary"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+        <InputGroup>
+          <FormControl
+            type={showPassword ? "text" : "password"}
+            placeholder="Ingrese su contraseña"
+            className="border border-1 border-secondary"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <Button
+            variant="outline-secondary"
+            onClick={togglePasswordVisibility}
+            className="d-flex align-items-center"
+          >
+            <i className={`bi ${showPassword ? "bi-eye-slash" : "bi-eye"}`}></i>
+          </Button>
+        </InputGroup>
         <LoadingButton
           loadingMessage="Ingresando"
           text="Iniciar Sesión"
