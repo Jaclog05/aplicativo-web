@@ -1,6 +1,6 @@
 import React from "react";
-import MainIcon from "../MainIcon";
 import IgacIcon from "../IgacIcon";
+import FavIcon from "/favicon.svg";
 import UniAtlanticoIcon from "../UniAtlanticoIcon";
 import MinCienciasIcon from "../MinCienciasIcon";
 import './Footer.css';
@@ -11,7 +11,7 @@ function Footer() {
       <div className="row py-3 px-5">
         <div className="col-md-4 border-md-end">
           <div className="h-100 d-flex flex-md-row flex-column align-items-md-stretch justify-content-md-center align-items-center gap-2">
-            <MainIcon size="100" className=""/>
+            <img src={FavIcon} alt="main-icon" width="80" height="80" className="d-inline-block align-text-top"/>
             <div className="text-center text-md-start">
               <p className="fw-bold mb-1 text-dark">EVALUARQ</p>
               <p className="mb-0">Calculo de avalúos inmobiliarios</p>
@@ -20,7 +20,7 @@ function Footer() {
         </div>
 
         <div className="col-md-4 text-md-start text-center px-md-4">
-          <p className="fw-bold mb-1 text-dark">Enlaces de interés</p>
+          <p className="fw-bold mb-1 text-dark">Aliados</p>
           <ul className="list-unstyled d-flex justify-content-center justify-content-md-start mb-0 gap-2">
             <li>
               <a

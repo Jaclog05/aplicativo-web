@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { Link } from "react-router";
 import { useLocation } from 'react-router-dom'
-import MainIcon from "../MainIcon";
+import FavIcon from "/favicon.svg";
 
 function NavBar() {
   const [isHovered, setIsHovered] = useState(false)
@@ -17,7 +17,7 @@ function NavBar() {
     <nav className="navbar navbar-light bg-secondary d-flex justify-content-between py-0 px-2 shadow">
       <Link to="/" className="navbar-brand p-0 m-0">
         <div className="d-flex align-items-center text-light justify-content-between gap-2 py-2 fs-5">
-          <MainIcon size='3rem' className=""/>
+          <img src={FavIcon} alt="main-icon" width="30" height="30" className="d-inline-block align-text-top"/>
           <p className="mb-0">EVALUARQ</p>
         </div>
       </Link>
