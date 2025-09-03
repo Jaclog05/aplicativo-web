@@ -187,9 +187,6 @@ function PdfReport({data, appraisal, sqMeterPrice, mapImageUrl, zipCode, plusPar
     year: 'numeric'
   });
 
-  // Generar código de reporte único
-  const reportCode = `AV-${today.getFullYear()}-${Math.floor(Math.random()*10000)}`;
-
   return (
     <Document>
       <Page size="A4" style={styles.termsPage}>
@@ -333,7 +330,6 @@ function PdfReport({data, appraisal, sqMeterPrice, mapImageUrl, zipCode, plusPar
         <View style={styles.header}>
           <View style={styles.headerMain}>
             <Text style={styles.headerTitle}>Reporte de Avalúo Inmobiliario</Text>
-            <Text style={styles.headerSubtitle}>Código: {reportCode}</Text>
           </View>
           <Text style={styles.headerSubtitle}>Fecha de emisión: {formattedDate}</Text>
         </View>
