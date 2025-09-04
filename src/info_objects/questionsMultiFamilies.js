@@ -653,7 +653,7 @@ export const questionsMultiFamiliesArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Acabados funcionales",
-    "measurement": "",
+    "measurement": "Verifique que los acabados de pisos, muros y techos cumplan con lo básico para un uso seguro, cómodo y duradero, y seleccione la opción que mejor refleje esa condición.",
     "explanation": "Es aquel elemento/material constructivo que permite mantener el estado de la vivienda útil por lapsos de tiempo más prolongados.",
     "question": "¿La vivienda cuenta con los acabados esenciales? (Ej: Enchape de baños, enchape sobre encimera de cocina, enchape de pisos)",
     "options": {
@@ -668,7 +668,7 @@ export const questionsMultiFamiliesArray = [
     "indicator": "Unidad Residencial",
     "subgroup": "Utilidad",
     "parameter": "Domótica",
-    "measurement": "",
+    "measurement": "Verifique si la vivienda cuenta con sistemas de automatización (iluminación, seguridad, climatización, entre otros) y seleccione la opción que mejor describa su nivel de implementación.",
     "explanation": "Permite automatizar las tareas relacionadas con la seguridad, el bienestar y el confort mediante un sistema inteligente instalado en una vivienda o edificio.",
     "question": "¿La  vivienda cuenta con un sistema de automatización como iluminacion inteligente, climatizacion automatizada, seguridad y acceso, persianas y cortinas automatizadas, electrodomesticos y entretenimiento?",
     "options": {
