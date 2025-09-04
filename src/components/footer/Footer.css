@@ -15,3 +15,10 @@
     border-inline-end: var(--bs-border-width, 1px) solid var(--bs-border-color, #dee2e6) !important;
   }
 }
+
+.logo-footer-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}

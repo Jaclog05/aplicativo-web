@@ -13,7 +13,7 @@ function Footer() {
           <div className="h-100 d-flex flex-md-row flex-column align-items-md-stretch justify-content-md-center align-items-center gap-2">
             <img src={FavIcon} alt="main-icon" width="80" height="80" className="d-inline-block align-text-top"/>
             <div className="text-center text-md-start">
-              <p className="fw-bold mb-1 text-dark">EVALUARQ</p>
+              <p className="fw-bold mb-1 text-dark logo-footer-text">EVALUARQ</p>
               <p className="mb-0">Calculo de avalúos inmobiliarios</p>
             </div>
           </div>
