@@ -6,7 +6,7 @@ import { useInitializeGuidingQuestions } from "../hooks/useInitializeGuidingQues
 
 function GuidingQuestionsForm() {
 
-  const { questions } = useContext(AppraisalsContext)
+  const { questions, currentIndex } = useContext(AppraisalsContext)
 
   useInitializeGuidingQuestions();
 
@@ -17,7 +17,7 @@ function GuidingQuestionsForm() {
       {
         loading ?
           <SpinnerLoader /> :
-          <GuidingQuestionsContent />
+          <GuidingQuestionsContent key={currentIndex}/>
       }
     </div>
   );

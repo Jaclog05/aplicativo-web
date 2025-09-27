@@ -1,9 +1,10 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, useMemo } from 'react';
 import genericImage from '../assets/generic-image.svg';
 import ProgressBarComponent from './progressBar/ProgressBarComponent';
 import InfoBar from './infoBar/InfoBar';
 import OptionButton from './optionButton/OptionButton';
 import { AppraisalsContext, AppraisalsDispatchContext } from '../appraisalContext';
+import { use } from 'react';
 
 function GuidingQuestionsContent() {
 
@@ -11,7 +12,10 @@ function GuidingQuestionsContent() {
   const dispatch = useContext(AppraisalsDispatchContext);
   const [currentImage, setCurrentImage] = useState(genericImage);
 
-  const currentQuestion = questions[currentIndex]
+  const currentQuestion = useMemo(() => {
+    return questions[currentIndex];
+  }, [questions, currentIndex]);
+
   const { id, question, options, parameterType, imageId } = currentQuestion;
 
   const questionsLength = questions.length;
@@ -40,6 +44,14 @@ function GuidingQuestionsContent() {
     };
 
   }, [imageId]);
+
+  useEffect(() => {
+    console.log('Context actualizado:', {
+      currentIndex,
+      totalQuestions: questions.length,
+      currentQuestion: questions[currentIndex]?.question,
+    });
+  }, [currentIndex, questions]);
 
   return (
     <>
